@@ -7,190 +7,149 @@
   <title>너겟 작업 사이트</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="app">
-    <aside class="sidebar">
-      <div class="nav-item" title="홈"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12L12 4l9 8M5 10v10h14V10"/></svg></div>
-      <div class="nav-item" title="캘린더"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div>
-      <div class="nav-item" title="큐"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-      <div class="nav-item active" title="대시보드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M14 19c0-2 2-4 4-4s4 1 4 4"/></svg></div>
-      <div class="nav-item" title="흐름"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 4v16M7 4l-3 3M7 4l3 3M17 20V4M17 20l3-3M17 20l-3-3"/></svg></div>
-      <div class="nav-item" title="분석"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="13" width="3" height="7" rx="1"/><rect x="10" y="9" width="3" height="11" rx="1"/><rect x="16" y="5" width="3" height="15" rx="1"/></svg></div>
-      <div class="nav-item" title="아카이브"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7l2-3h14l2 3M3 7v13h18V7M3 7h18M9 12h6"/></svg></div>
-      <div class="nav-item" title="설정"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.2-1.7l2-1.6-2-3.4-2.4 1a7 7 0 0 0-3-1.7L13 2h-4l-.4 2.6a7 7 0 0 0-3 1.7l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 3 12c0 .6.1 1.1.2 1.7l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 3 1.7L9 22h4l.4-2.6a7 7 0 0 0 3-1.7l2.4 1 2-3.4-2-1.6c.1-.6.2-1.1.2-1.7z"/></svg></div>
-      <div class="nav-spacer"></div>
-      <div class="nav-avatar" title="너겟">너</div>
-      <div class="nav-dots"><span></span><span></span><span></span><span></span></div>
+
+    <aside class="col-left">
+      <div class="top-row">
+        <div class="logo-mark">너</div>
+        <button class="menu-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          메뉴
+        </button>
+      </div>
+
+      <div class="followers-mini">
+        <div class="top">
+          <span class="num" id="followersNum">0</span>
+          <span class="delta" id="followersDelta">+0%</span>
+        </div>
+        <div class="sub">팔로워 · 지난 30일</div>
+        <div class="chart" id="followersChart"></div>
+      </div>
+
+      <div class="ai-insight-block">
+        <div class="quote" id="aiSummary">불러오는 중...</div>
+        <div class="by">
+          <span class="dot"></span>
+          <span>너겟 비서 · </span>
+          <span id="aiTime">--:--</span>
+        </div>
+      </div>
+
+      <div class="ctas-row">
+        <button class="pill-btn dark">큐 보기</button>
+        <button class="pill-btn ghost">통계</button>
+      </div>
+
+      <div class="left-spacer"></div>
+
+      <div class="bottom-mini">
+        <div class="thumb" id="latestThumb">
+          <span class="thumb-label">최신</span>
+        </div>
+        <button class="next-btn" aria-label="다음">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="caps">
+          <span></span><span></span>
+        </div>
+      </div>
     </aside>
 
-    <main class="main">
-      <div class="header">
-        <div class="icon-btn dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 10l4-2v8l-4-2M3 7h12v10H3z"/></svg></div>
-        <div class="pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <span id="clock">14:20</span>
-          <span class="pill-divider"></span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>
-          <span>23°</span>
-          <span class="pill-divider"></span>
-          <span style="color:var(--text-3);">•••</span>
-        </div>
-        <div class="pill search">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-          <input placeholder="검색..."/>
-        </div>
-        <div class="header-spacer"></div>
-        <div class="icon-btn dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></svg></div>
-        <div class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6l8 6 8-6M4 6v12h16V6M4 6h16"/></svg><span class="dot"></span></div>
+    <section class="col-center">
+      <div class="filter-tabs">
+        <button class="tab active">전체</button>
+        <button class="tab">캐러셀</button>
+        <button class="tab">릴스</button>
+        <button class="tab">포스트</button>
       </div>
 
-      <div class="notice" id="dummyNotice">⚠️ 더미 데이터. 인스타 API + 수집기 연동 후 자동 교체됩니다.</div>
+      <div class="hero-card">
+        <div class="hero-image">
+          <div class="hero-tag">
+            <span class="live-dot"></span>
+            <span>이번 주 베스트</span>
+          </div>
+          <div class="hero-body">
+            <div class="hero-eyebrow" id="heroSource">매체 · 유형</div>
+            <h1 class="hero-title" id="heroTitle">불러오는 중...</h1>
+            <p class="hero-summary" id="heroSummary"></p>
+            <div class="hero-stats">
+              <span>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21l-1.5-1.4C5 14.6 2 11.9 2 8.5 2 5.9 4 4 6.5 4c1.5 0 2.9.7 3.7 1.8L12 7.5l1.8-1.7C14.6 4.7 16 4 17.5 4 20 4 22 5.9 22 8.5c0 3.4-3 6.1-8.5 11.1L12 21z"/></svg>
+                <span id="heroLikes">0</span>
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+                <span id="heroComments">0</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div class="grid">
-        <section class="card card-recent">
-          <div class="card-head">
-            <div class="card-title">최근 발행</div>
-            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/></svg></div>
-          </div>
-          <div class="recent-list" id="recentList"></div>
-          <div class="timeline-axis"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span></div>
-        </section>
+      <div class="progress-pill">
+        <div class="end-dot filled"></div>
+        <div class="track"><div class="fill" id="progressFill" style="width:0"></div></div>
+        <div class="center-mark">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+        </div>
+        <div class="track"><div class="fill" id="progressFill2" style="width:0"></div></div>
+        <div class="end-dot"></div>
+        <div class="week-label" id="weekLabel">이번 주 0/15</div>
+      </div>
+    </section>
 
-        <section class="card card-followers">
-          <div class="card-head">
-            <div class="card-title">팔로워 추이</div>
-            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 17l6-6 4 4 8-8"/></svg></div>
-          </div>
-          <div class="followers-stat">
-            <span class="followers-num" id="followersNum">0</span>
-            <span class="followers-delta" id="followersDelta">+0%</span>
-          </div>
-          <div class="followers-label">지난 30일</div>
-          <div class="followers-chart" id="followersChart"></div>
-          <div class="followers-legend" id="followersLegend"></div>
-        </section>
+    <aside class="col-right">
+      <div class="search-row">
+        <div class="search-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input placeholder="raw 항목 검색"/>
+        </div>
+        <div class="avatar-mini">너</div>
+      </div>
 
-        <section class="card card-ai dark">
-          <div class="card-head">
-            <div class="card-title">AI 비서</div>
-            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div>
+      <div>
+        <div class="label-eyebrow" style="padding-left:6px;margin-bottom:10px;">최근 발행</div>
+        <div class="recent-list" id="recentList"></div>
+      </div>
+
+      <div class="weekly-card">
+        <div class="head">
+          <div>
+            <div class="label-eyebrow">주간 발행</div>
+            <div class="head-num" id="weeklyTotal">0</div>
           </div>
-          <div class="ai-orb">
-            <svg viewBox="0 0 220 220">
-              <defs>
-                <radialGradient id="orbGrad" cx="45%" cy="40%" r="65%">
-                  <stop offset="0%" stop-color="#f0f0f0"/>
-                  <stop offset="30%" stop-color="#999"/>
-                  <stop offset="70%" stop-color="#2a2a2a"/>
-                  <stop offset="100%" stop-color="#0a0a0a"/>
-                </radialGradient>
-                <radialGradient id="orbCore" cx="50%" cy="55%" r="40%">
-                  <stop offset="0%" stop-color="#ffffff"/>
-                  <stop offset="60%" stop-color="#dfe8ee"/>
-                  <stop offset="100%" stop-color="#a8b8c4" stop-opacity="0.6"/>
-                </radialGradient>
-                <filter id="softGlow">
-                  <feGaussianBlur stdDeviation="2"/>
-                </filter>
-              </defs>
-              <circle cx="110" cy="110" r="92" fill="url(#orbGrad)"/>
-              <ellipse cx="110" cy="125" rx="36" ry="30" fill="url(#orbCore)" opacity="0.95"/>
-              <ellipse cx="100" cy="118" rx="14" ry="8" fill="white" opacity="0.6" filter="url(#softGlow)"/>
-              <circle cx="78" cy="78" r="2" fill="white" opacity="0.85"/>
-              <circle cx="138" cy="62" r="1.4" fill="white" opacity="0.9"/>
-              <circle cx="160" cy="98" r="1.1" fill="white" opacity="0.7"/>
-              <circle cx="60" cy="138" r="1.7" fill="white" opacity="0.75"/>
-              <circle cx="148" cy="162" r="1.2" fill="white" opacity="0.6"/>
-              <circle cx="50" cy="92" r="0.9" fill="white" opacity="0.5"/>
-              <circle cx="170" cy="135" r="1" fill="white" opacity="0.55"/>
+          <span style="font-size:10px;color:var(--text-3);letter-spacing:0.4px;">총 / 일평균 <strong id="weeklyAvg" style="color:var(--text);font-weight:600;">0</strong></span>
+        </div>
+        <div class="weekly-bars" id="weeklyBars"></div>
+      </div>
+
+      <div>
+        <div class="label-eyebrow" style="padding-left:6px;margin-bottom:6px;">발행 형태</div>
+        <div class="formats-row">
+          <div class="formats-info" id="formatsInfo"></div>
+          <div class="donut-wrap">
+            <svg id="donutSvg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--bg)" stroke-width="9"/>
             </svg>
-          </div>
-          <div class="ai-summary" id="aiSummary">불러오는 중...</div>
-          <div class="ai-foot">
-            <div class="avatar-mini">AI</div>
-            <div>
-              <div class="ai-name">너겟 비서</div>
-              <div class="ai-time" id="aiTime">--:--</div>
-            </div>
-            <div class="ai-bar"></div>
-          </div>
-        </section>
-
-        <section class="card card-formats">
-          <div class="card-head">
-            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h12"/></svg></div>
-            <div class="formats-toggle">
-              <button class="active" title="목록"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-              <button title="그리드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
+            <div class="center">
+              <span id="donutTotal">0</span>
+              <small>총 발행</small>
             </div>
           </div>
-          <div class="format-list" id="formatList"></div>
-        </section>
-
-        <section class="card card-weekly dark">
-          <div class="weekly-head">
-            <div class="weekly-dots">
-              <span class="active"></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="weekly-mini-chart">
-              <div style="height:30%"></div><div style="height:60%"></div><div style="height:40%"></div><div style="height:80%"></div><div style="height:50%"></div><div style="height:70%"></div><div style="height:90%"></div><div style="height:45%"></div>
-            </div>
-          </div>
-          <div class="weekly-content">
-            <div class="weekly-block">
-              <div class="weekly-block-head">
-                <div class="avatar-stack">
-                  <div class="avatar-mini">M</div>
-                  <div class="avatar-mini b">K</div>
-                  <div class="avatar-mini c">J</div>
-                </div>
-                <div class="card-title">이번 주</div>
-              </div>
-              <div class="weekly-stat-row">
-                <div>
-                  <div class="weekly-stat-num" id="weeklyTotal">0</div>
-                  <div class="weekly-stat-label">총 발행</div>
-                </div>
-                <div style="text-align:right;">
-                  <div class="weekly-stat-num" id="weeklyAvg">0</div>
-                  <div class="weekly-stat-label">일평균</div>
-                </div>
-              </div>
-              <div class="weekly-progress"><div class="fill" id="weeklyFill" style="width:0%"></div></div>
-              <div class="weekly-stat-label" id="weeklyGoal">목표 대비</div>
-            </div>
-            <div class="weekly-block">
-              <div class="weekly-block-head">
-                <div class="avatar-stack">
-                  <div class="avatar-mini b">N</div>
-                  <div class="avatar-mini">P</div>
-                  <div class="avatar-mini c">S</div>
-                </div>
-                <div class="card-title">피크</div>
-              </div>
-              <div class="weekly-stat-row">
-                <div>
-                  <div class="weekly-stat-num" id="peakDay">-</div>
-                  <div class="weekly-stat-label" id="peakDayCount">0건</div>
-                </div>
-              </div>
-              <div class="weekly-progress"><div class="fill" style="width:80%"></div></div>
-              <div class="weekly-stat-label">전체 대비</div>
-            </div>
-            <div class="weekly-block">
-              <div class="card-title" style="margin-bottom:4px;">요일별</div>
-              <div class="bars-chart" id="barsChart"></div>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
-    </main>
+    </aside>
+
   </div>
+
+  <div class="dummy-notice" id="dummyNotice">⚠️ 표시된 데이터는 더미입니다. 인스타 API + 수집기 연동 후 자동 갱신됩니다.</div>
 
   <script src="./app.js"></script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
