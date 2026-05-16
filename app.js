@@ -1,149 +1,151 @@
-// 너겟 작업 사이트 v0.5 — gallery white-cube tone
+// 너겟 작업 사이트 v0.6 — Cloudflare Worker로 인스타 실데이터 연결
+const WORKER_URL = 'https://nugget.rabett.workers.dev/';
+const DAY_LABELS = ['일','월','화','수','목','금','토'];
+const FORMAT_COLORS = { '캐러셀': '#1a1a1a', '릴스': '#6b6b6b', '단일 포스트': '#c4c4c4' };
+
+// media_type: 1=이미지, 2=비디오/릴스, 8=캐러셀
+function mediaTypeToFormat(t) {
+  if (t === 8) return '캐러셀';
+  if (t === 2) return '릴스';
+  return '단일 포스트';
+}
+
+// Worker 응답 → 사이트가 쓰는 insta 구조로 변환
+function transformWorker(w) {
+  const posts = Array.isArray(w.all_posts) ? w.all_posts : (w.recent_posts || []);
+  const now = Date.now();
+  const weekMs = 7 * 24 * 3600 * 1000;
+
+  // 요일별 카운트 (최근 7일)
+  const dayCount = [0,0,0,0,0,0,0];
+  posts.forEach(p => {
+    const t = p.taken_at;
+    if (!t) return;
+    if (now - t > weekMs) return;
+    const d = new Date(t).getDay();
+    dayCount[d] += 1;
+  });
+  // 월~일 순서로
+  const order = [1,2,3,4,5,6,0];
+  const weekly_posts = order.map(i => ({ day: DAY_LABELS[i], count: dayCount[i] }));
+
+  // 발행 형태 (최근 30건 기준)
+  const formatMap = { '캐러셀': 0, '릴스': 0, '단일 포스트': 0 };
+  posts.slice(0, 30).forEach(p => {
+    formatMap[mediaTypeToFormat(p.media_type)] += 1;
+  });
+  const post_formats = Object.keys(formatMap)
+    .filter(k => formatMap[k] > 0)
+    .map(k => ({ type: k, count: formatMap[k], color: FORMAT_COLORS[k] }));
+
+  // 최근 게시물 4건 (사이트가 쓰는 필드명으로 매핑)
+  const recent_posts = (w.recent_posts || posts.slice(0, 6)).slice(0, 5).map(p => ({
+    id: p.code || p.pk,
+    title: (p.caption || '').split('\n')[0].trim() || '(캡션 없음)',
+    format: mediaTypeToFormat(p.media_type),
+    date: new Date(p.taken_at).toISOString().slice(0, 10),
+    likes: p.likes || 0,
+    views: p.views || 0,
+    thumbnail: p.thumbnail
+  }));
+
+  // 베스트 게시물 (최근 7일 중 likes+views/100 최대)
+  const recentWeek = posts.filter(p => p.taken_at && (now - p.taken_at <= weekMs));
+  const pool = recentWeek.length ? recentWeek : posts;
+  const best = pool.slice().sort((a, b) => {
+    const sa = (a.likes || 0) + (a.views || 0) / 100;
+    const sb = (b.likes || 0) + (b.views || 0) / 100;
+    return sb - sa;
+  })[0];
+
+  return {
+    handle: w.handle,
+    followers_now: w.followers,
+    following: w.following,
+    posts_total: w.posts,
+    profile_pic_url: w.profile_pic_url,
+    full_name: w.full_name,
+    weekly_posts,
+    post_formats,
+    recent_posts,
+    best_post: best,
+    raw_posts: posts
+  };
+}
+
+// ─── 진입점 ─────────────────────────────────────────────────────────
 Promise.all([
-  fetch('./data/insta.json').then(r => r.json()),
-  fetch('./data/ai_insight.json').then(r => r.json()),
-  fetch('./data/items.json').then(r => r.json())
-]).then(([insta, ai, items]) => {
-  if (insta._주의 || ai._주의 || items._주의) {
+  fetch(WORKER_URL, { cache: 'no-store' }).then(r => r.json()),
+  fetch('./data/ai_insight.json').then(r => r.json())
+]).then(([workerData, ai]) => {
+  const insta = transformWorker(workerData);
+
+  // 인스타 실데이터 + AI 더미 = AI만 더미 알림
+  if (ai._주의) {
     document.getElementById('dummyNotice').classList.add('on');
+    document.getElementById('dummyNotice').textContent =
+      '⚠️ 인스타 데이터는 실시간이지만, AI 비서 인사이트·hero 좌측 raw 항목은 더미입니다.';
   }
-  renderFollowers(insta.followers_30d);
+
+  renderFollowersSingle(insta);
   renderAI(ai);
-  renderHero(items.items[0]);
-  renderRecent(insta.recent_posts);
+  renderHeroFromInsta(insta.best_post);
+  renderRecentFromInsta(insta.recent_posts);
   renderWeekly(insta.weekly_posts);
   renderFormats(insta.post_formats);
   renderProgress(insta.weekly_posts);
 }).catch(e => {
-  console.error(e);
-  document.getElementById('aiSummary').textContent = '데이터 로드 실패: ' + e.message;
+  console.error('Worker fetch 실패:', e);
+  // 폴백: 로컬 더미
+  Promise.all([
+    fetch('./data/insta.json').then(r => r.json()),
+    fetch('./data/ai_insight.json').then(r => r.json()),
+    fetch('./data/items.json').then(r => r.json())
+  ]).then(([insta, ai, items]) => {
+    document.getElementById('dummyNotice').classList.add('on');
+    document.getElementById('dummyNotice').textContent =
+      '⚠️ Worker 연결 실패 — 더미 데이터로 폴백 중. (' + e.message + ')';
+    renderFollowersLegacy(insta.followers_30d);
+    renderAI(ai);
+    renderHeroLegacy(items.items[0]);
+    renderRecentLegacy(insta.recent_posts);
+    renderWeekly(insta.weekly_posts);
+    renderFormats(insta.post_formats);
+    renderProgress(insta.weekly_posts);
+  });
 });
 
-// 팔로워 미니 라인 차트
-function renderFollowers(data) {
+// ─── 팔로워 (실데이터: 1시점) ─────────────────────────────────────
+function renderFollowersSingle(insta) {
+  document.getElementById('followersNum').textContent = (insta.followers_now || 0).toLocaleString();
+  const delta = document.getElementById('followersDelta');
+  delta.textContent = `게시물 ${insta.posts_total || 0}`;
+  delta.style.background = 'rgba(0,0,0,0.05)';
+  delta.style.color = 'var(--text-3)';
+  // 추이 차트 영역: 1점만 있으므로 가는 점선으로 안내
+  document.getElementById('followersChart').innerHTML = `
+    <svg viewBox="0 0 100 36" preserveAspectRatio="none" style="width:100%;height:100%">
+      <line x1="0" y1="18" x2="100" y2="18" stroke="var(--placeholder)" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="98" cy="18" r="2.4" fill="var(--text)"/>
+      <text x="50" y="32" text-anchor="middle" font-size="7" fill="var(--text-3)" letter-spacing="0.6">30일 추이 수집 중</text>
+    </svg>
+  `;
+}
+
+// ─── 팔로워 (폴백: 30일 더미 라인) ─────────────────────────────────
+function renderFollowersLegacy(data) {
   const last = data[data.length - 1].count;
   const first = data[0].count;
   const delta = ((last - first) / first * 100);
   document.getElementById('followersNum').textContent = last.toLocaleString();
   document.getElementById('followersDelta').textContent = (delta >= 0 ? '+' : '') + delta.toFixed(1) + '%';
 
-  const w = 100, h = 48;
+  const w = 100, h = 36;
   const max = Math.max(...data.map(d => d.count));
   const min = Math.min(...data.map(d => d.count));
   const range = max - min || 1;
   const pts = data.map((d, i) => [
     (i / (data.length - 1)) * w,
-    h - ((d.count - min) / range) * (h - 10) - 5
+    h - ((d.count - min) / range) * (h - 8) - 4
   ]);
-  let path = `M ${pts[0][0]},${pts[0][1]}`;
-  for (let i = 1; i < pts.length; i++) {
-    const a = pts[i-1], b = pts[i];
-    const cx = (a[0] + b[0]) / 2;
-    path += ` Q ${cx},${a[1]} ${cx},${(a[1]+b[1])/2} T ${b[0]},${b[1]}`;
-  }
-  const area = path + ` L ${pts[pts.length-1][0]},${h} L ${pts[0][0]},${h} Z`;
-
-  document.getElementById('followersChart').innerHTML = `
-    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
-      <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.14"/>
-        <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0"/>
-      </linearGradient></defs>
-      <path d="${area}" fill="url(#lg)"/>
-      <path d="${path}" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="2" fill="#1a1a1a"/>
-    </svg>
-  `;
-}
-
-function renderAI(ai) {
-  document.getElementById('aiSummary').textContent = `"${ai.summary}"`;
-  document.getElementById('aiTime').textContent = ai.generated_at.split(' ')[1] || '--:--';
-}
-
-// 중앙 hero (raw 항목 중 첫 번째 = 더미는 검은신화 오공)
-function renderHero(item) {
-  if (!item) return;
-  document.getElementById('heroSource').textContent = `${item.출처_매체} · ${item.유형}`;
-  document.getElementById('heroTitle').textContent = item.제목.replace(/^\[더미\]\s*/, '');
-  document.getElementById('heroSummary').textContent = item.원문_요약;
-  // 인스타 더미 likes/comments 매핑
-  document.getElementById('heroLikes').textContent = '687';
-  document.getElementById('heroComments').textContent = '62';
-}
-
-function renderRecent(posts) {
-  const list = document.getElementById('recentList');
-  list.innerHTML = posts.slice(0, 4).map((p, i) => {
-    const hasImg = i % 2 === 1;
-    const title = p.title.replace(/^\[더미\]\s*/, '');
-    return `
-      <div class="recent-item">
-        <div class="meta">
-          <div class="title">${escapeHtml(title)}</div>
-          <div class="sub">${p.format} · ${p.date.split('-').slice(1).join('/')}</div>
-        </div>
-        ${hasImg
-          ? `<div class="thumb"></div>`
-          : `<button class="add-btn" aria-label="추가"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg></button>`}
-      </div>
-    `;
-  }).join('');
-}
-
-// 주간 막대
-function renderWeekly(weekly) {
-  const total = weekly.reduce((s, d) => s + d.count, 0);
-  const avg = (total / 7).toFixed(1);
-  document.getElementById('weeklyTotal').textContent = total + '건';
-  document.getElementById('weeklyAvg').textContent = avg;
-  const max = Math.max(...weekly.map(d => d.count), 1);
-  const peakIdx = weekly.findIndex(d => d.count === max);
-  document.getElementById('weeklyBars').innerHTML = weekly.map((d, i) => `
-    <div class="col">
-      <div class="bar ${i === peakIdx ? 'peak' : ''}" style="height:${Math.max((d.count / max) * 56, 8)}px"></div>
-      <div class="day ${i === peakIdx ? 'peak' : ''}">${d.day}</div>
-    </div>
-  `).join('');
-}
-
-// 도넛 + 정보
-function renderFormats(formats) {
-  const total = formats.reduce((s, f) => s + f.count, 0);
-  document.getElementById('donutTotal').textContent = total;
-  document.getElementById('formatsInfo').innerHTML = formats.map(f => `
-    <div class="item">
-      <span class="swatch" style="background:${f.color}"></span>
-      <span class="name">${f.type}</span>
-      <span class="pct">${Math.round(f.count / total * 100)}%</span>
-    </div>
-  `).join('');
-  const svg = document.getElementById('donutSvg');
-  const r = 42, cx = 50, cy = 50;
-  const circ = 2 * Math.PI * r;
-  let offset = 0;
-  const segs = formats.map(f => {
-    const ratio = f.count / total;
-    const len = circ * ratio;
-    const seg = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${f.color}" stroke-width="9" stroke-dasharray="${len} ${circ - len}" stroke-dashoffset="${-offset}"/>`;
-    offset += len;
-    return seg;
-  }).join('');
-  svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--border-soft)" stroke-width="9"/>${segs}`;
-}
-
-// 진행률 (이번 주 발행 / 목표)
-function renderProgress(weekly) {
-  const total = weekly.reduce((s, d) => s + d.count, 0);
-  const goal = 15;
-  const pct = Math.min(100, total / goal * 100);
-  // 두 트랙으로 분할 (중앙 마크 기준)
-  const leftPct = Math.min(100, pct * 2);
-  const rightPct = Math.max(0, (pct - 50) * 2);
-  document.getElementById('progressFill').style.width = leftPct + '%';
-  document.getElementById('progressFill2').style.width = rightPct + '%';
-  document.getElementById('weekLabel').textContent = `이번 주 ${total}/${goal}`;
-}
-
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt
+  let path = `M ${pts[0
