@@ -5,429 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>너겟 작업 사이트</title>
-  <style>
-    :root {
-      --bg: #fafaf7;
-      --surface: #ffffff;
-      --border: #e8e6e0;
-      --text: #1a1a1a;
-      --text-muted: #6b6b6b;
-      --accent: #ffb800;
-      --accent-dark: #b88500;
-      --selected: #2eb086;
-      --selected-bg: #e7f7f1;
-      --shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    h1 {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    .badge-count {
-      background: var(--accent);
-      color: #1a1a1a;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-left: 8px;
-    }
-    .stats {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-    .stats strong { color: var(--selected); }
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .filters select, .filters button {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-      font-size: 14px;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .filters button.reset {
-      color: var(--text-muted);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s, box-shadow 0.15s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-    .card.selected {
-      border-color: var(--selected);
-      box-shadow: 0 0 0 2px var(--selected-bg);
-    }
-    .card-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #f0f0ec;
-      object-fit: cover;
-    }
-    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
-    .card-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin: 0 0 10px;
-      line-height: 1.35;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .card-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: auto;
-    }
-    .pill {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 500;
-      background: #f5f3ec;
-      color: #6b5a1a;
-    }
-    .pill.type-뉴스 { background: #e8f0fe; color: #1a5fb4; }
-    .pill.type-리뷰 { background: #fce4ec; color: #ad1457; }
-    .pill.type-콜라보 { background: #f3e5f5; color: #6a1b9a; }
-    .pill.type-산업 { background: #e0f2f1; color: #00695c; }
-    .pill.type-칼럼 { background: #fff3e0; color: #e65100; }
-    .pill.status-draft { background: #fff3cd; color: #856404; }
-    .pill.status-selected { background: var(--selected-bg); color: var(--selected); }
-
-    /* 모달 */
-    .modal-backdrop {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-      padding: 16px;
-    }
-    .modal-backdrop.open { display: flex; }
-    .modal {
-      background: var(--surface);
-      border-radius: 16px;
-      max-width: 640px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 28px;
-    }
-    .modal h2 { margin: 0 0 12px; font-size: 20px; line-height: 1.3; }
-    .modal-meta {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .modal img {
-      width: 100%;
-      border-radius: 10px;
-      margin: 12px 0;
-    }
-    .modal-summary {
-      font-size: 15px;
-      line-height: 1.65;
-      color: #333;
-      margin: 12px 0;
-    }
-    .modal-fields {
-      background: #f9f8f3;
-      padding: 14px 16px;
-      border-radius: 10px;
-      font-size: 13px;
-      margin: 16px 0;
-    }
-    .modal-fields div { margin-bottom: 6px; }
-    .modal-fields div:last-child { margin-bottom: 0; }
-    .modal-fields strong { color: var(--text); margin-right: 6px; }
-    .modal-fields a { color: var(--accent-dark); }
-    .modal-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      justify-content: flex-end;
-    }
-    .btn {
-      padding: 10px 18px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      font-family: inherit;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #1a1a1a;
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-    .btn-primary:hover { background: var(--accent-dark); color: white; }
-    .btn-selected {
-      background: var(--selected);
-      color: white;
-      border-color: var(--selected);
-    }
-    .empty {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-    }
-    .notice {
-      background: #fff8e1;
-      border: 1px solid #ffe082;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      margin-bottom: 16px;
-      color: #6d4c00;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <h1>🍗 너겟 작업 사이트 <span class="badge-count" id="totalCount">0</span></h1>
-      <div class="stats">
-        선택됨 <strong id="selectedCount">0</strong> / 전체 <span id="totalStat">0</span>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="nav-item" title="홈"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12L12 4l9 8M5 10v10h14V10"/></svg></div>
+      <div class="nav-item" title="캘린더"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div>
+      <div class="nav-item" title="큐"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div class="nav-item active" title="대시보드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M14 19c0-2 2-4 4-4s4 1 4 4"/></svg></div>
+      <div class="nav-item" title="흐름"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 4v16M7 4l-3 3M7 4l3 3M17 20V4M17 20l3-3M17 20l-3-3"/></svg></div>
+      <div class="nav-item" title="분석"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="13" width="3" height="7" rx="1"/><rect x="10" y="9" width="3" height="11" rx="1"/><rect x="16" y="5" width="3" height="15" rx="1"/></svg></div>
+      <div class="nav-item" title="아카이브"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7l2-3h14l2 3M3 7v13h18V7M3 7h18M9 12h6"/></svg></div>
+      <div class="nav-item" title="설정"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.2-1.7l2-1.6-2-3.4-2.4 1a7 7 0 0 0-3-1.7L13 2h-4l-.4 2.6a7 7 0 0 0-3 1.7l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 3 12c0 .6.1 1.1.2 1.7l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 3 1.7L9 22h4l.4-2.6a7 7 0 0 0 3-1.7l2.4 1 2-3.4-2-1.6c.1-.6.2-1.1.2-1.7z"/></svg></div>
+      <div class="nav-spacer"></div>
+      <div class="nav-avatar" title="너겟">너</div>
+      <div class="nav-dots"><span></span><span></span><span></span><span></span></div>
+    </aside>
+
+    <main class="main">
+      <div class="header">
+        <div class="icon-btn dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 10l4-2v8l-4-2M3 7h12v10H3z"/></svg></div>
+        <div class="pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span id="clock">14:20</span>
+          <span class="pill-divider"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>
+          <span>맑음 23°</span>
+          <span class="pill-divider"></span>
+          <span style="color:var(--text-3);">•••</span>
+        </div>
+        <div class="pill search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input placeholder="raw 항목·매체·태그 검색..."/>
+        </div>
+        <div class="header-spacer"></div>
+        <div class="icon-btn dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></svg></div>
+        <div class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6l8 6 8-6M4 6v12h16V6M4 6h16"/></svg><span class="dot"></span></div>
       </div>
-    </div>
-  </header>
 
-  <main>
-    <div class="notice" id="dummyNotice" style="display:none;">⚠️ 현재 표시된 데이터는 동작 확인용 더미입니다. 수집기 완성 후 실제 기사로 교체됩니다.</div>
+      <div class="notice" id="dummyNotice">⚠️ 표시된 데이터는 모두 더미입니다. 인스타 API + 수집기 연동 후 실데이터로 자동 교체됩니다.</div>
 
-    <div class="filters">
-      <select id="filter-status">
-        <option value="">전체 상태</option>
-        <option value="draft">미선택 (draft)</option>
-        <option value="selected">선택됨 (selected)</option>
-      </select>
-      <select id="filter-type">
-        <option value="">전체 유형</option>
-      </select>
-      <select id="filter-source">
-        <option value="">전체 매체</option>
-      </select>
-      <button class="reset" id="reset">필터 초기화</button>
-    </div>
+      <div class="grid">
+        <section class="card card-recent">
+          <div class="card-head">
+            <div class="card-title">최근 발행</div>
+            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/></svg></div>
+          </div>
+          <div class="recent-list" id="recentList"></div>
+          <div class="timeline-axis"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span></div>
+        </section>
 
-    <div class="grid" id="grid"></div>
-    <div class="empty" id="empty" style="display:none;">표시할 항목이 없습니다.</div>
-  </main>
+        <section class="card card-followers">
+          <div class="card-head">
+            <div class="card-title">팔로워 추이</div>
+            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 17l6-6 4 4 8-8"/></svg></div>
+          </div>
+          <div class="followers-stat">
+            <span class="followers-num" id="followersNum">0</span>
+            <span class="followers-delta" id="followersDelta">+0%</span>
+          </div>
+          <div class="followers-label">지난 30일</div>
+          <div class="followers-chart" id="followersChart"></div>
+          <div class="followers-legend" id="followersLegend"></div>
+        </section>
 
-  <div class="modal-backdrop" id="modal">
-    <div class="modal" id="modalContent"></div>
+        <section class="card card-ai dark">
+          <div class="card-head">
+            <div class="card-title">AI 비서 인사이트</div>
+            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div>
+          </div>
+          <div class="ai-orb">
+            <svg viewBox="0 0 200 200">
+              <defs>
+                <radialGradient id="orbGrad" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#e8e8e8"/>
+                  <stop offset="50%" stop-color="#888"/>
+                  <stop offset="100%" stop-color="#1a1a1a"/>
+                </radialGradient>
+                <radialGradient id="orbCore" cx="50%" cy="55%" r="30%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#c4d4e0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="100" cy="100" r="80" fill="url(#orbGrad)"/>
+              <ellipse cx="100" cy="115" rx="32" ry="28" fill="url(#orbCore)" opacity="0.95"/>
+              <circle cx="78" cy="78" r="2" fill="white" opacity="0.7"/>
+              <circle cx="125" cy="60" r="1.2" fill="white" opacity="0.8"/>
+              <circle cx="150" cy="90" r="1" fill="white" opacity="0.6"/>
+              <circle cx="60" cy="130" r="1.5" fill="white" opacity="0.7"/>
+              <circle cx="140" cy="150" r="1" fill="white" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="ai-summary" id="aiSummary">불러오는 중...</div>
+          <div class="ai-foot">
+            <div class="avatar-mini">AI</div>
+            <div>
+              <div class="ai-name">너겟 비서</div>
+              <div class="ai-time" id="aiTime">--:--</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card card-formats">
+          <div class="card-head">
+            <div class="card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10v0H4"/></svg></div>
+            <div class="formats-toggle">
+              <button class="active" title="목록"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+              <button title="그리드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
+            </div>
+          </div>
+          <div class="card-title" style="margin-bottom:14px;">발행 형태 (최근 30일)</div>
+          <div class="format-list" id="formatList"></div>
+        </section>
+
+        <section class="card card-weekly dark">
+          <div class="weekly-head">
+            <div class="weekly-dots">
+              <span class="active"></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="weekly-mini-chart">
+              <div style="height:30%"></div><div style="height:60%"></div><div style="height:40%"></div><div style="height:80%"></div><div style="height:50%"></div><div style="height:70%"></div><div style="height:90%"></div><div style="height:45%"></div>
+            </div>
+          </div>
+          <div class="weekly-content">
+            <div class="weekly-block">
+              <div class="card-title">이번 주 발행</div>
+              <div class="weekly-stat-row">
+                <div>
+                  <div class="weekly-stat-num" id="weeklyTotal">0</div>
+                  <div class="weekly-stat-label">총 발행</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="weekly-stat-num" id="weeklyAvg">0</div>
+                  <div class="weekly-stat-label">일평균</div>
+                </div>
+              </div>
+              <div class="weekly-progress"><div class="fill" id="weeklyFill" style="width:0%"></div></div>
+              <div class="weekly-stat-label" id="weeklyGoal">목표 대비</div>
+            </div>
+            <div class="weekly-block">
+              <div class="card-title">피크 요일</div>
+              <div class="weekly-stat-row">
+                <div>
+                  <div class="weekly-stat-num" id="peakDay">-</div>
+                  <div class="weekly-stat-label" id="peakDayCount">0건</div>
+                </div>
+              </div>
+              <div class="weekly-progress"><div class="fill" style="width:80%"></div></div>
+              <div class="weekly-stat-label">전체 대비</div>
+            </div>
+            <div class="weekly-block">
+              <div class="card-title" style="margin-bottom:6px;">요일별</div>
+              <div class="bars-chart" id="barsChart"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
 
-  <script>
-    const STORAGE_KEY = 'nugget_selections_v1';
-    let items = [];
-    let selections = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-
-    async function load() {
-      try {
-        const res = await fetch('./data/items.json');
-        const json = await res.json();
-        items = json.items || [];
-        if (json._주의) document.getElementById('dummyNotice').style.display = 'block';
-        initFilters();
-        render();
-      } catch (e) {
-        document.getElementById('grid').innerHTML = '';
-        document.getElementById('empty').style.display = 'block';
-        document.getElementById('empty').textContent = '데이터를 불러올 수 없습니다: ' + e.message;
-      }
-    }
-
-    function getStatus(item) {
-      return selections[item.id] ? 'selected' : (item.상태 || 'draft');
-    }
-
-    function initFilters() {
-      const types = [...new Set(items.map(i => i.유형))].sort();
-      const sources = [...new Set(items.map(i => i.출처_매체))].sort();
-      const typeSelect = document.getElementById('filter-type');
-      const sourceSelect = document.getElementById('filter-source');
-      types.forEach(t => typeSelect.insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
-      sources.forEach(s => sourceSelect.insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`));
-
-      ['filter-status', 'filter-type', 'filter-source'].forEach(id => {
-        document.getElementById(id).addEventListener('change', render);
-      });
-      document.getElementById('reset').addEventListener('click', () => {
-        ['filter-status', 'filter-type', 'filter-source'].forEach(id => document.getElementById(id).value = '');
-        render();
-      });
-    }
-
-    function render() {
-      const fStatus = document.getElementById('filter-status').value;
-      const fType = document.getElementById('filter-type').value;
-      const fSource = document.getElementById('filter-source').value;
-
-      const filtered = items.filter(i => {
-        if (fStatus && getStatus(i) !== fStatus) return false;
-        if (fType && i.유형 !== fType) return false;
-        if (fSource && i.출처_매체 !== fSource) return false;
-        return true;
-      });
-
-      const grid = document.getElementById('grid');
-      const empty = document.getElementById('empty');
-      grid.innerHTML = '';
-      if (filtered.length === 0) {
-        empty.style.display = 'block';
-        empty.textContent = '표시할 항목이 없습니다.';
-      } else {
-        empty.style.display = 'none';
-        filtered.forEach(item => grid.appendChild(card(item)));
-      }
-
-      // 통계
-      const selectedNum = items.filter(i => getStatus(i) === 'selected').length;
-      document.getElementById('totalCount').textContent = items.length;
-      document.getElementById('totalStat').textContent = items.length;
-      document.getElementById('selectedCount').textContent = selectedNum;
-    }
-
-    function card(item) {
-      const el = document.createElement('div');
-      const status = getStatus(item);
-      el.className = 'card' + (status === 'selected' ? ' selected' : '');
-      el.innerHTML = `
-        <img class="card-thumb" src="${item.이미지_썸네일_URL}" alt="" loading="lazy" onerror="this.style.display='none'" />
-        <div class="card-body">
-          <h3 class="card-title">${escapeHtml(item.제목)}</h3>
-          <div class="card-meta">
-            <span class="pill type-${item.유형}">${item.유형}</span>
-            <span class="pill status-${status}">${status === 'selected' ? '✓ 선택됨' : 'draft'}</span>
-            <span>${item.출처_매체}</span>
-            <span>·</span>
-            <span>${item.수집일.split(' ')[0]}</span>
-          </div>
-        </div>
-      `;
-      el.addEventListener('click', () => openModal(item));
-      return el;
-    }
-
-    function openModal(item) {
-      const status = getStatus(item);
-      const modal = document.getElementById('modal');
-      const content = document.getElementById('modalContent');
-      content.innerHTML = `
-        <h2>${escapeHtml(item.제목)}</h2>
-        <div class="modal-meta">
-          <span class="pill type-${item.유형}">${item.유형}</span>
-          <span class="pill status-${status}">${status === 'selected' ? '✓ 선택됨' : 'draft'}</span>
-          <span>${item.출처_매체} · ${item.수집일}</span>
-        </div>
-        ${item.이미지_썸네일_URL ? `<img src="${item.이미지_썸네일_URL}" alt="" onerror="this.style.display='none'" />` : ''}
-        <p class="modal-summary">${escapeHtml(item.원문_요약)}</p>
-        <div class="modal-fields">
-          <div><strong>원본 제목:</strong> ${escapeHtml(item.원본_제목)}</div>
-          <div><strong>플랫폼:</strong> ${item.플랫폼}</div>
-          <div><strong>태그:</strong> ${(item.태그||[]).join(', ')}</div>
-          <div><strong>출처:</strong> <a href="${item.출처_URL}" target="_blank" rel="noopener">${item.출처_URL}</a></div>
-        </div>
-        <div class="modal-actions">
-          <button class="btn" id="closeBtn">닫기</button>
-          <button class="btn ${status === 'selected' ? 'btn-selected' : 'btn-primary'}" id="selectBtn">
-            ${status === 'selected' ? '✓ 선택 취소' : '이거 발행 →'}
-          </button>
-        </div>
-      `;
-      modal.classList.add('open');
-      document.getElementById('closeBtn').addEventListener('click', closeModal);
-      document.getElementById('selectBtn').addEventListener('click', () => {
-        toggleSelect(item);
-        openModal(item); // 다시 그리기
-        render();
-      });
-      modal.addEventListener('click', e => { if (e.target === modal) closeModal(); }, { once: true });
-    }
-
-    function closeModal() {
-      document.getElementById('modal').classList.remove('open');
-    }
-
-    function toggleSelect(item) {
-      if (selections[item.id]) delete selections[item.id];
-      else selections[item.id] = { selectedAt: new Date().toISOString() };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(selections));
-    }
-
-    function escapeHtml(s) {
-      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    }
-
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-    load();
-  </script>
+  <script src="./app.js"></script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
