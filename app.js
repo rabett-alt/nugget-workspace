@@ -1,4 +1,4 @@
-// 너겟 작업 사이트 v0.2
+// 너겟 작업 사이트 v0.3
 Promise.all([
   fetch('./data/insta.json').then(r => r.json()),
   fetch('./data/ai_insight.json').then(r => r.json()),
@@ -18,7 +18,7 @@ Promise.all([
 });
 
 function renderRecent(posts) {
-  const offsets = ['', 'offset-1', 'offset-2', 'offset-3', ''];
+  const offsets = ['', 'offset-1', 'offset-2', 'offset-3', 'offset-4'];
   const avatarSets = [
     '<div class="avatar-mini">M</div>',
     '<div class="avatar-mini b">K</div><div class="avatar-mini">L</div>',
@@ -67,21 +67,29 @@ function renderFollowers(data) {
     <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
       <defs>
         <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.15"/>
+          <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.12"/>
           <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0"/>
         </linearGradient>
       </defs>
       <path d="${area}" fill="url(#areaGrad)"/>
-      <path d="${path}" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${path}" fill="none" stroke="#1a1a1a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `;
 
-  document.getElementById('followersLegend').innerHTML = `
-    <div class="leg"><span class="dot"></span><span>신규 ${(last - first).toLocaleString()}</span></div>
-    <div class="leg"><span class="dot" style="background:#1a1a1a"></span><span>현재 ${last.toLocaleString()}</span></div>
-    <div class="leg"><span class="dot"></span><span>피크 ${max.toLocaleString()}</span></div>
-    <div class="leg"><span class="dot"></span><span>최저 ${min.toLocaleString()}</span></div>
-  `;
+  // 미니멀 레전드: 작은 점 + placeholder bar + 작은 숫자
+  const items = [
+    {dot: 'dot', label: '현재', val: last},
+    {dot: 'dot mute', label: '신규', val: last - first},
+    {dot: 'dot mute', label: '피크', val: max},
+    {dot: 'dot mute', label: '최저', val: min}
+  ];
+  document.getElementById('followersLegend').innerHTML = items.map(it => `
+    <div class="leg">
+      <span class="${it.dot}"></span>
+      <span class="placeholder-bar"></span>
+      <span style="color:var(--text-2);">${it.val.toLocaleString()}</span>
+    </div>
+  `).join('');
 }
 
 function renderAI(ai) {
@@ -96,7 +104,7 @@ function renderFormats(formats) {
       <div class="format-swatch" style="background:${f.color}"></div>
       <div class="format-info">
         <div class="format-name">${f.type}</div>
-        <div class="format-meta">${Math.round(f.count / total * 100)}% · 전체 ${total}건 중</div>
+        <div class="format-bar"></div>
       </div>
       <div class="format-count">${f.count}</div>
     </div>
@@ -112,15 +120,14 @@ function renderWeekly(weekly) {
   document.getElementById('weeklyTotal').textContent = total;
   document.getElementById('weeklyAvg').textContent = avg;
   document.getElementById('weeklyFill').style.width = Math.min(100, total / goal * 100) + '%';
-  document.getElementById('weeklyGoal').textContent = `목표 ${goal}건 / ${total}건 (${Math.round(total/goal*100)}%)`;
+  document.getElementById('weeklyGoal').textContent = `목표 ${goal}건 · ${Math.round(total/goal*100)}%`;
   document.getElementById('peakDay').textContent = peak.day;
   document.getElementById('peakDayCount').textContent = peak.count + '건';
 
   const max = Math.max(...weekly.map(d => d.count), 1);
   document.getElementById('barsChart').innerHTML = weekly.map(d => `
     <div class="bar-col">
-      <div class="bar-val">${d.count}</div>
-      <div class="bar" style="height:${(d.count / max) * 70}px"></div>
+      <div class="bar ${d.count === 0 ? 'mute' : ''}" style="height:${Math.max((d.count / max) * 80, 4)}px"></div>
       <div class="bar-label">${d.day}</div>
     </div>
   `).join('');
@@ -136,5 +143,4 @@ updateClock();
 setInterval(updateClock, 30000);
 
 function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
