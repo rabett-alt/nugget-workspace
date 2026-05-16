@@ -1,4 +1,4 @@
-// 너겟 작업 사이트 v0.4
+// 너겟 작업 사이트 v0.5 — gallery white-cube tone
 Promise.all([
   fetch('./data/insta.json').then(r => r.json()),
   fetch('./data/ai_insight.json').then(r => r.json()),
@@ -129,7 +129,7 @@ function renderFormats(formats) {
     offset += len;
     return seg;
   }).join('');
-  svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--bg)" stroke-width="9"/>${segs}`;
+  svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--border-soft)" stroke-width="9"/>${segs}`;
 }
 
 // 진행률 (이번 주 발행 / 목표)
@@ -146,5 +146,4 @@ function renderProgress(weekly) {
 }
 
 function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt
