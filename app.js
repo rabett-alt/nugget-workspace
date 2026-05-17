@@ -43,12 +43,13 @@ function fetchWorker() {
         .then(function(r){ return r.json(); })
         .then(function(d){
           var n = ((d.all_posts || []).length) || ((d.recent_posts || []).length);
-          if (n > 0 || tries >= 2) return resolve(d);
-          tries++; setTimeout(attempt, 800);
+          var bad = (d && d.ok === false) || n === 0;
+          if (!bad || tries >= 4) return resolve(d);
+          tries++; setTimeout(attempt, 700);
         })
         .catch(function(e){
-          if (tries >= 2) return reject(e);
-          tries++; setTimeout(attempt, 800);
+          if (tries >= 4) return reject(e);
+          tries++; setTimeout(attempt, 700);
         });
     }
     attempt();
