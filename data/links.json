@@ -1,0 +1,77 @@
+{
+  "_설명": "너겟이 게임 소식 빠르게 받기 위해 큐레이션한 소스. 국내·해외 각 매체/커뮤니티 분리.",
+  "_갱신": "2026-05-17",
+  "categories": [
+    {
+      "id": "kr_media",
+      "region": "국내",
+      "type": "매체",
+      "label": "국내 게임 매체",
+      "items": [
+        { "name": "인벤", "url": "https://www.inven.co.kr/", "note": "한국 1위 게임포털. 게임별 인벤 분리." },
+        { "name": "게임메카", "url": "https://www.gamemeca.com/", "note": "PC·콘솔 비중 높음." },
+        { "name": "루리웹", "url": "https://www.ruliweb.com/", "note": "콘솔·일본 게임 강세. 게시판도 활발." },
+        { "name": "디스이즈게임", "url": "https://www.thisisgame.com/", "note": "산업·기업 이슈 심층." },
+        { "name": "경향게임스", "url": "https://www.khgames.co.kr/", "note": "신문사 계열, 산업·정책." },
+        { "name": "게임톡", "url": "https://www.gametoc.co.kr/", "note": "모바일·산업 동향." },
+        { "name": "데일리e스포츠", "url": "https://www.dailyesports.com/", "note": "e스포츠 전문." },
+        { "name": "포모스 게임", "url": "https://m.fomos.kr/", "note": "e스포츠·게임." },
+        { "name": "전자신문 게임", "url": "https://www.etnews.com/news/section.html?id1=10&id2=10", "note": "산업 1차 출처." },
+        { "name": "ZDNet Korea 게임", "url": "https://zdnet.co.kr/news/?gubun=00000020000020", "note": "IT 산업 시각." }
+      ]
+    },
+    {
+      "id": "kr_community",
+      "region": "국내",
+      "type": "커뮤니티",
+      "label": "국내 게임 커뮤니티",
+      "items": [
+        { "name": "루리웹 게시판", "url": "https://bbs.ruliweb.com/", "note": "콘솔·일본겜 중심, 정보 빠름." },
+        { "name": "인벤 게시판", "url": "https://www.inven.co.kr/board/", "note": "게임별 게시판." },
+        { "name": "DC인사이드 게임 갤러리", "url": "https://gall.dcinside.com/", "note": "게임별 갤. 노이즈 많음, 빠름." },
+        { "name": "아카라이브 (게임 채널)", "url": "https://arca.live/", "note": "신생, 게임별 채널 활발." },
+        { "name": "에펨코리아 (펨코) 포텐", "url": "https://www.fmkorea.com/", "note": "트렌드·짤 빠름." },
+        { "name": "클리앙 모두의 게임", "url": "https://www.clien.net/service/board/park", "note": "차분한 톤, 콘솔·PC." },
+        { "name": "PGR21 게임 게시판", "url": "https://www.pgr21.com/", "note": "롤·콘솔·인디 토론." },
+        { "name": "오늘의유머 게임", "url": "https://www.todayhumor.co.kr/", "note": "캐주얼 게이머." }
+      ]
+    },
+    {
+      "id": "intl_media",
+      "region": "해외",
+      "type": "매체",
+      "label": "해외 게임 매체",
+      "items": [
+        { "name": "IGN", "url": "https://www.ign.com/", "note": "글로벌 1위, 첫 보도 많음." },
+        { "name": "GameSpot", "url": "https://www.gamespot.com/", "note": "리뷰·뉴스 균형." },
+        { "name": "Eurogamer", "url": "https://www.eurogamer.net/", "note": "유럽·심층 분석." },
+        { "name": "PC Gamer", "url": "https://www.pcgamer.com/", "note": "PC 전문." },
+        { "name": "Polygon", "url": "https://www.polygon.com/", "note": "문화·산업 시각." },
+        { "name": "Kotaku", "url": "https://kotaku.com/", "note": "독립 보도·이슈." },
+        { "name": "Rock Paper Shotgun", "url": "https://www.rockpapershotgun.com/", "note": "PC·인디 심층." },
+        { "name": "Game Informer", "url": "https://www.gameinformer.com/", "note": "장기 매체, 독점 인터뷰." },
+        { "name": "VG247", "url": "https://www.vg247.com/", "note": "속보 강함." },
+        { "name": "Destructoid", "url": "https://www.destructoid.com/", "note": "리뷰·인디." },
+        { "name": "The Verge — Gaming", "url": "https://www.theverge.com/gaming", "note": "테크 시각." },
+        { "name": "4Gamer (日)", "url": "https://www.4gamer.net/", "note": "일본 1위 매체." },
+        { "name": "Famitsu (日)", "url": "https://www.famitsu.com/", "note": "일본 정통, 매출 차트." }
+      ]
+    },
+    {
+      "id": "intl_community",
+      "region": "해외",
+      "type": "커뮤니티",
+      "label": "해외 게임 커뮤니티",
+      "items": [
+        { "name": "Reddit r/Games", "url": "https://www.reddit.com/r/Games/", "note": "큰 발표·뉴스 중심." },
+        { "name": "Reddit r/gaming", "url": "https://www.reddit.com/r/gaming/", "note": "캐주얼·트렌드." },
+        { "name": "Reddit r/pcgaming", "url": "https://www.reddit.com/r/pcgaming/", "note": "PC 전용." },
+        { "name": "Reddit r/IndieGaming", "url": "https://www.reddit.com/r/IndieGaming/", "note": "인디 발굴." },
+        { "name": "ResetEra", "url": "https://www.resetera.com/", "note": "산업 인사이더 토론." },
+        { "name": "NeoGAF", "url": "https://www.neogaf.com/", "note": "콘솔 중심 토론." },
+        { "name": "GameFAQs Boards", "url": "https://gamefaqs.gamespot.com/boards", "note": "게임별 게시판." },
+        { "name": "Steam Community Hub", "url": "https://steamcommunity.com/", "note": "게임별 공식 hub." }
+      ]
+    }
+  ]
+}
