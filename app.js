@@ -910,3 +910,114 @@ document.addEventListener('keydown', function(e){
 
 loadFeed();
 setInterval(function(){ if (!document.hidden) loadFeed(); }, 60000);
+// ─── v0.14: hero-row (1 big + 4 small) + 우측 panel (인기 매체 + 키워드) ───
+function renderHeroRowAndPanel() {
+  var heroEl = $('heroRow'); var gridMeta = $('gridMeta');
+  var top = $('topSources'); var kw = $('keywordCloud');
+
+  if (!_feedState.all.length) return;
+  var ids;
+  if (_feedState.activeCat === 'all') {
+    ids = _feedState.all.map(function(it){ return it.id; });
+  } else {
+    ids = _feedState.byCat[_feedState.activeCat] || [];
+  }
+  var itemsMap = {};
+  _feedState.all.forEach(function(it){ itemsMap[it.id] = it; });
+  var items = ids.map(function(id){ return itemsMap[id]; }).filter(Boolean);
+
+  if (gridMeta) gridMeta.textContent = items.length + '건 · 매시간 자동 수집';
+
+  var catColor = {}, catLabel = {};
+  _feedState.cats.forEach(function(c){ catColor[c.id] = c.color; catLabel[c.id] = c.label; });
+
+  // Hero Row: top 5 = 1 big + 4 small
+  if (heroEl) {
+    if (items.length < 1) { heroEl.innerHTML = ''; }
+    else {
+      var big = items[0];
+      var smalls = items.slice(1, 5);
+      var pcat = big.categories && big.categories[0];
+      var bigBg = big.thumb
+        ? 'background-image:url(' + JSON.stringify(big.thumb) + ');'
+        : 'background:linear-gradient(135deg,' + (catColor[pcat]||'#a88c68') + ',#5a3a2a);';
+      var bigHTML = '<div class="hero-big" data-id="' + big.id + '">' +
+        '<div class="bg" style="' + bigBg + '"></div>' +
+        '<div class="overlay"></div>' +
+        '<div class="badges-top">' +
+          '<span class="live-badge">LIVE</span>' +
+          '<span class="cat-badge"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:' + (catColor[pcat]||'#a88c68') + ';margin-right:4px"></span>' + esc(catLabel[pcat] || '기타') + '</span>' +
+        '</div>' +
+        '<div class="meta-bottom">' +
+          '<div class="src-line">' + esc(big.source_name) + ' · ' + fmtRelShort(big.taken_at) + ' 전</div>' +
+          '<div class="title-xl">' + esc(big.title) + '</div>' +
+        '</div>' +
+        '<div class="play-btn">▶</div>' +
+        '</div>';
+
+      var smallsHTML = '<div class="hero-side">' +
+        smalls.map(function(it){
+          var pc = it.categories && it.categories[0];
+          var bg = it.thumb
+            ? 'background-image:url(' + JSON.stringify(it.thumb) + ');'
+            : 'background:linear-gradient(135deg,' + (catColor[pc]||'#a88c68') + ',#5a3a2a);';
+          return '<div class="hero-small" data-id="' + it.id + '">' +
+            '<div class="bg" style="' + bg + '"></div>' +
+            '<div class="overlay"></div>' +
+            '<span class="mini-badge">' + esc(catLabel[pc] || '기타') + '</span>' +
+            '<div class="mini-title">' + esc(it.title) + '</div>' +
+          '</div>';
+        }).join('') +
+        '</div>';
+
+      heroEl.innerHTML = bigHTML + smallsHTML;
+      heroEl.querySelectorAll('.hero-big, .hero-small').forEach(function(el){
+        el.addEventListener('click', function(){ openModal(el.dataset.id); });
+      });
+    }
+  }
+
+  // 우측 panel: 인기 매체 TOP 10 (item count per source)
+  if (top) {
+    var srcCount = {}, srcName = {};
+    items.forEach(function(it){
+      srcCount[it.source_id] = (srcCount[it.source_id]||0) + 1;
+      srcName[it.source_id] = it.source_name;
+    });
+    var ranked = Object.keys(srcCount).map(function(id){
+      return { id:id, name:srcName[id], count:srcCount[id] };
+    }).sort(function(a,b){ return b.count - a.count; }).slice(0, 10);
+    top.innerHTML = ranked.map(function(r, i){
+      var topCls = i < 3 ? ' class="top"' : '';
+      return '<li' + topCls + '><span class="rank-name">' + esc(r.name) + '</span><span class="rank-count">' + r.count + '</span></li>';
+    }).join('');
+  }
+
+  // 키워드 트렌드 (제목에서 자주 등장하는 키워드)
+  if (kw) {
+    var freq = {};
+    var keywords = ['엘든링','메이플','닌텐도','발더스','오공','검은신화','원신','로스트아크','리니지','배그','오버워치','GTA','젤다','마리오','포켓몬','스위치','PS5','Xbox','Steam','콜라보','신작','출시','DLC','업데이트','실적','인디','지스타','TGS'];
+    items.forEach(function(it){
+      var t = (it.title + ' ' + (it.summary||'')).toLowerCase();
+      keywords.forEach(function(k){
+        if (t.indexOf(k.toLowerCase()) !== -1) freq[k] = (freq[k]||0) + 1;
+      });
+    });
+    var sorted = Object.keys(freq).sort(function(a,b){ return freq[b] - freq[a]; }).slice(0, 16);
+    kw.innerHTML = sorted.map(function(k, i){
+      var hot = i < 3 ? ' hot' : '';
+      return '<span class="kw-pill' + hot + '">' + esc(k) + ' <span style="opacity:0.6;font-size:9px">' + freq[k] + '</span></span>';
+    }).join('') || '<span class="kw-pill" style="opacity:0.5">매칭 키워드 없음</span>';
+  }
+}
+
+// renderCards가 hero-row + panel도 같이 그리도록 monkey-patch
+var _origRenderCards = renderCards;
+renderCards = function() {
+  _origRenderCards();
+  renderHeroRowAndPanel();
+  // grid는 hero에 표시한 top 5 제외하고 6번째부터
+  var grid = $('cardsGrid'); if (!grid) return;
+  var firstFive = grid.querySelectorAll('.feed-card');
+  for (var i = 0; i < Math.min(5, firstFive.length); i++) firstFive[i].style.display = 'none';
+};

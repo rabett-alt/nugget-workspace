@@ -156,12 +156,39 @@
   </div>
 
   <main class="content-app page-section" data-page-section="content">
-    <header class="content-head">
-      <h2 class="content-title">콘텐츠 소스</h2>
-      <p class="content-sub">매시간 자동 수집 · 신선도·매체권위·키워드 기준 자동 스코어링</p>
-    </header>
-    <nav class="cat-tabs" id="catTabs"></nav>
-    <div class="cards-grid" id="cardsGrid"></div>
+    <div class="content-layout">
+
+      <section class="content-main">
+        <header class="content-head-v2">
+          <div>
+            <h2 class="content-title-v2">GAME · NUGGET</h2>
+            <p class="content-sub-v2">매시간 자동 수집 · 신선도·매체권위·키워드 스코어링</p>
+          </div>
+          <nav class="cat-tabs" id="catTabs"></nav>
+        </header>
+
+        <div class="hero-row" id="heroRow"></div>
+
+        <div class="grid-head">
+          <h3 class="grid-title">최신 픽업</h3>
+          <span class="grid-meta" id="gridMeta">—</span>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="panel-block">
+          <h4 class="panel-title">인기 매체 <span>TOP 10</span></h4>
+          <ol class="rank-list" id="topSources"></ol>
+        </div>
+        <div class="panel-block">
+          <h4 class="panel-title">키워드 트렌드</h4>
+          <div class="keyword-cloud" id="keywordCloud"></div>
+        </div>
+      </aside>
+
+    </div>
+
     <div class="card-modal" id="cardModal" hidden>
       <div class="card-modal-backdrop" id="cardModalBg"></div>
       <div class="card-modal-panel">
