@@ -13,8 +13,18 @@
 <body>
 
   <nav class="page-nav">
-    <button class="page-tab active" data-page="dashboard">대시보드</button>
-    <button class="page-tab" data-page="content">콘텐츠</button>
+    <div class="pn-left">
+      <button class="page-tab active" data-page="dashboard">대시보드</button>
+      <button class="page-tab" data-page="content">콘텐츠</button>
+    </div>
+    <div class="global-search-wrap">
+      <div class="global-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <input id="globalSearch" type="text" placeholder="검색 (게시물·매체·커뮤니티)" autocomplete="off"/>
+        <button class="gs-clear" id="gsClear" aria-label="지우기" style="display:none">×</button>
+      </div>
+      <div class="global-search-results" id="gsResults" hidden></div>
+    </div>
     <div class="sync-info">
       <span class="dot"></span>
       <span id="syncTime">동기화 중...</span>
@@ -42,14 +52,29 @@
       </div>
 
       <div class="followers-mini">
-        <div class="top">
-          <span class="num" id="followersNum">0</span>
-          <span class="delta" id="followersDelta"></span>
+        <div class="fm-head">
+          <div class="fm-title">팔로워 추이</div>
+          <div class="fm-tabs" role="tablist">
+            <button class="fm-tab" data-period="D">일</button>
+            <button class="fm-tab" data-period="W">주</button>
+            <button class="fm-tab" data-period="M">월</button>
+            <button class="fm-tab active" data-period="Y">연</button>
+          </div>
         </div>
-        <div class="sub">팔로워</div>
-        <div class="chart" id="followersChart"></div>
-        <div class="month-axis" id="followersMonths"></div>
-        <div class="followers-tooltip placeholder" id="followersTooltip">점을 클릭하면 그 시점 수치</div>
+        <div class="fm-compare">
+          <div class="fm-side fm-prev">
+            <div class="fm-label" id="prevLabel">지난</div>
+            <div class="fm-num" id="prevNum">—</div>
+            <div class="fm-meta" id="prevMeta">—</div>
+          </div>
+          <div class="fm-side fm-cur">
+            <div class="fm-label" id="curLabel">현재</div>
+            <div class="fm-num" id="curNum">—</div>
+            <div class="fm-meta" id="curMeta">—</div>
+          </div>
+        </div>
+        <div class="fm-chart" id="followersChart"></div>
+        <div class="fm-foot" id="followersFoot"></div>
       </div>
 
       <div class="ai-insight-block">
@@ -57,21 +82,10 @@
         <div class="by"></div>
       </div>
 
-      <div class="ctas-row">
-        <button class="pill-btn dark">큐 보기</button>
-        <button class="pill-btn ghost">통계</button>
-      </div>
-
       <div class="left-spacer"></div>
     </aside>
 
     <section class="col-center">
-      <div class="filter-tabs">
-        <button class="tab active">전체</button>
-        <button class="tab">캐러셀</button>
-        <button class="tab">릴스</button>
-        <button class="tab">포스트</button>
-      </div>
 
       <div class="hero-card">
         <div class="hero-image">
@@ -116,13 +130,6 @@
     </section>
 
     <aside class="col-right">
-      <div class="search-row">
-        <div class="search-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-          <input placeholder="검색"/>
-        </div>
-        <div class="avatar-mini">너</div>
-      </div>
 
       <div>
         <div class="label-eyebrow" style="padding-left:2px;margin-bottom:12px;">최근 발행</div>

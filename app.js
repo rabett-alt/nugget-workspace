@@ -1,13 +1,11 @@
-// 너겟 작업 사이트 v0.9 - hero 9:16 + 차트 월별 클릭 + (한 발 더) 게시일/원본링크/동기화/콘텐츠 검색
+// 너겟 작업 사이트 v0.10 — 팔로워 차트 재설계 (D/W/M/Y + 두 시기 비교 + 이중 꺾은선)
 var WORKER_URL = 'https://nugget.rabett.workers.dev/';
 var DAYS = ['일','월','화','수','목','금','토'];
 var BEIGE = '#a8957a';
-var MONTHS = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
 
 function $(id) { return document.getElementById(id); }
 function esc(s) { return String(s).replace(/[&<>"']/g, function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];}); }
 function mtype(t) { return t === 8 ? '캐러셀' : (t === 2 ? '릴스' : '단일 포스트'); }
-
 function fmtRel(ts) {
   if (!ts) return '';
   var diff = (Date.now() - ts) / 1000;
@@ -19,7 +17,11 @@ function fmtRel(ts) {
   if (d < 365) return Math.floor(d/30) + '개월 전';
   return Math.floor(d/365) + '년 전';
 }
+function pad2(n){ return n<10?'0'+n:''+n; }
+function fmtDate(d){ return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
+function parseDate(s){ var p=s.split('-'); return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2])); }
 
+// ─── 페이지 탭 (대시보드/콘텐츠) ───
 function setupTabs() {
   document.querySelectorAll('.page-tab').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -32,6 +34,7 @@ function setupTabs() {
   });
 }
 
+// ─── Worker ───
 function fetchWorker() {
   return new Promise(function(resolve, reject){
     var tries = 0;
@@ -52,104 +55,212 @@ function fetchWorker() {
   });
 }
 
-// 팔로워 - 일 단위 점 + 월 라벨 + 클릭 툴팁
-var _historyState = [];
+// ─── 팔로워 차트 (D/W/M/Y) ───
+var _state = { hist: [], period: 'Y' };
 
-function showTooltip(item) {
-  var box = $('followersTooltip');
-  if (!box) return;
-  box.classList.remove('placeholder');
-  box.innerHTML = '<span class="ttl-date">' + item.date + '</span><span class="ttl-count">' + item.count.toLocaleString() + '명</span>';
-  document.querySelectorAll('#followersChart svg circle.point').forEach(function(c){
-    c.classList.toggle('active', c.dataset.date === item.date);
-  });
+function periodBuckets(period) {
+  // 각 period에 대한 prev/cur 범위 + 라벨
+  var now = new Date(); now.setHours(0,0,0,0);
+  if (period === 'D') {
+    var yest = new Date(now); yest.setDate(now.getDate()-1);
+    return {
+      prevRange: [yest, yest], curRange: [now, now],
+      prevLabel: '어제', curLabel: '오늘',
+      footLabels: [fmtDate(yest), fmtDate(now)],
+      bucketCount: 1
+    };
+  }
+  if (period === 'W') {
+    var weekStart = new Date(now); weekStart.setDate(now.getDate() - now.getDay());  // 이번 일요일 시작
+    var lastWeekStart = new Date(weekStart); lastWeekStart.setDate(weekStart.getDate()-7);
+    var lastWeekEnd = new Date(weekStart); lastWeekEnd.setDate(weekStart.getDate()-1);
+    return {
+      prevRange: [lastWeekStart, lastWeekEnd], curRange: [weekStart, now],
+      prevLabel: '지난주', curLabel: '이번주',
+      footLabels: DAYS,
+      bucketCount: 7
+    };
+  }
+  if (period === 'M') {
+    var monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    var lastMonthStart = new Date(now.getFullYear(), now.getMonth()-1, 1);
+    var lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+    return {
+      prevRange: [lastMonthStart, lastMonthEnd], curRange: [monthStart, now],
+      prevLabel: '지난달', curLabel: '이번달',
+      footLabels: ['1', '8', '15', '22', '말'],
+      bucketCount: 30
+    };
+  }
+  // Y
+  var yearStart = new Date(now.getFullYear(), 0, 1);
+  var lastYearStart = new Date(now.getFullYear()-1, 0, 1);
+  var lastYearEnd = new Date(now.getFullYear()-1, 11, 31);
+  return {
+    prevRange: [lastYearStart, lastYearEnd], curRange: [yearStart, now],
+    prevLabel: (now.getFullYear()-1) + '년', curLabel: now.getFullYear() + '년',
+    footLabels: ['J','F','M','A','M','J','J','A','S','O','N','D'],
+    bucketCount: 12
+  };
 }
 
-function renderFollowers(worker, history) {
-  var hist = (history && history.history) ? history.history.slice() : [];
-  var today = new Date().toISOString().slice(0,10);
-  if (worker && typeof worker.followers === 'number') {
-    var last = hist[hist.length - 1];
-    if (!last || last.date !== today) hist.push({date: today, count: worker.followers});
-    else last.count = worker.followers;
-  }
-  if (!hist.length) return;
-  _historyState = hist;
-  var cur = hist[hist.length-1].count;
-  $('followersNum').textContent = cur.toLocaleString();
-  $('followersDelta').textContent = '';
-  var sub = document.querySelector('.followers-mini .sub');
-  if (sub) sub.textContent = '팔로워 · ' + hist[0].date + '부터';
+function inRange(dateStr, range) {
+  var d = parseDate(dateStr);
+  return d >= range[0] && d <= range[1];
+}
 
-  if (hist.length < 2) {
-    $('followersChart').innerHTML =
-      '<svg viewBox="0 0 100 36" preserveAspectRatio="none" width="100%" height="100%">' +
-      '<line x1="0" y1="18" x2="100" y2="18" stroke="#d8d6d0" stroke-width="1" stroke-dasharray="3 3"/>' +
-      '<circle class="point" data-date="' + hist[0].date + '" data-idx="0" cx="96" cy="18" r="2.8" fill="' + BEIGE + '"/></svg>';
-    $('followersMonths').innerHTML = '<span>' + hist[0].date.substring(5) + '</span>';
-    bindChartClicks(hist);
+function pickInRange(hist, range) {
+  return hist.filter(function(h){ return inRange(h.date, range); });
+}
+
+function renderFollowersChart() {
+  var period = _state.period;
+  var hist = _state.hist;
+  var b = periodBuckets(period);
+  var prevData = pickInRange(hist, b.prevRange);
+  var curData = pickInRange(hist, b.curRange);
+
+  // 큰 숫자 두 칸
+  $('prevLabel').textContent = b.prevLabel;
+  $('curLabel').textContent = b.curLabel;
+  if (prevData.length) {
+    var pv = prevData[prevData.length-1].count;
+    $('prevNum').textContent = pv.toLocaleString();
+    $('prevMeta').textContent = prevData[0].date;
+  } else {
+    $('prevNum').textContent = '—';
+    $('prevMeta').textContent = '데이터 누적 중';
+  }
+  if (curData.length) {
+    var cv = curData[curData.length-1].count;
+    $('curNum').textContent = cv.toLocaleString();
+    $('curMeta').textContent = '현재까지 · ' + curData[curData.length-1].date;
+  } else {
+    $('curNum').textContent = '—';
+    $('curMeta').textContent = '데이터 누적 중';
+  }
+
+  drawDualLine(prevData, curData, b);
+}
+
+function normalizeToBuckets(data, bucketCount) {
+  // data: [{date,count}] → 길이 bucketCount, 각 인덱스에 (있으면 count, 없으면 null)
+  if (!data.length) return new Array(bucketCount).fill(null);
+  // 단순화: 마지막 N개를 균등 배치
+  var arr = new Array(bucketCount).fill(null);
+  if (data.length === 1) { arr[arr.length-1] = data[0].count; return arr; }
+  if (data.length >= bucketCount) {
+    for (var i = 0; i < bucketCount; i++) {
+      var srcIdx = Math.round(i * (data.length-1) / (bucketCount-1));
+      arr[i] = data[srcIdx].count;
+    }
+  } else {
+    // 데이터를 끝 쪽으로 배치 (가장 최근 데이터가 우측 끝)
+    var offset = bucketCount - data.length;
+    for (var j = 0; j < data.length; j++) arr[offset+j] = data[j].count;
+  }
+  return arr;
+}
+
+function drawDualLine(prevData, curData, b) {
+  var chartEl = $('followersChart');
+  var footEl = $('followersFoot');
+  // 빈 상태
+  if (!prevData.length && !curData.length) {
+    chartEl.innerHTML = '<svg viewBox="0 0 100 100" preserveAspectRatio="none">' +
+      '<line x1="0" y1="50" x2="100" y2="50" stroke="#d8d6d0" stroke-width="0.5" stroke-dasharray="2 3"/></svg>';
+    footEl.className = 'fm-foot empty';
+    footEl.textContent = '데이터 누적 중 (' + b.curLabel + ' 시작 후 자동 표시)';
     return;
   }
 
-  var w = 100, h = 36, padX = 2, padY = 6;
-  var counts = hist.map(function(d){return d.count;});
-  var max = Math.max.apply(null, counts), min = Math.min.apply(null, counts);
-  var rng = (max - min) || 1;
-  var pts = hist.map(function(d, i){
-    return [padX + (i / (hist.length - 1)) * (w - padX * 2), h - padY - ((d.count - min) / rng) * (h - padY * 2)];
-  });
-  var line = 'M ' + pts[0][0].toFixed(2) + ',' + pts[0][1].toFixed(2);
-  for (var i = 1; i < pts.length; i++) line += ' L ' + pts[i][0].toFixed(2) + ',' + pts[i][1].toFixed(2);
-  var area = line + ' L ' + pts[pts.length-1][0].toFixed(2) + ',' + h + ' L ' + pts[0][0].toFixed(2) + ',' + h + ' Z';
-  var dots = pts.map(function(p, i){
-    return '<circle class="point" data-idx="' + i + '" data-date="' + hist[i].date + '" cx="' + p[0].toFixed(2) + '" cy="' + p[1].toFixed(2) + '" r="2.2" fill="' + BEIGE + '"><title>' + hist[i].date + ' · ' + hist[i].count.toLocaleString() + '명</title></circle>';
-  }).join('');
-  $('followersChart').innerHTML =
-    '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" width="100%" height="100%">' +
-    '<path d="' + area + '" fill="' + BEIGE + '" fill-opacity="0.18"/>' +
-    '<path d="' + line + '" fill="none" stroke="' + BEIGE + '" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-    dots + '</svg>';
+  var bucketCount = Math.max(b.bucketCount, 2);
+  var prevArr = normalizeToBuckets(prevData, bucketCount);
+  var curArr = normalizeToBuckets(curData, bucketCount);
 
-  // 월별 라벨 - hist에서 등장한 월들 가져옴
-  var seenMonths = [];
-  hist.forEach(function(d){
-    var ym = d.date.substring(0, 7);
-    if (seenMonths.indexOf(ym) === -1) seenMonths.push(ym);
-  });
-  $('followersMonths').innerHTML = seenMonths.map(function(ym){
-    var m = parseInt(ym.split('-')[1], 10);
-    return '<span>' + MONTHS[m-1] + '</span>';
-  }).join('');
+  var allVals = prevArr.concat(curArr).filter(function(v){return v!==null;});
+  var maxV = Math.max.apply(null, allVals);
+  var minV = Math.min.apply(null, allVals);
+  if (maxV === minV) { maxV += 1; minV = Math.max(0, minV-1); }
+  var rng = maxV - minV;
 
-  bindChartClicks(hist);
-}
+  var w = 100, h = 60, padX = 2, padY = 6;
+  function xAt(i){ return padX + (i/(bucketCount-1))*(w - padX*2); }
+  function yAt(v){ return h - padY - ((v-minV)/rng)*(h - padY*2); }
 
-function bindChartClicks(hist) {
-  var chart = $('followersChart');
-  if (!chart) return;
-  chart.onclick = function(e){
-    var t = e.target;
-    if (t.tagName.toLowerCase() === 'circle' && t.classList.contains('point')) {
-      var idx = parseInt(t.dataset.idx, 10);
-      if (!isNaN(idx) && hist[idx]) showTooltip(hist[idx]);
+  function pathFor(arr) {
+    var s = '', started = false;
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === null) continue;
+      var cmd = started ? 'L' : 'M';
+      s += cmd + ' ' + xAt(i).toFixed(2) + ',' + yAt(arr[i]).toFixed(2) + ' ';
+      started = true;
     }
-  };
-  // 월 라벨 클릭 → 그 월 마지막 데이터 표시
-  var ax = $('followersMonths');
-  if (ax) {
-    ax.onclick = function(e){
-      if (e.target.tagName.toLowerCase() !== 'span') return;
-      var label = e.target.textContent;
-      var monthIdx = MONTHS.indexOf(label);
-      if (monthIdx === -1) return;
-      var pad = (monthIdx+1).toString().padStart(2,'0');
-      var monthHist = hist.filter(function(d){ return d.date.substring(5,7) === pad; });
-      if (monthHist.length) showTooltip(monthHist[monthHist.length-1]);
-    };
+    return s.trim();
   }
+
+  var prevPath = pathFor(prevArr);
+  var curPath = pathFor(curArr);
+
+  // 현재 라인 끝점 (마지막 non-null)
+  var lastIdx = -1, lastVal = null;
+  for (var k = curArr.length-1; k >= 0; k--) {
+    if (curArr[k] !== null) { lastIdx = k; lastVal = curArr[k]; break; }
+  }
+  // 이전 라인 같은 X에서의 값 (없으면 마지막 non-null)
+  var prevAtX = null;
+  if (lastIdx >= 0 && prevArr[lastIdx] !== null) prevAtX = prevArr[lastIdx];
+  else for (var k2 = prevArr.length-1; k2 >= 0; k2--) { if (prevArr[k2] !== null) { prevAtX = prevArr[k2]; break; } }
+
+  var dotSvg = '';
+  var bubbleHtml = '';
+  if (lastVal !== null) {
+    var cx = xAt(lastIdx), cy = yAt(lastVal);
+    dotSvg = '<circle cx="' + cx.toFixed(2) + '" cy="' + cy.toFixed(2) + '" r="2.4" fill="' + BEIGE + '" stroke="#fff" stroke-width="1"/>';
+    if (prevAtX !== null) {
+      var diff = lastVal - prevAtX;
+      var sign = diff >= 0 ? '+' : '';
+      var bubbleClass = diff >= 0 ? '' : ' neg';
+      // 버블 위치는 % (svg viewBox 100x60 → % 변환)
+      var leftPct = cx; // viewBox 100 == 100%
+      var topPct = (cy/60)*100; // viewBox 60
+      bubbleHtml = '<div class="delta-bubble' + bubbleClass + '" style="left:' + leftPct + '%;top:' + topPct + '%">' + sign + diff.toLocaleString() + '명</div>';
+    }
+  }
+
+  // 영역 채움 (현재 라인)
+  var areaPath = '';
+  if (curPath) {
+    var firstCur = -1; for (var f = 0; f < curArr.length; f++) if (curArr[f] !== null) { firstCur = f; break; }
+    if (firstCur >= 0 && lastIdx >= 0) {
+      areaPath = curPath + ' L ' + xAt(lastIdx).toFixed(2) + ',' + h + ' L ' + xAt(firstCur).toFixed(2) + ',' + h + ' Z';
+    }
+  }
+
+  chartEl.innerHTML =
+    '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+      (areaPath ? '<path d="' + areaPath + '" fill="' + BEIGE + '" fill-opacity="0.15"/>' : '') +
+      (prevPath ? '<path d="' + prevPath + '" fill="none" stroke="#c4c2bc" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0"/>' : '') +
+      (curPath ? '<path d="' + curPath + '" fill="none" stroke="' + BEIGE + '" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>' : '') +
+      dotSvg +
+    '</svg>' + bubbleHtml;
+
+  // foot 라벨
+  footEl.className = 'fm-foot';
+  footEl.innerHTML = b.footLabels.map(function(l){ return '<span>' + esc(l) + '</span>'; }).join('');
 }
 
-// Hero - 베스트 게시물 + 게시일 + 원본 링크
+function setupPeriodTabs() {
+  document.querySelectorAll('.fm-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      _state.period = btn.dataset.period;
+      document.querySelectorAll('.fm-tab').forEach(function(b){ b.classList.toggle('active', b === btn); });
+      renderFollowersChart();
+    });
+  });
+}
+
+// ─── Hero ───
 function renderHero(worker) {
   var posts = (worker.all_posts && worker.all_posts.length) ? worker.all_posts : (worker.recent_posts || []);
   if (!posts.length) return;
@@ -180,7 +291,7 @@ function renderHero(worker) {
   }
 }
 
-// 주간 발행
+// ─── 주간 발행 ───
 function renderWeekly(worker) {
   var posts = (worker.all_posts && worker.all_posts.length) ? worker.all_posts : (worker.recent_posts || []);
   var now = Date.now(), weekMs = 7 * 24 * 3600 * 1000;
@@ -206,18 +317,15 @@ function renderWeekly(worker) {
   }).join('');
 }
 
-// 콘텐츠 리스트
-var _linksState = null;
+// ─── 콘텐츠 페이지 ───
 function renderLinks(links) {
-  _linksState = links;
   if (!links || !Array.isArray(links.categories)) return;
   $('linksGrid').innerHTML = links.categories.map(function(cat){
     var badgeClass = cat.region === '국내' ? 'kr' : 'intl';
     var rows = cat.items.map(function(it){
       return '<a class="link-row" data-name="' + esc((it.name + ' ' + (it.note||'')).toLowerCase()) + '" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
         '<div><div class="name">' + esc(it.name) + '</div><div class="note">' + esc(it.note || '') + '</div></div>' +
-        '<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>' +
-        '</a>';
+        '<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></a>';
     }).join('');
     return '<div class="links-card"><div class="head"><div class="title">' + esc(cat.label) + '</div>' +
       '<span class="badge ' + badgeClass + '">' + cat.region + ' · ' + cat.type + ' · ' + cat.items.length + '</span></div>' +
@@ -244,15 +352,15 @@ function applyLinksFilter(q) {
   if (hint) hint.textContent = q ? (visible + '/' + total + ' 매칭') : '';
 }
 
-// 동기화 시각
 function updateSyncTime() {
   var t = new Date();
-  var pad = function(n){return n<10?'0'+n:n;};
-  $('syncTime').textContent = '동기화 ' + pad(t.getHours()) + ':' + pad(t.getMinutes());
+  $('syncTime').textContent = '동기화 ' + pad2(t.getHours()) + ':' + pad2(t.getMinutes());
 }
 
-// 진입점
+// ─── 진입점 ───
 setupTabs();
+setupPeriodTabs();
+
 function loadAll() {
   $('syncTime').textContent = '동기화 중...';
   return Promise.all([
@@ -260,10 +368,20 @@ function loadAll() {
     fetch('./data/followers_history.json?t=' + Date.now()).then(function(r){return r.json();}).catch(function(){return {history:[]};}),
     fetch('./data/links.json?t=' + Date.now()).then(function(r){return r.json();}).catch(function(){return {categories:[]};})
   ]).then(function(arr){
-    renderFollowers(arr[0], arr[1]);
-    renderHero(arr[0]);
-    renderWeekly(arr[0]);
-    renderLinks(arr[2]);
+    var worker = arr[0], hist = arr[1], links = arr[2];
+    // history에 오늘 worker 값 push
+    var h = (hist.history || []).slice();
+    var today = fmtDate(new Date());
+    if (worker && typeof worker.followers === 'number') {
+      var last = h[h.length-1];
+      if (!last || last.date !== today) h.push({date: today, count: worker.followers});
+      else last.count = worker.followers;
+    }
+    _state.hist = h;
+    renderFollowersChart();
+    renderHero(worker);
+    renderWeekly(worker);
+    renderLinks(links);
     updateSyncTime();
   }).catch(function(e){
     console.error(e);
@@ -274,11 +392,172 @@ function loadAll() {
 }
 
 loadAll();
-
-// 새로고침 버튼
 var refreshBtn = $('refreshBtn');
 if (refreshBtn) refreshBtn.addEventListener('click', loadAll);
-
-// 콘텐츠 필터
 var filterInput = $('linksFilter');
 if (filterInput) filterInput.addEventListener('input', function(e){ applyLinksFilter(e.target.value); });
+
+
+// ─── v0.11: 전역 검색 ───
+var _searchIndex = [];
+
+function buildSearchIndex(worker, links) {
+  var idx = [];
+  // 게시물 (Worker)
+  var posts = (worker && (worker.all_posts || worker.recent_posts)) || [];
+  posts.forEach(function(p){
+    var first = (p.caption || '').split('\n')[0].trim();
+    idx.push({
+      group: '인스타 게시물',
+      label: first || '(캡션 없음)',
+      meta: mtype(p.media_type) + ' · ' + (p.likes || 0).toLocaleString() + '♥',
+      target: 'hero',
+      payload: p,
+      hay: (first + ' ' + (p.caption || '')).toLowerCase()
+    });
+  });
+  // 매체/커뮤니티
+  if (links && links.categories) {
+    links.categories.forEach(function(cat){
+      cat.items.forEach(function(it){
+        idx.push({
+          group: cat.label,
+          label: it.name,
+          meta: it.note || '',
+          target: 'link',
+          payload: { url: it.url, name: it.name, region: cat.region },
+          hay: (it.name + ' ' + (it.note || '') + ' ' + cat.label).toLowerCase()
+        });
+      });
+    });
+  }
+  // 섹션 키워드
+  ['팔로워 추이', '주간 발행', '이번 주 베스트', '발행 형태', '최근 발행'].forEach(function(k){
+    idx.push({
+      group: '대시보드',
+      label: k,
+      meta: '섹션으로 이동',
+      target: 'section',
+      payload: { key: k },
+      hay: k.toLowerCase()
+    });
+  });
+  _searchIndex = idx;
+}
+
+function flashHighlight(el) {
+  if (!el) return;
+  el.classList.remove('search-highlight');
+  void el.offsetWidth;
+  el.classList.add('search-highlight');
+  setTimeout(function(){ el.classList.remove('search-highlight'); }, 3100);
+}
+
+function navigateTo(item) {
+  // 콘텐츠 페이지 항목이면 콘텐츠 탭 활성
+  var sectionMap = {
+    '팔로워 추이': '.followers-mini',
+    '주간 발행': '.weekly-card',
+    '이번 주 베스트': '.hero-card',
+    '발행 형태': '.formats-row',
+    '최근 발행': '.recent-list'
+  };
+  if (item.target === 'hero') {
+    document.querySelector('.page-tab[data-page="dashboard"]').click();
+    var hero = document.querySelector('.hero-card');
+    hero.scrollIntoView({behavior:'smooth', block:'center'});
+    flashHighlight(hero);
+  } else if (item.target === 'section') {
+    document.querySelector('.page-tab[data-page="dashboard"]').click();
+    var sel = sectionMap[item.payload.key];
+    var el = sel ? document.querySelector(sel) : null;
+    if (el) { el.scrollIntoView({behavior:'smooth', block:'center'}); flashHighlight(el); }
+  } else if (item.target === 'link') {
+    document.querySelector('.page-tab[data-page="content"]').click();
+    setTimeout(function(){
+      // 콘텐츠 페이지에서 해당 link-row 찾기
+      var rows = document.querySelectorAll('.link-row');
+      for (var i = 0; i < rows.length; i++) {
+        var nameEl = rows[i].querySelector('.name');
+        if (nameEl && nameEl.textContent === item.payload.name) {
+          rows[i].scrollIntoView({behavior:'smooth', block:'center'});
+          flashHighlight(rows[i]);
+          break;
+        }
+      }
+    }, 120);
+  }
+}
+
+function runGlobalSearch(q) {
+  var res = $('gsResults');
+  q = (q || '').trim().toLowerCase();
+  if (!q) { res.hidden = true; $('gsClear').style.display='none'; return; }
+  $('gsClear').style.display = 'inline-block';
+  var hits = _searchIndex.filter(function(it){ return it.hay.indexOf(q) !== -1; }).slice(0, 30);
+  if (!hits.length) {
+    res.innerHTML = '<div class="gs-empty">검색 결과 없음</div>';
+    res.hidden = false;
+    return;
+  }
+  // group별
+  var groups = {};
+  hits.forEach(function(h){ (groups[h.group] = groups[h.group] || []).push(h); });
+  var html = '';
+  Object.keys(groups).forEach(function(g){
+    html += '<div class="gs-group-title">' + esc(g) + '</div>';
+    groups[g].forEach(function(h, i){
+      var lbl = h.label.length > 60 ? h.label.substring(0,57) + '...' : h.label;
+      html += '<div class="gs-item" data-grp="' + esc(g) + '" data-idx="' + i + '"><span class="name">' + esc(lbl) + '</span><span class="meta">' + esc(h.meta) + '</span></div>';
+    });
+  });
+  res.innerHTML = html;
+  res.hidden = false;
+  // 클릭 핸들러
+  res.querySelectorAll('.gs-item').forEach(function(el){
+    el.addEventListener('click', function(){
+      var grp = el.dataset.grp, idx = parseInt(el.dataset.idx, 10);
+      var item = groups[grp][idx];
+      navigateTo(item);
+      res.hidden = true;
+      $('globalSearch').value = '';
+      $('gsClear').style.display = 'none';
+    });
+  });
+}
+
+// 진입점 보완 - 인덱스 빌드 + 검색 input 바인딩
+(function(){
+  var input = $('globalSearch');
+  if (input) {
+    input.addEventListener('input', function(e){ runGlobalSearch(e.target.value); });
+    document.addEventListener('click', function(e){
+      var wrap = e.target.closest('.global-search-wrap');
+      if (!wrap) $('gsResults').hidden = true;
+    });
+  }
+  var clear = $('gsClear');
+  if (clear) clear.addEventListener('click', function(){
+    $('globalSearch').value = '';
+    runGlobalSearch('');
+    $('globalSearch').focus();
+  });
+})();
+
+// loadAll 후 검색 인덱스 빌드되도록 fetchAll에 hook
+var _origLoadAll = loadAll;
+loadAll = function(){
+  return _origLoadAll().then(function(){
+    return Promise.all([
+      fetch(WORKER_URL + '?t='+Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};}),
+      fetch('./data/links.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {categories:[]};})
+    ]).then(function(arr){ buildSearchIndex(arr[0], arr[1]); });
+  });
+};
+// 첫 로드 후 한 번 더 인덱스 빌드
+setTimeout(function(){
+  Promise.all([
+    fetch(WORKER_URL + '?t='+Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};}),
+    fetch('./data/links.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {categories:[]};})
+  ]).then(function(arr){ buildSearchIndex(arr[0], arr[1]); });
+}, 2000);
