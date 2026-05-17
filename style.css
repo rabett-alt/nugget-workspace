@@ -2128,3 +2128,17 @@ body { padding-left: 200px; }
   }
   .md-temp, .md-hide-mobile { display: none; }
 }
+
+/* ===== v0.19: 풀 화면 강제 (rail 사라졌으니 padding 0) ===== */
+body { padding-left: 0 !important; overflow: auto; background: #050916 !important; }
+.content-app { padding: 0 !important; max-width: none !important; }
+.content-app .md-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  margin: 0 !important;
+  aspect-ratio: auto !important;
+  border-radius: 0 !important;
+  min-height: 100vh !important;
+  box-shadow: none !important;
+}
