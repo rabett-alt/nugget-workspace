@@ -1,0 +1,81 @@
+name: Follower Daily Snapshot
+
+# 매일 06:00 KST = 21:00 UTC (전날)
+# Worker 호출 → followers_history.json에 오늘 수치 append → commit
+on:
+  schedule:
+    - cron: '0 21 * * *'   # 21:00 UTC = 06:00 KST 다음날
+  workflow_dispatch:        # 수동 트리거
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch followers (with retry)
+        id: fetch
+        run: |
+          set -e
+          # Worker 빈응답 burst 대비 — 최대 8회 재시도
+          for i in 1 2 3 4 5 6 7 8; do
+            res=$(curl -sS "https://nugget.rabett.workers.dev/?cron=$(date +%s)$i")
+            followers=$(echo "$res" | jq -r '.followers // empty')
+            ok=$(echo "$res" | jq -r '.ok // empty')
+            if [ "$ok" = "true" ] && [ -n "$followers" ] && [ "$followers" != "null" ] && [ "$followers" != "0" ]; then
+              echo "followers=$followers" >> "$GITHUB_OUTPUT"
+              echo "date=$(date -u -d 'today' +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Attempt $i: bad response, retrying..."
+            sleep $((i * 3))
+          done
+          echo "All 8 attempts failed. Skipping today's snapshot."
+          exit 0
+
+      - name: Append snapshot
+        if: steps.fetch.outputs.followers != ''
+        run: |
+          python3 - <<'PY'
+          import json, os
+          path = 'data/followers_history.json'
+          with open(path) as f:
+              j = json.load(f)
+          today = os.environ['DATE']
+          count = int(os.environ['COUNT'])
+          h = j.get('history', [])
+          # 같은 날 있으면 갱신, 없으면 append
+          updated = False
+          for item in h:
+              if item['date'] == today:
+                  item['count'] = count
+                  updated = True
+                  break
+          if not updated:
+              h.append({'date': today, 'count': count})
+          j['history'] = h
+          j['_갱신'] = today
+          with open(path, 'w') as f:
+              json.dump(j, f, ensure_ascii=False, indent=2)
+          print(f'Appended {today}: {count}')
+          PY
+        env:
+          DATE: ${{ steps.fetch.outputs.date }}
+          COUNT: ${{ steps.fetch.outputs.followers }}
+
+      - name: Commit if changed
+        if: steps.fetch.outputs.followers != ''
+        run: |
+          git config user.name 'nugget-bot'
+          git config user.email 'bot@nugget.local'
+          if ! git diff --quiet data/followers_history.json; then
+            git add data/followers_history.json
+            git commit -m "snapshot: $(date -u +%Y-%m-%d) followers=${{ steps.fetch.outputs.followers }}"
+            git push
+          else
+            echo "No change today"
+          fi

@@ -605,3 +605,55 @@ setTimeout(function(){
     fetch('./data/links.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {categories:[]};})
   ]).then(function(arr){ buildSearchIndex(arr[0], arr[1]); });
 }, 2000);
+
+// ─── v0.12: silent refresh (30초마다 + 탭 가시화 시) + 검색 키보드 네비 ───
+var _silentTimer = null;
+function startSilentRefresh() {
+  if (_silentTimer) clearInterval(_silentTimer);
+  _silentTimer = setInterval(function(){
+    if (document.hidden) return;
+    if (typeof loadAll === 'function') loadAll();
+  }, 30000);
+}
+document.addEventListener('visibilitychange', function(){
+  if (!document.hidden && typeof loadAll === 'function') loadAll();
+});
+startSilentRefresh();
+
+// 검색 키보드 네비 (↑↓ Enter ESC)
+(function(){
+  var inp = $('globalSearch');
+  var res = $('gsResults');
+  if (!inp || !res) return;
+  var activeIdx = -1;
+  function items(){ return res.querySelectorAll('.gs-item'); }
+  function setActive(idx){
+    var its = items();
+    its.forEach(function(el, i){ el.classList.toggle('kbd-active', i === idx); });
+    var el = its[idx];
+    if (el) el.scrollIntoView({block:'nearest'});
+    activeIdx = idx;
+  }
+  inp.addEventListener('keydown', function(e){
+    var its = items();
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (res.hidden) return;
+      setActive(Math.min(its.length-1, activeIdx+1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActive(Math.max(0, activeIdx-1));
+    } else if (e.key === 'Enter') {
+      var el = its[activeIdx >= 0 ? activeIdx : 0];
+      if (el) { e.preventDefault(); el.click(); }
+    } else if (e.key === 'Escape') {
+      res.hidden = true; inp.blur();
+    } else {
+      activeIdx = -1;
+    }
+  });
+  // 입력 후 첫 항목 자동 활성화
+  inp.addEventListener('input', function(){
+    setTimeout(function(){ var its = items(); if (its.length) setActive(0); }, 60);
+  });
+})();

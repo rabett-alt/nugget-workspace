@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="너겟 게임 매거진의 작업·분석 대시보드. @nugget_zine 팔로워·발행 현황과 큐레이션 소스 모음." />
   <title>너겟 작업 사이트</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,31 +34,11 @@
       </div>
       <div class="global-search-results" id="gsResults" hidden></div>
     </div>
-    <div class="sync-info">
-      <span class="dot"></span>
-      <span id="syncTime">동기화 중...</span>
-      <button class="refresh-btn" id="refreshBtn" title="새로고침">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
-      </button>
-    </div>
   </nav>
 
   <div class="app page-section active" data-page-section="dashboard">
 
     <aside class="col-left">
-      <div class="top-row">
-        <div class="logo-mark" aria-label="너겟 로고">
-          <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 6 L14 4 L14 9 L5 11 Z"/>
-            <path d="M5 13 L14 11 L14 16 L5 18 Z"/>
-            <path d="M5 20 L14 18 L14 23 L5 25 Z"/>
-          </svg>
-        </div>
-        <button class="menu-toggle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-          메뉴
-        </button>
-      </div>
 
       <div class="followers-mini">
         <div class="fm-head">
@@ -178,10 +159,6 @@
     <header class="content-head">
       <h2 class="content-title">콘텐츠 소스</h2>
       <p class="content-sub">너겟이 매일 훑는 국내·해외 매체와 커뮤니티</p>
-      <div class="filter-row">
-        <input class="filter-input" id="linksFilter" placeholder="매체·커뮤니티 이름으로 필터 (예: 인벤, IGN, reddit)"/>
-        <span class="filter-hint" id="linksFilterHint"></span>
-      </div>
     </header>
     <div class="links-grid" id="linksGrid"></div>
   </main>
