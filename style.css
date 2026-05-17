@@ -656,103 +656,6 @@ body {
 /* dummy-notice 텍스트 없을 땐 안 보이게 */
 .dummy-notice:empty { display: none; }
 
-/* ===== v0.9: hero 9:16 비율 (인스타 릴스/세로형) ===== */
-.hero-card {
-  flex: 1;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-image {
-  flex: 0 1 auto;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 9 / 16;
-  min-height: 0;
-  padding: 22px;
-}
-
-/* ===== v0.9: 팔로워 차트 - 월별 클릭 + 툴팁 ===== */
-.followers-mini { position: relative; }
-.followers-mini .chart {
-  height: 56px;
-  position: relative;
-}
-.followers-mini .chart svg circle.point {
-  cursor: pointer;
-  transition: r 0.12s ease;
-}
-.followers-mini .chart svg circle.point:hover { r: 3.6; }
-.followers-mini .chart svg circle.point.active {
-  fill: var(--text);
-  r: 3.6;
-}
-.followers-mini .month-axis {
-  display: flex; justify-content: space-between;
-  font-size: 9px; color: var(--text-3);
-  letter-spacing: 0.4px;
-  margin-top: 4px;
-  padding: 0 2px;
-}
-.followers-tooltip {
-  margin-top: 8px;
-  font-size: 11px;
-  color: var(--text);
-  background: var(--bg-soft);
-  border: 1px solid var(--border-soft);
-  border-radius: 6px;
-  padding: 6px 10px;
-  min-height: 28px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.followers-tooltip .ttl-date { color: var(--text-3); }
-.followers-tooltip .ttl-count { font-weight: 700; }
-.followers-tooltip.placeholder { color: var(--text-3); justify-content: center; font-size: 10px; }
-4px;
-}
-.links-card {
-  border: 1px solid var(--border-soft);
-  border-radius: var(--r-lg);
-  padding: 22px 24px;
-}
-.links-card .head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 14px;
-}
-.links-card .head .title { font-size: 13px; font-weight: 700; }
-.links-card .head .badge {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.4px;
-  padding: 4px 10px;
-  border-radius: var(--r-pill);
-  background: var(--bg-soft);
-  color: var(--text-3);
-}
-.links-card .head .badge.kr { background: rgba(46,176,134,0.10); color: var(--green); }
-.links-card .head .badge.intl { background: rgba(212,74,42,0.08); color: var(--warm-1); }
-.link-row {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px dashed var(--border-soft);
-  text-decoration: none;
-  color: var(--text);
-}
-.link-row:last-child { border-bottom: none; }
-.link-row:hover { padding-left: 4px; }
-.link-row .name { font-size: 12.5px; font-weight: 600; }
-.link-row .note { font-size: 10.5px; color: var(--text-3); margin-top: 2px; }
-.link-row .arrow svg { width: 12px; height: 12px; stroke-width: 1.8; }
-@media (max-width: 980px) {
-  .links-grid { grid-template-columns: 1fr; }
-}
-.dummy-notice:empty { display: none; }
-
 /* ===== v0.9: hero 9:16 (인스타 릴스/세로형) ===== */
 .hero-card {
   flex: 1;
@@ -777,7 +680,7 @@ body {
   .hero-image { max-width: 320px; }
 }
 
-/* hero 위 우측 메타 (게시일 + 원본 보기) */
+/* hero 위 우측 메타 */
 .hero-meta-top {
   position: absolute;
   top: 22px; right: 22px;
@@ -798,4 +701,73 @@ body {
   border-radius: 50%;
   background: rgba(255,255,255,0.92);
   display: flex; align-items: center; justify-content: center;
- 
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.12s;
+}
+.hero-meta-top .open-link:hover { transform: scale(1.06); }
+.hero-meta-top .open-link svg { width: 13px; height: 13px; stroke-width: 1.8; }
+
+/* 팔로워 차트 클릭 + 월별 */
+.followers-mini { position: relative; }
+.followers-mini .chart { height: 56px; position: relative; }
+.followers-mini .chart svg circle.point { cursor: pointer; transition: r 0.12s ease; }
+.followers-mini .chart svg circle.point:hover { r: 3.6; }
+.followers-mini .chart svg circle.point.active { fill: var(--text); r: 3.8; }
+.followers-mini .month-axis {
+  display: flex; justify-content: space-between;
+  font-size: 9px; color: var(--text-3);
+  letter-spacing: 0.4px; margin-top: 4px; padding: 0 2px;
+}
+.followers-mini .month-axis span { cursor: pointer; }
+.followers-mini .month-axis span:hover { color: var(--text); }
+.followers-tooltip {
+  margin-top: 8px; font-size: 11px; color: var(--text);
+  background: var(--bg-soft); border: 1px solid var(--border-soft);
+  border-radius: 6px; padding: 6px 10px; min-height: 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.followers-tooltip .ttl-date { color: var(--text-3); }
+.followers-tooltip .ttl-count { font-weight: 700; }
+.followers-tooltip.placeholder { color: var(--text-3); justify-content: center; font-size: 10px; }
+
+/* 동기화 + 새로고침 */
+.page-nav .sync-info {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10.5px; color: var(--text-3);
+  letter-spacing: 0.3px;
+}
+.page-nav .sync-info .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(46,176,134,0.18);
+}
+.page-nav .sync-info .refresh-btn {
+  background: transparent; border: none; padding: 4px 6px;
+  cursor: pointer; color: var(--text-3);
+  display: inline-flex; align-items: center;
+  border-radius: 6px; transition: all 0.12s;
+}
+.page-nav .sync-info .refresh-btn:hover { color: var(--text); background: var(--bg-soft); }
+.page-nav .sync-info .refresh-btn svg { width: 13px; height: 13px; stroke-width: 1.8; }
+
+/* 콘텐츠 검색 필터 */
+.content-head .filter-row {
+  margin-top: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.content-head .filter-input {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: var(--r-pill);
+  padding: 9px 16px;
+  font-size: 12px; outline: none;
+  width: 280px; font-family: inherit; color: var(--text);
+}
+.content-head .filter-input:focus { border-color: var(--text-3); }
+.content-head .filter-hint {
+  font-size: 10px; color: var(--text-3); letter-spacing: 0.3px;
+}
+.link-row.filter-hidden { display: none; }
+.links-card .links-empty { font-size: 11px; color: var(--text-3); padding: 10px 0; }
