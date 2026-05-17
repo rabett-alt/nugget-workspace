@@ -1678,3 +1678,83 @@ body { padding-left: 64px; }
   .side-rail { display: none; }
   body { padding-left: 0; }
 }
+
+/* v0.16: 퀵링크 panel + 한국 카드 우선 시각 */
+.quick-tabs {
+  display: flex; gap: 4px;
+  background: var(--bg);
+  padding: 3px;
+  border-radius: var(--r-pill);
+  margin-bottom: 12px;
+  border: 1px solid var(--border-soft);
+}
+.qt-btn {
+  flex: 1;
+  background: transparent; border: none;
+  font-family: inherit; font-size: 11px; font-weight: 600;
+  padding: 6px 10px;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  color: var(--text-3);
+  transition: all 0.12s;
+}
+.qt-btn:hover { color: var(--text); }
+.qt-btn.active { background: var(--dark); color: var(--on-dark); }
+.quick-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  max-height: 320px; overflow-y: auto;
+}
+.quick-list li {
+  font-size: 11px;
+}
+.quick-list a {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.12s;
+}
+.quick-list a:hover { background: var(--bg); }
+.quick-list .ql-name { font-weight: 600; }
+.quick-list .ql-region {
+  font-size: 9px; font-weight: 700;
+  color: var(--text-3);
+  background: var(--bg);
+  padding: 2px 6px; border-radius: var(--r-pill);
+  letter-spacing: 0.4px;
+}
+.quick-list a:hover .ql-region { background: var(--bg-soft); }
+
+/* 한국 카드 좌상단 KR 표시 */
+.feed-card .kr-flag {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--dark);
+  color: var(--on-dark);
+  font-size: 9px; font-weight: 800;
+  padding: 3px 8px; border-radius: var(--r-pill);
+  letter-spacing: 0.5px;
+}
+.feed-card .score-pill.with-kr { right: 50px; }
+
+/* 영문 카드 원문 제목 부제 */
+.feed-card .title-original {
+  font-size: 10px; font-weight: 500;
+  opacity: 0.7;
+  letter-spacing: 0.1px;
+  margin-top: 4px;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 모달 강제 hidden */
+.card-modal[hidden] { display: none !important; }
+
+/* 3줄 요약 줄바꿈 */
+.brief-list li b { font-weight: 700; color: var(--text); }
+.brief-list li em { font-style: normal; color: var(--beige-deep); font-weight: 600; }

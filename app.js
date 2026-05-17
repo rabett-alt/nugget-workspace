@@ -1076,3 +1076,160 @@ renderCards = function() {
     }
   });
 };
+
+// ─── v0.16: 한국 우선 + 게임링크 추론 + 퀵링크 + KR 배지 + 모달 fix ───
+var GAME_LINK_RULES = [
+  { kw: ['psn','playstation','ps5','ps4','sony'], url: function(t){ return 'https://store.playstation.com/ko-kr/search/' + encodeURIComponent(t); } },
+  { kw: ['xbox','game pass'], url: function(t){ return 'https://www.xbox.com/ko-KR/Search/Results?q=' + encodeURIComponent(t); } },
+  { kw: ['nintendo','switch','마리오','젤다','포켓몬','스플래툰'], url: function(t){ return 'https://store.nintendo.co.kr/search?q=' + encodeURIComponent(t); } },
+  { kw: ['epic'], url: function(t){ return 'https://store.epicgames.com/ko/browse?q=' + encodeURIComponent(t); } },
+  { kw: ['steam','valve','pc gaming'], url: function(t){ return 'https://store.steampowered.com/search/?term=' + encodeURIComponent(t); } }
+];
+window.guessGameLink = function(it) {
+  var t = ((it.title || '') + ' ' + (it.summary || '')).toLowerCase();
+  for (var i = 0; i < GAME_LINK_RULES.length; i++) {
+    if (GAME_LINK_RULES[i].kw.some(function(k){ return t.indexOf(k.toLowerCase()) !== -1; })) {
+      return GAME_LINK_RULES[i].url(it.title.slice(0, 50));
+    }
+  }
+  return 'https://store.steampowered.com/search/?term=' + encodeURIComponent((it.title||'').slice(0,50));
+};
+
+// 한국 우선 정렬 — feed.json items를 region 'kr' 먼저로 재정렬 (점수도 살림)
+var _prevFeedLoad = loadFeed;
+loadFeed = function() {
+  return _prevFeedLoad().then(function(){
+    if (!_feedState.all || !_feedState.all.length) return;
+    _feedState.all.sort(function(a, b){
+      var aKr = a.region === 'kr' ? 1 : 0;
+      var bKr = b.region === 'kr' ? 1 : 0;
+      if (aKr !== bKr) return bKr - aKr;  // KR 먼저
+      return (b.score || 0) - (a.score || 0);
+    });
+    // by_category도 새로 계산 (KR 먼저)
+    var cats = (_feedState.cats || []).map(function(c){return c.id;});
+    var byCat = {};
+    cats.forEach(function(c){ byCat[c] = []; });
+    _feedState.all.forEach(function(it){
+      (it.categories || []).forEach(function(c){
+        if (byCat[c] && byCat[c].length < 30) byCat[c].push(it.id);
+      });
+    });
+    _feedState.byCat = byCat;
+    renderCatTabs(); renderCards();
+  });
+};
+
+// 카드 렌더 후 KR 배지 추가 + 영문 원문 부제
+var _prevRenderCards2 = renderCards;
+renderCards = function() {
+  _prevRenderCards2();
+  document.querySelectorAll('#cardsGrid .feed-card, #heroRow .hero-big, #heroRow .hero-small').forEach(function(card){
+    var id = card.dataset.id;
+    var it = _feedState.all.find(function(x){ return x.id === id; });
+    if (!it) return;
+    if (it.region === 'kr' && !card.querySelector('.kr-flag')) {
+      var f = document.createElement('div');
+      f.className = 'kr-flag';
+      f.textContent = 'KR';
+      card.appendChild(f);
+      var sp = card.querySelector('.score-pill');
+      if (sp) sp.classList.add('with-kr');
+    }
+    // 영문 카드 원문 제목 부제
+    if (it.title_original && !card.querySelector('.title-original')) {
+      var t = card.querySelector('.title');
+      if (t) {
+        var orig = document.createElement('div');
+        orig.className = 'title-original';
+        orig.textContent = it.title_original;
+        t.appendChild(orig);
+      }
+    }
+  });
+};
+
+// 퀵링크 panel - links.json에서 매거진(매체)/커뮤니티 필터
+var _quickLinks = { media: [], community: [], active: 'media' };
+
+(function(){
+  fetch('./data/links.json?t=' + Date.now()).then(function(r){return r.json();}).then(function(d){
+    if (!d || !d.categories) return;
+    d.categories.forEach(function(cat){
+      var bucket = cat.type === '매체' ? _quickLinks.media : _quickLinks.community;
+      cat.items.forEach(function(it){
+        bucket.push({ name: it.name, url: it.url, region: cat.region });
+      });
+    });
+    renderQuickLinks();
+    // 탭 클릭
+    document.querySelectorAll('.qt-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        _quickLinks.active = b.dataset.qt;
+        document.querySelectorAll('.qt-btn').forEach(function(x){ x.classList.toggle('active', x === b); });
+        renderQuickLinks();
+      });
+    });
+  });
+})();
+
+function renderQuickLinks() {
+  var el = document.getElementById('quickList'); if (!el) return;
+  var items = _quickLinks[_quickLinks.active] || [];
+  // 국내 먼저
+  items = items.slice().sort(function(a, b){
+    return (a.region === '국내' ? 0 : 1) - (b.region === '국내' ? 0 : 1);
+  });
+  el.innerHTML = items.map(function(it){
+    return '<li><a href="' + it.url + '" target="_blank" rel="noopener">' +
+      '<span class="ql-name">' + it.name + '</span>' +
+      '<span class="ql-region">' + (it.region === '국내' ? '🇰🇷' : '🌐') + '</span>' +
+    '</a></li>';
+  }).join('');
+}
+
+// 3줄 요약 서식 강화 - 핵심 키워드 볼드 / 숫자·게임명 강조
+var _prevMakeBrief = window.makeBrief;
+if (typeof makeBrief !== 'undefined') {
+  window.makeBrief = function(it) {
+    var lines = _prevMakeBrief(it);
+    var keywords = ['엘든링','메이플','닌텐도','발더스','오공','검은신화','원신','로스트아크','콜라보','출시','신작','DLC','업데이트','실적'];
+    return lines.map(function(l){
+      // 숫자+% / 숫자+건 / 숫자+만 강조
+      l = l.replace(/(\d+(?:[,.]\d+)?\s*[%원건만천백]+)/g, '<em>$1</em>');
+      // 키워드 볼드
+      keywords.forEach(function(k){
+        var re = new RegExp('(' + k + ')', 'g');
+        l = l.replace(re, '<b>$1</b>');
+      });
+      return l;
+    });
+  };
+}
+
+// 모달 게임 링크는 v0.16 추론 사용
+var _prevOpenModal = window.openModal;
+if (typeof openModal !== 'undefined') {
+  window.openModal = function(id) {
+    _prevOpenModal(id);
+    var it = _feedState.all.find(function(x){ return x.id === id; });
+    if (it && window.guessGameLink) {
+      var el = document.getElementById('modalLinkGame');
+      if (el) el.href = window.guessGameLink(it);
+    }
+    // 모달 brief를 HTML로 (b, em 살리기)
+    var briefEl = document.getElementById('modalBrief');
+    if (briefEl && it && window.makeBrief) {
+      briefEl.innerHTML = window.makeBrief(it).map(function(b){ return '<li>' + b + '</li>'; }).join('');
+    }
+  };
+}
+
+// 모달 닫기 강제 보강
+document.addEventListener('click', function(e){
+  if (e.target.id === 'cardModalBg' || e.target.id === 'modalClose' ||
+      e.target.closest && e.target.closest('#modalClose')) {
+    var m = document.getElementById('cardModal');
+    if (m) m.hidden = true;
+  }
+});
