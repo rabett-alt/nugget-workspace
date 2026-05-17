@@ -158,9 +158,32 @@
   <main class="content-app page-section" data-page-section="content">
     <header class="content-head">
       <h2 class="content-title">콘텐츠 소스</h2>
-      <p class="content-sub">너겟이 매일 훑는 국내·해외 매체와 커뮤니티</p>
+      <p class="content-sub">매시간 자동 수집 · 신선도·매체권위·키워드 기준 자동 스코어링</p>
     </header>
-    <div class="links-grid" id="linksGrid"></div>
+    <nav class="cat-tabs" id="catTabs"></nav>
+    <div class="cards-grid" id="cardsGrid"></div>
+    <div class="card-modal" id="cardModal" hidden>
+      <div class="card-modal-backdrop" id="cardModalBg"></div>
+      <div class="card-modal-panel">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div class="modal-thumb" id="modalThumb"></div>
+        <div class="modal-body">
+          <div class="modal-meta">
+            <span class="modal-cat" id="modalCat"></span>
+            <span class="modal-src" id="modalSrc"></span>
+          </div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-brief">
+            <div class="brief-label">3줄 압축</div>
+            <ul class="brief-list" id="modalBrief"></ul>
+          </div>
+          <div class="modal-buttons">
+            <a class="modal-btn dark" id="modalLinkOriginal" target="_blank" rel="noopener">↗  원문 보기</a>
+            <a class="modal-btn ghost" id="modalLinkGame" target="_blank" rel="noopener">🎮  게임 링크</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <div class="dummy-notice" id="dummyNotice"></div>

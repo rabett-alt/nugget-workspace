@@ -1,0 +1,3938 @@
+{
+  "_generated_at": "2026-05-17T05:22:45.597948+00:00",
+  "_total": 455,
+  "_categories": [
+    {
+      "id": "release",
+      "label": "신작·출시·업데이트",
+      "color": "#a88c68",
+      "weight": 0.35
+    },
+    {
+      "id": "industry",
+      "label": "산업·이슈",
+      "color": "#1e3a5f",
+      "weight": 0.3
+    },
+    {
+      "id": "collab",
+      "label": "콜라보·IP",
+      "color": "#d44a2a",
+      "weight": 0.2
+    },
+    {
+      "id": "indie",
+      "label": "인디·발굴",
+      "color": "#2eb086",
+      "weight": 0.05
+    },
+    {
+      "id": "offline",
+      "label": "오프라인·행사",
+      "color": "#5a3a7a",
+      "weight": 0.1
+    },
+    {
+      "id": "community",
+      "label": "커뮤니티 반응",
+      "color": "#7a5a3a",
+      "weight": 0.0
+    }
+  ],
+  "by_category": {
+    "release": [
+      "inven-3819870632",
+      "reddit_games-9367602425",
+      "pcgamer-346908161",
+      "reddit_indie-7286911002",
+      "reddit_games-6479046785",
+      "reddit_games-6065378138",
+      "4gamer-1799827316",
+      "ign-6283625142",
+      "pcgamer-53957830",
+      "rps-6512815950",
+      "ign-2395726913",
+      "ign-7261198629",
+      "pcgamer-8932695900",
+      "ign-8600039682",
+      "rps-1339901381"
+    ],
+    "industry": [
+      "polygon-5205881269",
+      "kotaku-2315305082",
+      "polygon-1968588740",
+      "polygon-581635081",
+      "polygon-6167767118",
+      "kotaku-7164857483",
+      "polygon-1757078978",
+      "polygon-5850018720",
+      "polygon-8215524678",
+      "polygon-4591333419",
+      "kotaku-7381832245",
+      "kotaku-7801797718",
+      "inven-5746435493",
+      "kotaku-5382617790",
+      "gamesindustry-3842930756"
+    ],
+    "collab": [
+      "pcgamer-9675861753",
+      "reddit_indie-6052223558",
+      "reddit_indie-7594786691",
+      "reddit_indie-8175696631",
+      "ign-8967998204",
+      "ruliweb_news-4225616462",
+      "reddit_gaming-7690040838",
+      "gamespot-1665055838",
+      "reddit_indie-7678097492",
+      "reddit_gaming-1326348434",
+      "ign-3836422493",
+      "ruliweb_news-1376241422",
+      "inven-556450576",
+      "pcgamer-6477201809",
+      "ign-9013768279"
+    ],
+    "indie": [
+      "reddit_games-287759872",
+      "reddit_indie-2061560769",
+      "reddit_indie-64419142",
+      "reddit_indie-7730750178",
+      "reddit_indie-9952464747",
+      "polygon-6501036781",
+      "reddit_indie-8377164320",
+      "reddit_indie-4078338776",
+      "pcgamer-5322044141",
+      "4gamer-3278113111",
+      "reddit_indie-5193781227",
+      "reddit_indie-8334499016",
+      "reddit_indie-7732164126",
+      "gamespot-1665055838",
+      "gamespot-6283918570"
+    ],
+    "offline": [
+      "inven-3196572212"
+    ],
+    "community": [
+      "reddit_gaming-6681894989",
+      "reddit_indie-2931757800",
+      "reddit_games-9083457482",
+      "reddit_gaming-3779991875",
+      "pcgamer-3087735232",
+      "reddit_gaming-3681130108",
+      "reddit_gaming-7633221299",
+      "reddit_gaming-8093655803",
+      "4gamer-1807797930",
+      "reddit_gaming-2291079181",
+      "reddit_gaming-5750143920",
+      "reddit_gaming-6059621610",
+      "reddit_gaming-656773822",
+      "reddit_indie-8334499016",
+      "reddit_indie-2054114035"
+    ]
+  },
+  "items": [
+    {
+      "id": "pcgamer-9675861753",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "It's time for Garfield's official Magic: The Gathering crossover now",
+      "summary": "No, not Richard Garfield. The other one.",
+      "url": "https://www.pcgamer.com/games/card-games/its-time-for-garfields-official-magic-the-gathering-crossover-now/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/TVzbnobhsgb835bGoYR4pg-1280-80.jpg",
+      "taken_at": 1778990194,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 97.50439999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-3819870632",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[체험기] 알라바스터 던, 크로스코드의 DNA를 이어받은 '진화'",
+      "summary": "'크로스코드' 개발사 래디컬 피쉬 게임즈의 신작 '알라바스터 던'이 얼리액세스로 출시됐습니다. 닉스의 저주로 황폐해진 세계를 구하는 주인공 주노의 여정을 담은 2.5D 액션 RPG로, 4종의 무기를 활용한 빠른 전투가 특징입니다. 현재 얼리액세스 분량은 전체의 약 20%이며, 개발사는 향후 콘텐츠를 보강해 정식 출시할 계획입니다.",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316396",
+      "thumb": "https://static.inven.co.kr/column/2026/05/14/news/thumb/s1864110915.jpg",
+      "taken_at": 1778987291,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 79.8343,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-287759872",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Desktop Reptiles - Solo Developer - desktop vivarium simulator about raising a leopard gecko",
+      "summary": "Hi r/Games , Happy Indie Sunday! I’m the solo developer behind Desktop Reptiles, a desktop vivarium simulator where you build a small habitat, care for a leopard gecko, and observe its behavior over time. The core idea is to turn the quiet joy of keeping a reptile enclosure into a small desktop game. You place hides, water dishes, lighting, substrate and hardscape, adjust the environment, then watch your gecko roam, drink, rest, hunt, hide, and slowly grow. Main features: - Build and decorate a ",
+      "url": "https://www.reddit.com/r/Games/comments/1tfg0vz/desktop_reptiles_solo_developer_desktop_vivarium/",
+      "thumb": null,
+      "taken_at": 1778994794,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 66.6869,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-9367602425",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Zombie Island Demo v2.2 - akshay33169 - 2D Top Down Zombie Shooter",
+      "summary": "Hi everyone, I just released Zombie Island Demo v2.2! This is a 2D Top Down Zombie Shooter game where you are on a mysterious island, and you must survive the waves of zombies while collecting loot and buying new weapons from the store. In this new release we added new features, including glowing effects on bullets and loot items, a visual inventory, and a complete grenade system. Download it on my store listing below. Please note this game is still in early release, so any feedback is appreciat",
+      "url": "https://www.reddit.com/r/Games/comments/1tffbkl/zombie_island_demo_v22_akshay33169_2d_top_down/",
+      "thumb": null,
+      "taken_at": 1778992604,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 61.2192,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-2061560769",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Hello Evervyone",
+      "summary": "Hey guys, I'm pretty new to indie dev. I'm thinking about making a reverse-horror game, but with a twist. Instead of just slashing people as a monster, you actually manage your lair and manipulate the investigators/teens with traps and illusions. Kind of like a strategy/management horror. Do you think players would dig this, or is the market too saturated with reverse-horror right now &#32; submitted by &#32; /u/DifficultBarber9439 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tffhuj/hello_evervyone/",
+      "thumb": null,
+      "taken_at": 1778993159,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 55.61149999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-346908161",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Former Valve writer Chet Faliszek has no interest in writing Half-Life 3: 'I don't want to touch that with a 10-foot pole'",
+      "summary": "\"Or even a grav gun separating me from that 10-foot pole.\"",
+      "url": "https://www.pcgamer.com/games/fps/former-valve-writer-chet-faliszek-has-no-interest-in-writing-half-life-3-i-dont-want-to-touch-that-with-a-10-foot-pole/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/V2YFkMTsYanzzDte3ZV3QS-1280-80.jpg",
+      "taken_at": 1778987494,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 54.3627,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-7286911002",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "prototyping a crate launching vehicle system in Unity",
+      "summary": "Very early prototype test. Still using placeholder models but the core mechanic is starting to come together. Feedback appreciated. &#32; submitted by &#32; /u/Fahad_Aseef [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tffv2h/prototyping_a_crate_launching_vehicle_system_in/",
+      "thumb": "https://external-preview.redd.it/d3hnYWs1cWFybTFoMQPUcuAvmQggIVp71KrLXDZKlsw5OT15fgpBzRLBaGGa.png?width=640&crop=smart&auto=webp&s=6b6be57cfe44006ba8fbca01510c02931d6bd2be",
+      "taken_at": 1778994276,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 50.437799999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-64419142",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Use your imagination to crack puzzles and save your life in this low poly game 🧠",
+      "summary": "&#32; submitted by &#32; /u/frankeno78 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tffo75/use_your_imagination_to_crack_puzzles_and_save/",
+      "thumb": "https://external-preview.redd.it/7WQHZFvNATGpJHxem-RB4fcCpn2f6VWNrSBjWsMd7MQ.png?width=640&crop=smart&auto=webp&s=c610cdc16e1e4e2686bab52832217ca6e9428d2b",
+      "taken_at": 1778993697,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 45.5693,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-6681894989",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "Looking for Game recommendation",
+      "summary": "I'm looking for Story driven game, not a 100+ hours plus game type like turnbase JRPGs. I'm feeling a little burnout from playing Yakuza Like a Dragon. (I'm usually main JRPG player but feeling burnout right now, Metaphor is in my list but doesn't feel like playing it right now) I'm looking for something like action, adventure, story driven game with the world that I could dissolve myself into. I'm craving for something like Mass Effect type story, (It doesn't need to be Sci-fi genre) with actio",
+      "url": "https://www.reddit.com/r/gaming/comments/1tffwwt/looking_for_game_recommendation/",
+      "thumb": "https://preview.redd.it/2odnoc5qrm1h1.png?width=140&height=78&auto=webp&s=0e0f973cdc4c4e3d5df8aa65f0d568128c0856d3",
+      "taken_at": 1778994438,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 44.5445,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-6052223558",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "If the whole world were reduced to just me and my older brother, would he fall in love with me?",
+      "summary": "I’m working on a narrative puzzle game called PondThing . The story follows a group of siblings who can’t see the faces of ordinary humans — yet they’re forced to live among them. That disconnect slowly twists each of them in different ways. The demo only hints at their relationships — quiet confessions, uneasy intimacy — but nothing explicit. The full game will go further: a married sister caught in a dangerous relationship, and another who falls in love with her own clone. &#32; submitted by &",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tfeulg/if_the_whole_world_were_reduced_to_just_me_and_my/",
+      "thumb": "https://preview.redd.it/tv588z6thm1h1.png?width=140&height=78&auto=webp&s=84843605720721435fb89db4bbb078d8f5f99f98",
+      "taken_at": 1778991175,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 41.7116,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-2931757800",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Our open world RPG in a fable world has been recently released",
+      "summary": "https://reddit.com/link/1tfesa7/video/rxjwspf0dm1h1/player Hi! Our game has been fully released after a year in Early Access and 2 years in development. https://store.steampowered.com/app/2669860/YAR_Forgotten_Throne/ This game started as a project for fun trying to get on the popular meme train, that should've been completed in 4 months. But then we got carried away, felt like it would be more fun if it was set in a fairy tale world and had proper story and world. We had fun ideas what can be a",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tfesa7/our_open_world_rpg_in_a_fable_world_has_been/",
+      "thumb": "https://external-preview.redd.it/OoaUk8vB6erZLnuWTjHQLaH7qhb5uB4r-aQr_cutSDs.jpeg?width=140&height=80&auto=webp&s=291b6c16afa8076889e4d4e701f3999576144446",
+      "taken_at": 1778990986,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 40.6924,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-6479046785",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Code: Terraform - Spyros - automation game where the Python code you write IS the gameplay",
+      "summary": "Hi all, I'm a big fan of automation games like Factorio and Satisfactory, colony sims like Oxygen Not Included, and engineering sims like Stationeers. I have a Computer Science background and always wanted a game where every system was actually controlled by Python code instead of by clicking buttons in a UI. So I built one. There is just something about terraforming sensors incrementally getting to a better and better phase, Planet Crafter has always been one of my top games and I have always e",
+      "url": "https://www.reddit.com/r/Games/comments/1tfemw4/code_terraform_spyros_automation_game_where_the/",
+      "thumb": null,
+      "taken_at": 1778990527,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 34.542899999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-9083457482",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Wizard Magic – Arkington Owen – An autistic wizard and their ADHD familiar in an RPG/bullet-hell adventure",
+      "summary": "Hi all! I’m sharing Wizard Magic , my solo project of over two years. I’ve put a lot of my life on hold to make this RPG because I don’t think there are enough games with autistic or neurodiverse protagonists. Inspired by Undertale, OneShot, Pokemon: Mystery Dungeon and In Stars and Time (ISAT mentioned!!!!), you’ll take control of a young wizard who picked today to attend university today because it seemed like a pretty good idea. Meet with a magic frog, anger a lizard and fight all sorts of we",
+      "url": "https://www.reddit.com/r/Games/comments/1tfem0h/wizard_magic_arkington_owen_an_autistic_wizard/",
+      "thumb": null,
+      "taken_at": 1778990465,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 34.2776,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-6065378138",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Indie Sunday Hub - May 17, 2026",
+      "summary": "Welcome to another Indie Sunday! This event starts at 12 AM EST and will run for 24 hours. Please read the below guidelines carefully before participating. If you have any questions please don't hesitate to send us a modmail. A reminder that Rule 8 is not enforced during this event for submissions which follow the participation guidelines. Submission Restrictions Games may be unreleased or finished You must provide video footage of the game in action. This can be a prototype, alpha, beta, etc. I",
+      "url": "https://www.reddit.com/r/Games/comments/1tfelnu/indie_sunday_hub_may_17_2026/",
+      "thumb": null,
+      "taken_at": 1778990441,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 34.175399999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-3779991875",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "My reboot/remake wishlist:",
+      "summary": "- Metal Arms: A Glitch in the System - Crimson Skies - Eternal Darkness - Rayman - Mark of Kri &#32; submitted by &#32; /u/RandyArgonianButler [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tffomg/my_rebootremake_wishlist/",
+      "thumb": null,
+      "taken_at": 1778993736,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 29.4959,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-1799827316",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "レッドブル×獅白ぼたんのコラボワッペンがもらえるキャンペーンがセブンイレブンで開催",
+      "summary": "2026年5月17日，レッドブル・ジャパンは，セブンイレブン限定で，「ホロライブ」所属のVTuber獅白ぼたんとのコラボキャンペーンを，5月20日から31日まで実施する。レッドブルを2本購入すると，「レッドブル×獅白ぼたんコラボピン付きワッペン」を先着でプレゼントするというものだ。",
+      "url": "https://www.4gamer.net/games/760/G076029/20260516004/",
+      "thumb": null,
+      "taken_at": 1778979600,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 28.881999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-7730750178",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Projeto Obscure Mediveal Um Jogo De Terror Gore é Violento",
+      "summary": "Rituais de sangue aconteceram nesta vila em nome de um rei sádico que queria se livrar de todas as bruxas. No entanto, uma maldição foi lançada, mergulhando a vila nas profundezas da escuridão. Este é o meu projeto, que futuramente estará disponível para PC no Steam e na Epic Games. Blood rituals happened here in this village all in the name of a sadistic king who wanted to get rid of all the witches, however a curse is cast, throwing the village into the depths of darkness. This is my project w",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tfd1uo/projeto_obscure_mediveal_um_jogo_de_terror_gore_é/",
+      "thumb": null,
+      "taken_at": 1778985843,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 23.429699999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-6283625142",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "James Cameron Wants to Make Avatar 4 and 5 'in Half the Time and Two-Thirds the Cost' But Will Take 1 Year to Figure It Out",
+      "summary": "James Cameron said he's \"looking at some new technologies\" to try and get Avatar 4 and 5 made \"in half the time for two-thirds of the cost,\" but it's going to take a year just to figure it out.",
+      "url": "https://www.ign.com/articles/james-cameron-wants-to-make-avatar-4-and-5-in-half-the-time-and-two-thirds-the-cost-but-will-take-1-year-to-figure-it-out",
+      "thumb": "https://assets-prd.ignimgs.com/2025/12/01/avatarthumb2-1764618624734.png",
+      "taken_at": 1778969883,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 20.6157,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "pcgamer-53957830",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Lego racing game 2K Drive will be delisted next week, but online multiplayer won't shut down until next year",
+      "summary": "It released just three years ago.",
+      "url": "https://www.pcgamer.com/games/racing/lego-racing-game-2k-drive-will-be-delisted-next-week-but-online-multiplayer-wont-shut-down-until-next-year/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/YtbUHSyB4WDRkof9ykcKDU-1280-80.jpg",
+      "taken_at": 1778973614,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 20.3994,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "rps-6512815950",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "Palestinian pseudo-stealth game Dreams on a Pillow paints a difficult, poetic picture in its first look at gameplay",
+      "summary": "Back in late 2024 , Palestinian developer Rasheed Abueideh announced Dreams on a Pillow , a \"pseudo-stealth adventure game.\" It's set during the Nakba, the 1948 ethnic cleansing that saw Israel violently displacing Palestinians and dispossessing their land and homes, serving as Abueideh's emotional response to the attacks on Gaza that began in 2023. And now, as a second round of funding continues, a first look at gameplay has been offered up. Read more",
+      "url": "https://www.rockpapershotgun.com/palestinian-pseudo-stealth-game-dreams-on-a-pillow-paints-a-difficult-poetic-picture-in-its-first-look-at-gameplay",
+      "thumb": "https://assetsio.gnwcdn.com/dreams-on-a-pillow.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778968454,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 19.116999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-2395726913",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Xbox Is Apparently Rebranding to XBOX",
+      "summary": "Xbox seems to have rebranded…to \"XBOX.\"",
+      "url": "https://www.ign.com/articles/xbox-is-apparently-rebranding-to-xbox",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/06/screenshot-2026-05-06-162907-1778081413883.png",
+      "taken_at": 1778956297,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 16.3142,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_indie-7594786691",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Road To Virtue Playtesting",
+      "summary": "Hello reddit, Me and my friends made a game. It is our first one. Would anyone mind playing it and recording your feedback here: https://docs.google.com/forms/d/e/1FAIpQLScbrxLW-ALuTZSWNpWvLBQ0NkjX0ve4idWkKIw1atLqLFfZkg/viewform?usp=dialog The game is called Road To Virtue. Here is the link: https://store.epicgames.com/p/road-to-virtue-70d2a1 &#32; submitted by &#32; /u/Unusual-Bread3756 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tfbdel/road_to_virtue_playtesting/",
+      "thumb": null,
+      "taken_at": 1778980991,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 15.981699999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-7261198629",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Mixtape Publisher Refutes Claim That Expired Music Licenses Will Cause the Game to Be Delisted",
+      "summary": "Mixtape is packed with licensed music from artists like Devo and The Smashing Pumpkins, but Annapurna Interactive and Beethoven and Dinosaur have told fans not to worry about the game potentially being delisted down the road.",
+      "url": "https://www.ign.com/articles/mixtape-publisher-refutes-claim-that-expired-music-licenses-will-cause-the-game-to-be-delisted",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/16/mixtape-1778962078505.png",
+      "taken_at": 1778962549,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 15.2138,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "pcgamer-8932695900",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Check your inbox: Steam Controller reservations are coming through",
+      "summary": "Not everyone got an email, but if you did, you'll have to act fast.",
+      "url": "https://www.pcgamer.com/hardware/check-your-inbox-steam-controller-reservations-are-coming-through/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/bNS7VaeK5ptjBJXDZYZfdY-1280-80.jpg",
+      "taken_at": 1778959583,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 15.031099999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-8600039682",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "The Best Deals Today: Hyrule Warriors: Age of Imprisonment, Metroid Prime 4, Sonic Racing: CrossWorlds, and More",
+      "summary": "",
+      "url": "https://www.ign.com/articles/best-deals-for-may-16-2026",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/13/hyrulewarriors-1778704729327.jpg",
+      "taken_at": 1778961672,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 14.7273,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_indie-8175696631",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "What do you think of the take-off animation of my sci-fi cosy rogue lite ?",
+      "summary": "Hi ! We're currently developing a plant based roguelite and I needed a cool UI for the spaceship... What do you think ? If you're interested in the game, it's called Seeding The Wasteland and you can already wishlist it on Steam ! https://store.steampowered.com/app/4444510/Seeding_The_Wasteland/?beta=1 &#32; submitted by &#32; /u/zacharieg14 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tf9c7q/what_do_you_think_of_the_takeoff_animation_of_my/",
+      "thumb": "https://external-preview.redd.it/MDR5b3NlcmQ2bDFoMflenQMtfZXQfMKB9WvjIjM6PDcpUCYj5GeeVlwFRCYo.png?width=320&crop=smart&auto=webp&s=e36b13c63f1abeaac5548514b597c268bac86517",
+      "taken_at": 1778975307,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 14.062999999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-3087735232",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "GTA roleplayers built a secret Boiler Room rave beneath Los Santos, complete with DJs, club photographers, biker security, and a custom party drug",
+      "summary": "With nearly 100 players packed into an underground bunker.",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-roleplayers-built-a-secret-boiler-room-rave-beneath-los-santos-complete-with-djs-club-photographers-biker-security-and-a-custom-party-drug/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/jFXRXuXsDJEuFhuSoF2dGT-1280-80.jpg",
+      "taken_at": 1778954400,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 12.670699999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-9952464747",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "The Midnight Cannibal — Arcade Horror Gameplay",
+      "summary": "Hey folks, I’d like to share my new game, The Midnight Cannibal — a fast-paced arcade game where you dash around biting everyone… yeah. This is the first chapter: The Boogeyman , set in a neighborhood at night. The kids have no idea what’s lurking in the dark. I’ve been working on this project since March, and I recently finished the core gameplay for this chapter, so I wanted to show it here. Hope you like it! &#32; submitted by &#32; /u/FineEchidna8545 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tfbiic/the_midnight_cannibal_arcade_horror_gameplay/",
+      "thumb": "https://external-preview.redd.it/ZXBnZm1vOXlvbDFoMUxcrWgXRO4gC84Ybzc7w_fXf9yolmm_AktmTcol2cpS.png?width=640&crop=smart&auto=webp&s=c202880d18387d21b6bf97edfea4a1e88e088a77",
+      "taken_at": 1778981388,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 12.3256,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-5205881269",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "PS5 game player counts are finally coming — but it won't help you",
+      "summary": "PlayStation is beta testing the Community Activity widget for the Community Hub on PS5, but I don't think they should add this feature",
+      "url": "https://www.polygon.com/ps5-player-count-feature-community-activity/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/04/marathon-rooks-ganging-up-header-2.jpg",
+      "taken_at": 1778952507,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 11.958099999999998,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "rps-1339901381",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "Mixtape will be safe from a music licensing related delisting, ensured by its developer paying extra for the privilege",
+      "summary": "The first thought that probably arose for most people upon seeing Mixtape for the first time was probably something along the lines of, \"that's a lot of licensed music, wonder how long it takes before it's delisted.\" Music licensing is notoriously a pain in the ass, and considering how embedded into the story every song that's in the game is, it certainly seemed like Mixtape was doomed. But according to its devs, there's nothing to worry about. Read more",
+      "url": "https://www.rockpapershotgun.com/mixtape-will-be-safe-from-a-music-licensing-related-delisting-ensured-by-its-developer-paying-extra-for-the-privilege",
+      "thumb": "https://assetsio.gnwcdn.com/mixtape-firework.png?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778963684,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 11.780999999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "rps-3851665292",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "Sleepover is a cosmic horror visual novel about the last person on earth and the stranger who shows up at their front door",
+      "summary": "A concept that quite genuinely keeps me up at night is the idea of waking up one day and every other person on Earth disappearing. Couldn't possibly tell you where this fear of mine stems from, all I can say is that I would imagine such a reality to be a cosmically nightmarish one. Enter Sleepover, a post-apocalyptic cosmic-horror visual novel that sees in that exact fear of mine, the key difference being that its protagonist isn't alone after all. Read more",
+      "url": "https://www.rockpapershotgun.com/sleepover-is-a-cosmic-horror-visual-novel-about-the-last-person-on-earth-and-the-stranger-who-shows-up-at-their-front-door",
+      "thumb": "https://assetsio.gnwcdn.com/sleepover_vkKQc4b.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778955097,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 11.643099999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-6188072075",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Claims that Mixtape will be delisted over music licenses are 'a lie,' says publisher",
+      "summary": "The developer paid for perpetual music licenses to avoid that problem.",
+      "url": "https://www.pcgamer.com/games/adventure/claims-that-mixtape-will-be-delisted-over-music-licenses-are-a-lie-says-publisher/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/epvFLGYveLeWLMQEFKAmgJ-1280-80.png",
+      "taken_at": 1778960470,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 11.6319,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-1617988169",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Ancient MMO Final Fantasy 11 still has new things on the horizon 24 years after launch",
+      "summary": "The other Final Fantasy MMO is still doing its thing.",
+      "url": "https://www.pcgamer.com/games/mmo/ancient-mmo-final-fantasy-11-still-has-new-things-on-the-horizon-24-years-after-launch/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/JcRPfaEG5Y5xUXLbPrZzok-1280-80.jpg",
+      "taken_at": 1778960016,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 11.445699999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-6501036781",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Why is Dropout changing so much? CEO Sam Reich explains",
+      "summary": "Game Changer host and Dropout CEO Sam Reich on how all the company's 2026 innovations are doing, from the board game Kickstarter to the Superfan tier.",
+      "url": "https://www.polygon.com/dropout-ceo-sam-reich-interview-kickstarter-2026/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/game-changer-s8-sam-reich-photo-2.jpg",
+      "taken_at": 1778959820,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 11.3673,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "reddit_indie-8377164320",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "How I do textures for my upcoming game.",
+      "summary": "&#32; submitted by &#32; /u/tr1beontwitch [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tfb21e/how_i_do_textures_for_my_upcoming_game/",
+      "thumb": "https://external-preview.redd.it/dW43eWkyNnhrbDFoMfQjocpRoszMihCTu7H8z1hTkdPBUq5U_mXAlvmTJNun.png?width=640&crop=smart&auto=webp&s=741ca459723b859adff5a712cdfb783a4b8e99cd",
+      "taken_at": 1778980086,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 11.2693,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-8967998204",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "The Boys Showrunner Says Season 5 Vought Rising Nods Were Not the Result of 'Craven Commercialism'",
+      "summary": "The Boys showrunner Eric Kripke has said that the recent nods to the upcoming Vought Rising spinoff in Season 5 were never meant to \"feel like it's just a commercial.\"",
+      "url": "https://www.ign.com/articles/the-boys-showrunner-says-season-5-vought-rising-nods-were-not-the-result-of-craven-commercialism",
+      "thumb": "https://assets-prd.ignimgs.com/2026/04/03/theboys-season5-premiere-blogroll-02-1775242585485.jpg",
+      "taken_at": 1778942377,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 10.9942,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "kotaku-2315305082",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Forza Horizon 6 Lets You Race A Gundam And It Looks Awesome",
+      "summary": "The ‘Mech My Day’ showcase offers the most absurd match up in motorsport history",
+      "url": "https://kotaku.com/forza-horizon-6-pits-your-acura-against-a-giant-mech-2000696781",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/gundam.jpg",
+      "taken_at": 1778956056,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 10.705099999999998,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "pcgamer-3751812801",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "MercurySteam announces 'difficult and painful' job cuts as its God of War-inspired hack 'n' slash arrives on Steam",
+      "summary": "The developer of Blades of Fire has initiated a \"workforce adjustment process.\"",
+      "url": "https://www.pcgamer.com/games/action/mercurysteam-announces-difficult-and-painful-job-cuts-as-its-god-of-war-inspired-hack-n-slash-arrives-on-steam/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/yaRVUnSTn6av5vNtpoZ5eY-1280-80.jpg",
+      "taken_at": 1778940000,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 10.6967,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-1968588740",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "MemoryCore combines the best PS1 games in one stylish new TTRPG",
+      "summary": "The first game anthology features modules based on six classic games including Resident Evil and Tekken.",
+      "url": "https://www.polygon.com/memorycore-90s-games-interview/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/memorycore_box_2.jpg",
+      "taken_at": 1778958020,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 10.6848,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "ign-6371062113",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Sonic the Hedgehog 4 Director Shares Behind-the-Scenes Look at Metal Sonic as Filming Wraps",
+      "summary": "Sonic the Hedgehog 4 director Jeff Fowler has published a first look at Metal Sonic as filming on the latest movie comes to an end.",
+      "url": "https://www.ign.com/articles/sonic-the-hedgehog-4-director-shares-behind-the-scenes-look-at-metal-sonic-as-filming-wraps",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/16/sonic-the-hedgehog-4-metal-sonic-1778940983644.png",
+      "taken_at": 1778941067,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 10.6449,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "rps-8604765660",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "Fence off a free-spirited horse that can't stop eating grass in the daily puzzle game enclose.horse",
+      "summary": "There is a horse in the middle of the field. It wants to escape, run free, to graze upon the grass where it thinks it is greener. The horse knows not of the dangers of the outside world, for it is simply a horse. So what must we do? We must put up enclosures to form a pasture for the horse, yet we only have so many walls to use, so we must be choosy. This, more or less, is enclose.horse , a daily puzzle game where you must stop a horse from running away to eat grass. Read more",
+      "url": "https://www.rockpapershotgun.com/fence-off-a-free-spirited-horse-that-cant-stop-eating-grass-in-the-daily-puzzle-game-enclosehorse",
+      "thumb": "https://assetsio.gnwcdn.com/enclose-horse.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778951178,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 10.3362,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-8530894021",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "John Rambo Prequel Movie Casts James Franco in Small Role",
+      "summary": "Upcoming action movie prequel John Rambo has reportedly added James Franco to its cast.",
+      "url": "https://www.ign.com/articles/john-rambo-prequel-movie-casts-james-franco-in-small-role",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/16/james-franco-1778950059393.png",
+      "taken_at": 1778950593,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 10.2774,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "gamespot-9721872194",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "This Giant Hellboy Collection Includes Over 100 Comics Written And Illustrated By Mike Mignola",
+      "summary": "Mike Mignola is one of the most celebrated modern comic writers and illustrators, best known for creating Dark Horse's iconic demonic paranormal investigator, Hellboy, and the rest of the B.P.R.D. (Bureau of Paranormal Research and Defense) extended universe. His dark and imaginative universe now spans several decades, and knowing where to start can be an intimidating task for newcomers. However, for a limited-time, you can grab over 100 digital edition comics and graphic novels from Mignola's c",
+      "url": "https://www.gamespot.com/articles/this-giant-hellboy-collection-includes-over-100-comics-written-and-illustrated-by-mike-mignola/1100-6539968/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1701/17013431/4696789-hbcollect.jpg",
+      "taken_at": 1778953260,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 10.1332,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-209000638",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Release That Witch is the revolution fantasy fans of Sentenced to Be a Hero shouldn’t miss",
+      "summary": "Release That Witch more interested in rebuilding the world than merely saving it",
+      "url": "https://www.polygon.com/sentenced-to-be-a-hero-release-that-witch-anime/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/release-that-witch-donghua.jpg",
+      "taken_at": 1778954420,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 9.508799999999999,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "ign-9461917499",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "In the Grey: Jake Gyllenhaal Says He Was 'Rooting' for Henry Cavill to 'Remember His Next Line' in Guy Ritchie’s Improv-Heavy Film",
+      "summary": "Jake Gyllenhaal reveals he and Henry Cavill didn't meet until day one of filming Guy Ritchie’s improv-heavy action thriller In the Grey.",
+      "url": "https://www.ign.com/articles/jake-gyllenhaal-henry-cavill-in-the-grey",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/ugr-blogroll-1778886747909.jpg",
+      "taken_at": 1778947200,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 9.3464,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_games-8563138017",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Splitgate Developer 1047 Games is Working on a Spiritual Successor to Titanfall, Dubbed ‘Empulse’",
+      "summary": "&#32; submitted by &#32; /u/Turbostrider27 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1tf8mwb/splitgate_developer_1047_games_is_working_on_a/",
+      "thumb": null,
+      "taken_at": 1778973449,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 9.1707,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-8859346196",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Mixtape will be safe from a music licensing related delisting, ensured by its developer paying extra for the privilege",
+      "summary": "&#32; submitted by &#32; /u/Tvilantini [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1tf8kh4/mixtape_will_be_safe_from_a_music_licensing/",
+      "thumb": null,
+      "taken_at": 1778973272,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 9.087399999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-6036107716",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Sink your teeth into V Rising for free this weekend, and you can grab the full game for less than half price",
+      "summary": "All DLC is also 20% off.",
+      "url": "https://www.pcgamer.com/games/survival-crafting/sink-your-teeth-into-v-rising-for-free-this-weekend-and-you-can-grab-the-full-game-for-less-than-half-price/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/nGbwMCMdJMGxtDNk8iVdmg-1280-80.png",
+      "taken_at": 1778932800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 9.0839,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-3681130108",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "The Ghost",
+      "summary": "Game: Ghost of Tsushima &#32; submitted by &#32; /u/LawrenceOnKeyboard [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tfbxz3/the_ghost/",
+      "thumb": "https://preview.redd.it/841f4fypsl1h1.jpeg?width=640&crop=smart&auto=webp&s=a7004eb41f7a2390cf4510427bff6a85590cf1cb",
+      "taken_at": 1778982633,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 8.68,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-4078338776",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Which Steam capsule do you prefer?",
+      "summary": "I could use some advice, is the new capsule better? Are there parts of the old one you prefer? I wasn't getting many clicks on the original, and I feel like it was because it didn't really show that it's a card game very well. So, I made this new one in hopes of getting my game closer to its target audience. All feedback is appreciated Thank you for the help :) Oh and here's the Steam page, in case you wanna see it in the store or support me with a wishlist. &#32; submitted by &#32; /u/JPLDevWor",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tf79eb/which_steam_capsule_do_you_prefer/",
+      "thumb": "https://preview.redd.it/41oqg5i4pk1h1.png?width=640&crop=smart&auto=webp&s=813f112a7fc42fbe4315eaf718ef8685cd94d72e",
+      "taken_at": 1778969849,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 8.554699999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-581635081",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Pokémon TCG's Chaos Rising set proves art matters more than gameplay",
+      "summary": "Pokémon TCG’s Chaos Rising set proves the game’s biggest strength isn’t competitive gameplay — it’s stunning collectible art and illustration rares.",
+      "url": "https://www.polygon.com/pokemon-chaos-rising-best-cards-illustration-rares/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/mega-draglge-ex-2-copy-2.jpg",
+      "taken_at": 1778950819,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 8.533,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "pcgamer-7631479192",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "MMOs are better if classes are imbalanced—you just need to do it on purpose",
+      "summary": "Perfectly balanced, as all things shouldn't be.",
+      "url": "https://www.pcgamer.com/games/mmo/mmos-are-better-if-classes-are-imbalanced-you-just-need-to-do-it-on-purpose/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/U4B9TDFiUzwbkjPSAP4RBR-1280-80.png",
+      "taken_at": 1778950800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 8.528799999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_pcgaming-5704099457",
+      "source_id": "reddit_pcgaming",
+      "source_name": "Reddit r/pcgaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Forza Horizon 6 Has Made Over $140 Million from Premium Edition",
+      "summary": "&#32; submitted by &#32; /u/Turbostrider27 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/pcgaming/comments/1tf955x/forza_horizon_6_has_made_over_140_million_from/",
+      "thumb": "https://external-preview.redd.it/syViA4CbBZhoQ9GnIhb0UTyfdtbuXm83_95SVAXdmsY.jpeg?width=640&crop=smart&auto=webp&s=f15a1fd7ae70c2654ac43e848388fd6121da882b",
+      "taken_at": 1778974794,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 8.204699999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-6167767118",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "4 best horror books to read if you love The Backrooms",
+      "summary": "While liminal spaces thrive in visual mediums, novelists have had their own success",
+      "url": "https://www.polygon.com/4-books-for-readers-who-have-been-stuck-in-the-backrooms/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/04/backrooms.png",
+      "taken_at": 1778949018,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 8.106,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "kotaku-7164857483",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Prolific Repacker Of Pirated Games Announces They’re Stepping Back To Focus On Law Degree",
+      "summary": "You wouldn't download a law degree",
+      "url": "https://kotaku.com/prolific-repacker-of-pirated-games-announces-theyre-stepping-back-to-focus-on-law-degree-2000696765",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/Image-from-the-You-Wouldnt-Steal-A-Car-PSA-by-Warner-Bros-1280x733.jpg",
+      "taken_at": 1778955051,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.7756,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "polygon-1757078978",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Inkonbini review: finding peace at a Japanese convenience store",
+      "summary": "Inkonbini is a very relaxing and cozy slice-of-life, narrative-focused game. It makes for a great weekend binge.",
+      "url": "https://www.polygon.com/inkonbini-review-nintendo-switch-ps5-xbox-series-x-pc/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/inkonbini-key-art-cropped.jpg",
+      "taken_at": 1778947219,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.7139999999999995,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "pcgamer-5322044141",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "This game about being a chaotic mage might be the best indie immersive sim you can play, as I learned after destroying a mime's house with magnetism",
+      "summary": "Rhell: Warped Worlds & Troubled Times is a delight.",
+      "url": "https://www.pcgamer.com/games/sim/this-game-about-being-a-chaotic-mage-might-be-the-best-indie-immersive-sim-you-can-play-as-i-learned-after-destroying-a-mimes-house-with-magnetism/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/7Dv33VbEeouujpTHpoaMPH-1280-80.jpg",
+      "taken_at": 1778947200,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.709799999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-7633221299",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "For fans of LIMBO / INSIDE, I recommend BIONIC BAY",
+      "summary": "I never heard of this game until recently and bought it because it’s currently $4.99 on PSN, and I’ve been blown away by it. The visuals are stunning and the gameplay is solid. Highly recommended for fans of cinematic 2D platformers. &#32; submitted by &#32; /u/filmeswole [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tfb925/for_fans_of_limbo_inside_i_recommend_bionic_bay/",
+      "thumb": null,
+      "taken_at": 1778980645,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.525699999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-6672139613",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "토탈워 워해머3에 \"범 내려온다\"",
+      "summary": "크리에이티브 어셈블리의 대전략 시뮬레이션 '토탈워: 워해머3'의 신규 DLC로 '케세이' 진영 신규 유닛들인 '호랑이 전사'들이 대거 투입된다. 3갈래로 나뉘는 엘프, 공룡 탄 공룡, 메카 관우 옹기봇 등 온갖 독특한 테마의 유닛들이 대거 등장하는 시리즈답게, 이번에 추가되는 유닛 로스터 역시 만만치 않은 판타지를 보여준다. 이번 DLC의 핵심은 '백호",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316495",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/i1119542674.jpg",
+      "taken_at": 1778938280,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 7.386399999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-5850018720",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Is Westworld coming back? Fans of the HBO show just got some terrible news",
+      "summary": "Westworld became the exact corporate nightmare it warned us about",
+      "url": "https://www.polygon.com/hbos-westworld-show-is-officially-dead-right/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/chorus/uploads/chorus_asset/file/7220129/westworld-body-photo_1920.0.jpg",
+      "taken_at": 1778945419,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.352099999999999,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "ign-4570657570",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Want an Easy TV Villain? Give Them a Cybertruck",
+      "summary": "How did the Tesla Cybertruck become television shorthand for sucky characters? Here's a brief, incomplete history of the vehicle on TV.",
+      "url": "https://www.ign.com/articles/want-an-easy-tv-villain-give-them-a-cybertruck",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/the-deep-cybertruck-thumb-2-1778885827310.jpg",
+      "taken_at": 1778936400,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.154,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "rps-9569999778",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "For its 24th anniversary, Final Fantasy 11 is getting a free trial upgrade that lets you play it for as long as you like",
+      "summary": "Final Fantasy 11 is the MMO that just keeps on ticking. It's the game's 24th anniversary today, which still isn't old enough to make it the longest running MMO, but does make it old enough for those of you that played it when it came out to have grandkids. The game isn't just still running either, but getting new updates too, with a livestream held on the Japanese Square Enix YouTube channel yesterday marking the anniversary with details of what's still to come. Quite notably is the fact that th",
+      "url": "https://www.rockpapershotgun.com/for-its-24th-anniversary-final-fantasy-11-is-getting-a-free-trial-upgrade-that-lets-you-play-it-for-as-long-as-you-like",
+      "thumb": "https://assetsio.gnwcdn.com/final-fantasy-11-free-trial.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778948115,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.1071,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "polygon-8215524678",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "No, Mixtape won't be delisted because of its licensed music",
+      "summary": "Annapurna Interactive and Beethoven & Dinosaur have confirmed that Mixtape's music licenses exist in perpetuity",
+      "url": "https://www.polygon.com/mixtape-not-getting-delisted/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/mixtape-1.jpg",
+      "taken_at": 1778943683,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.029399999999999,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "polygon-4591333419",
+      "source_id": "polygon",
+      "source_name": "Polygon",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Why is Tau Ceti the sci-fi setting for Marathon, Project Hail Mary, and more?",
+      "summary": "Tau Ceti is the star system of choice for Marathon, Project Hail Mary, and Directive 8020, among others. Here's why.",
+      "url": "https://www.polygon.com/tau-ceti-marathon-directive-8020-project-hail-mary/",
+      "thumb": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/03/mcdprha_mg032.jpg",
+      "taken_at": 1778943681,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.029399999999999,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "pcgamer-9360784724",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "I've been pixelating things again for our latest quiz—this time you have to guess which 10 videogame characters I've mangled",
+      "summary": "It's like going back to the 1980s.",
+      "url": "https://www.pcgamer.com/games/ive-been-pixelating-things-again-for-our-latest-quiz-this-time-you-have-to-guess-which-10-videogame-characters-ive-mangled/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/4YuGjjpe4dETPci2stUsKP-1280-80.png",
+      "taken_at": 1778943600,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 7.0147,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-7381832245",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "The Internet Reacts To Xbox Trying To Rebrand As XBOX",
+      "summary": "This is no longer an Xbox, it's now an XBOX",
+      "url": "https://kotaku.com/the-internet-reacts-to-xbox-trying-to-rebrand-as-xbox-2000696758",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/The-latest-Xbox-logo-1280x720.jpg",
+      "taken_at": 1778940909,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 7.0126,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ruliweb_news-4225616462",
+      "source_id": "ruliweb_news",
+      "source_name": "루리웹 뉴스",
+      "authority": 1.3,
+      "region": "kr",
+      "title": "내가 진짜 퍼리는 아닌데...  테일즈샵 ‘사니양 연구실’ 시크릿 세미나 현장",
+      "summary": "스토리 중심 게임 개발사 테일즈샵이 약 7년 만에 개최한 오프라인 이벤트 ‘사니양 연구실 - 시크릿 세미나’가 팬들의 뜨거운 호응 속에 마무리됐다.16일 서울 서초구 흰물결 아트센터에서 열린 이번 행사는 온라인 콘텐츠였던 ‘사니양 연...",
+      "url": "https://bbs.ruliweb.com/news/read/224656",
+      "thumb": "https://img.ruliweb.com/data/news/tn/26/05/17/19e31e44628_usfdnj.webp",
+      "taken_at": 1778954400,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 6.7305,
+      "_diversity_note": "매체 N=15"
+    },
+    {
+      "id": "kotaku-7801797718",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Stores At A Loss For Words After Being Sent Sealed Copies Of Rare PS4 Game Poop Slinger",
+      "summary": "Collectors, retailers and influencers alike attempt to figure out which end of the gift horse these mystery packages are coming from",
+      "url": "https://kotaku.com/stores-at-a-loss-for-words-after-being-sent-sealed-copies-of-rare-ps4-game-poop-slinger-2000696767",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/well-done-cows.jpg",
+      "taken_at": 1778948154,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 6.344799999999999,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_gaming-8093655803",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "I really enjoy this type of humor (game is A Knight's Quest)",
+      "summary": "&#32; submitted by &#32; /u/OVERDRlVE [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tfab7n/i_really_enjoy_this_type_of_humor_game_is_a/",
+      "thumb": "https://preview.redd.it/kvg3r4koel1h1.png?width=640&crop=smart&auto=webp&s=a0274848a36f99678bd47aa584e42bf636302647",
+      "taken_at": 1778977951,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 6.3238,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-3901274813",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Call of the Elder Gods - Review Thread",
+      "summary": "Game Information Game Title : Call of the Elder Gods Platforms : PlayStation 5 (May 12, 2026) Nintendo Switch 2 (May 12, 2026) PC (May 12, 2026) Xbox Series X/S (May 12, 2026) Nintendo Switch (May 12, 2026) Trailer : Developer : OutBlueGames Publisher : Kwalee Ltd Review Aggregator : OpenCritic - 79 average - 64% recommended - 25 reviews Critic Reviews 4News.it - Riccardo Amalfitano - Italian - 7.9 / 10 Call of the Elder Gods is a successful sequel, particularly when judged on the strength of it",
+      "url": "https://www.reddit.com/r/Games/comments/1teyqr0/call_of_the_elder_gods_review_thread/",
+      "thumb": null,
+      "taken_at": 1778949755,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 6.2545,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-1193035753",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[인터뷰] 태극마크를 향한 '바이퍼' 박도현의 진심",
+      "summary": "현재 LPL(중국) BLG 소속으로 활약 중인 '바이퍼' 박도현이 2026 아이치·나고야 아시안게임 LoL 국가대표를 향한 강력한 의지를 드러냈다. 박도현은 LCK와 LPL을 오가며 월드 챔피언십 우승, 퍼스트 스탠드 2회 우승 등을 달성한 화려한 커리어의 베테랑 원거리 딜러다. '바이퍼' 박도현은 인터뷰를 통해 아시안게임이 갖는 무게감을 강조했다. 그는",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316497",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1583676366.jpg",
+      "taken_at": 1778941193,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.9388,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-8859087110",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "6 million more people are using Firefox because of new EU rules, which is good news for Chrome haters like me",
+      "summary": "Other third-party browsers are seeing upticks too.",
+      "url": "https://www.pcgamer.com/software/6-million-more-people-are-using-firefox-because-of-new-eu-rules-which-is-good-news-for-chrome-haters-like-me/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/35Tu4ygUdh9vg92iSHasJB-1280-80.jpg",
+      "taken_at": 1778936400,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.901,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-1807797930",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "週刊Steam広場 第153号：協力プレイで遊べる「Subnautica 2」や，ホテル経営シム「Hotel Architect」が発売に",
+      "summary": "今週発売されたSteamの注目タイトルやセール情報をお届けする「週刊Steam広場」。今週は，異星の海を舞台とする水中サバイバルアドベンチャー「Subnautica2」や，世界各地を渡り歩いて豪華ホテルを設計・運営するコンストラクション＆経営シミュレーション「HotelArchitect」が発売された。",
+      "url": "https://www.4gamer.net/games/038/G003821/20260516003/",
+      "thumb": null,
+      "taken_at": 1778922000,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 5.8555,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-3181731750",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[LCK] \"너희가 누굴 내보낸 건지 알려줄게\"",
+      "summary": "BNK 피어엑스가 16일 종로 치지직 롤파크에서 진행된 '2026 LoL 챔피언스 코리아(LCK)' 정규 시즌 2라운드 농심 레드포스전에서 2:0으로 승리했다. '트레이드 더비'로 많은 관심이 쏠렸는데, 경기에 앞서 &quot;제대로 보여주겠다&quot;고 각오를 다졌던 '태윤' 김태윤의 활약과 함께 승리를 꿰찼다. 이날 기자실을 찾은 '태윤'은 한결 여유로운 표정이었다.",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316496",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1405505248.jpg",
+      "taken_at": 1778939441,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.693099999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-2291079181",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "So far, my favorite thing about Forza Horizon 6 is that the collectible mascots you drive into change facial expressions after you smash them, which means they experience some form of sentience, and you're causing them physical pain.",
+      "summary": "&#32; submitted by &#32; /u/fredthegreat [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf9hi6/so_far_my_favorite_thing_about_forza_horizon_6_is/",
+      "thumb": "https://preview.redd.it/ahsjj5s48l1h1.jpeg?width=640&crop=smart&auto=webp&s=81922915bdac6870bc840dc0dc2beb57651cbfd9",
+      "taken_at": 1778975709,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.547499999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-6312758799",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[LCK] 8연패 농심 최인규 감독, \"현 로스터, 스크림에서 가능성 보여\"",
+      "summary": "농심 레드포스가 16일 종로 치지직 롤파크에서 열린 '2026 LoL 챔피언스 코리아(LCK)' 정규 시즌 2라운드, BNK 피어엑스전에서 2:0으로 승리했다. 1, 2세트 모두 유리한 고지를 점하며 시작했으나, 유리함을 승리로 연결하지 못한다는 문제점을 또다시 노출하면서 끝내 패했다. 오늘로 농심 레드포스는 8연패를 기록했다. 다음은 최인규 감독, '스카",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316494",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1467214260.jpg",
+      "taken_at": 1778938272,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.538399999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-8467717206",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "「アズールレーン」に新規UR「ゲッツ・フォン・ベルリヒンゲン」「U-2501」が参戦。5月20日にスタートするイベントの内容が明らかに",
+      "summary": "Yostarは本日（2026年5月16日），スマホアプリ「アズールレーン」の番組を配信し，ゲーム内イベント「聖印前の同盟」を5月20日から6月12日のメンテナンスまで開催すると発表した。これに合わせて，UR戦艦「ゲッツ・フォン・ベルリヒンゲン」とUR潜水艦「U-2501」を含む，鉄血陣営の新たな艦船が実装される。",
+      "url": "https://www.4gamer.net/games/390/G039084/20260516005/",
+      "thumb": null,
+      "taken_at": 1778932627,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.429899999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-4993651198",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[LCK] 농심 유니폼 던져버린 '태윤'...BNK 피어엑스, 농심에 2:0 완승",
+      "summary": "16일 종로 치지직 롤파크에서 열린 '2026 LoL 챔피언스 코리아(LCK)' 정규 시즌 2라운드서 BNK 피어엑스와 농심 레드포스가 만났다. 2라운드를 앞두고 원딜 트레이드를 진행한 팀 간의 대결로 많은 이목이 쏠렸는데, '태윤' 김태윤이 속한 BNK 피어엑스가 2:0으로 승리를 거뒀다. 1세트, 먼저 리드를 잡은 건 농심 레드포스였다. 카운터 정글을",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316493",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1956286051.jpg",
+      "taken_at": 1778936932,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.3697,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "rps-5422647138",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "Subnautica 2's no-killing ethos \"will be a continued point of resistance\" among players, say Unknown Worlds, but they have no plans to change it",
+      "summary": "With the early access release of otherworldly diving sim Subnautica 2 , developers Unknown Worlds are dealing with some familiar criticisms about the new survival game 's absence of weaponry or outright combat elements. Speaking to RPS among other journalists in a roundtable interview, design lead Anthony Gallegos acknowledged that Subnautica 2's emphasis on living with, rather than confronting larger, dangerous organisms will be \"a continued point of resistance\" for some players, while reiterat",
+      "url": "https://www.rockpapershotgun.com/subnautica-2s-no-killing-ethos-will-be-a-continued-point-of-resistance-among-players-say-unknown-worlds-but-they-have-no-plans-to-change-it",
+      "thumb": "https://assetsio.gnwcdn.com/20260511210006_1.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778936400,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.3053,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-5746435493",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "미국 엔터 소프트웨어 협회, \"게임보호법이 산업 발달 저해한다\"",
+      "summary": "ESA는 소비자 운동인 ‘스톱 킬링 게임즈’가 신규 기술 개발을 저해한다며 반대 입장을 냈다. 해당 운동은 유럽 시민 청원에서 130만 건 이상의 서명을 얻어 유럽연합 공식 검토 단계에 진입했으며, 현재 캘리포니아 의회에서는 서비스 종료 시 오프라인 플레이 지원을 의무화하는 ‘AB 1921’ 법안이 논의 중이다. ESA는 게임이 소유가 아닌 라이선스임을 강조했다.",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316492",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1790657989.png",
+      "taken_at": 1778935383,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.1849,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-6028965153",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Celebrating 15 Years of Terraria!",
+      "summary": "&#32; submitted by &#32; /u/_Protector [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1tf36p6/celebrating_15_years_of_terraria/",
+      "thumb": null,
+      "taken_at": 1778959820,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.1533999999999995,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-79322013",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Fallout's creator reveals you could have played as a snoring cow hater who believes in UFOs, had Black Isle stuck with its original licensed roleplaying system",
+      "summary": "Tim Cain spills the tea on \"GURPS Fallout\".",
+      "url": "https://www.pcgamer.com/games/rpg/fallouts-creator-reveals-you-could-have-played-as-a-snoring-cow-hater-who-believes-in-ufos-had-black-isle-stuck-with-its-original-licensed-roleplaying-system/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/bsje6xd2VoLUVFacQEDqNW-1280-80.jpg",
+      "taken_at": 1778929200,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.053999999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-9817369182",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "狂気じみた商品を紹介する謎のXアカウント「アヲダ商會」が出現。なんらかのコンテンツに関するプロモーションかも？",
+      "summary": "X（旧Twitter）には数多くの“変なアカウント”が存在する。140文字という制限を生かした文章で独特な体験を提供してくれるアカウントもあれば，シンプルな狂気をゴリ押してくるアカウントもある。その中で，最近になって投稿が開始されたのが「アヲダ商會」と名付けられたアカウントだ。",
+      "url": "https://www.4gamer.net/games/999/G999905/20260514063/",
+      "thumb": null,
+      "taken_at": 1778929200,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 5.053999999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-4694657994",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Invincible Vs Review",
+      "summary": "The sentence: \"An Amazon television show video game tie-in\" is about as big a red flag as a two star hygiene rating on a kebab van. You would not be at fault for looking at Invincible Vs with narrowed eyes. However, would you believe it, Invincible Vs is an exceptionally enjoyable game. Not only does it do wonders as an adaption, it might just be one of the best fighting games released in recent years. Read more",
+      "url": "https://www.eurogamer.net/invincible-vs-review",
+      "thumb": "https://assetsio.gnwcdn.com/19e2c6db3e127-screenshotUrl.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778922009,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.850999999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-3560831120",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Hyrule Warriors: Age of Imprisonment for Nintendo Switch 2 Is $20 Off at Best Buy",
+      "summary": "Save $30 if you're a My Best Buy Plus member.",
+      "url": "https://www.ign.com/articles/hyrule-warriors-age-of-imprisonment-deal-for-nintendo-switch-2",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/13/hyrulewarriors-1778704729327.jpg",
+      "taken_at": 1778881800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 4.834199999999999,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "inven-5727795359",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[LCK] 유상욱 감독, \"3세트 바텀 사고, 카밀에 당황한 게 컸다\"",
+      "summary": "젠지 e스포츠가 16일 종로 치지직 롤파크에서 열린 '2026 LoL 챔피언스 코리아(LCK)' 정규 시즌 2라운드 T1전에서 1:2로 패했다. 1세트를 승리하며 출발했지만, 2세트 역전패로 시리즈의 흐름을 내주게 됐고, 결국 마지막 3세트마저 패했다. 젠지 e스포츠는 이번 패배로 4위로 내려가게 됐다. 다음은 유상욱 감독, '캐니언' 김건부의 기자회견 전",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316491",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1899354082.jpg",
+      "taken_at": 1778930568,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.6739,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-8763128520",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "We’ve released our city-building strategy game set aboard a giant steampunk train. Players must build a thriving society for humans, elves, and orcs, who all have to learn to live together",
+      "summary": "&#32; submitted by &#32; /u/Jaded-Grocery-9308 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tf0163/weve_released_our_citybuilding_strategy_game_set/",
+      "thumb": "https://external-preview.redd.it/c2I3YnBmYmViajFoMTtYzzJzWdQTZIAXKT8Eh3TQgBRKiOEr7JC_U4-YCnOR.png?width=640&crop=smart&auto=webp&s=e659f2b41ef66cda330c0356380f3b73a3aae2eb",
+      "taken_at": 1778952617,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 4.5332,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-566802118",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "[LCK] T1, '새러데이 쇼다운' 젠지전 2:1 승리...10승 대열 합류",
+      "summary": "16일 종로 치지직 롤파크에서 열린 '2026 LoL 챔피언스 코리아(LCK)' 정규 시즌 2라운드, 젠지 e스포츠와 T1의 대결에서 T1이 2:1로 승리했다. 상위권 경쟁에서 유리한 고지를 점하기 위해 매우 중요한 경기이기도 했는데, 1세트를 일방적으로 패했음에도 빠르게 팀을 재정비하며 '패승승'을 완성했다.",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316490",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1922651353.jpg",
+      "taken_at": 1778928586,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.487,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_pcgaming-4030535768",
+      "source_id": "reddit_pcgaming",
+      "source_name": "Reddit r/pcgaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Celebrating 15 Years of Terraria!",
+      "summary": "&#32; submitted by &#32; /u/_Protector [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/pcgaming/comments/1tf36j5/celebrating_15_years_of_terraria/",
+      "thumb": "https://external-preview.redd.it/oSyb6k-5gAzL1b_80RjzJ1ngI-EVfVPQz_exUtdse3g.png?width=640&crop=smart&auto=webp&s=ba230eaba207d665170a609f09b2dc3c96b8b9ae",
+      "taken_at": 1778959808,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.2931,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-5019475354",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "What we've been playing - \"Asking what the point of playing it is would be like asking why you should bother seasoning a meal\"",
+      "summary": "Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Victoria almost sleeps through a foundational child-powered gaming moment; Bertie sounds a bit like a grumpy old man; Chris has a few more thoughts about Mixtape; and Connor plays a game that isn't RuneScape would you believe it. Read more",
+      "url": "https://www.eurogamer.net/what-weve-been-playing-mixtape-saros-zelda-directive-8020",
+      "thumb": "https://assetsio.gnwcdn.com/chef-salting-meal-AdobeStock_1873238081.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778914800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.2658,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-5750143920",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "I really miss this era of racing games",
+      "summary": "The gameplay, the soundtracks and the overall vibe was always on point, Idk maybe it’s just nostalgia but I feel like we just don’t get anything like these nowadays. Games in the Grid Midnight Club Street Racing, Midnight Club II, Midnight Club 3 DUB Edition Remix, Midnight Club Los Angeles Complete Edition Need For Speed Underground, Need For Speed Underground 2, Need For Speed Most Wanted Black Edition, Need For Speed Carbon Burnout 2 Point of Impact, Burnout 3 Takedown, Burnout Revenge, Burno",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf7bn6/i_really_miss_this_era_of_racing_games/",
+      "thumb": "https://preview.redd.it/xnnokgj6rk1h1.jpeg?width=640&crop=smart&auto=webp&s=3fe3c90495e589d8818f438dbe1c54ee4be334b8",
+      "taken_at": 1778970007,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.1552,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-7690040838",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "Shower Thought Boss Concept: The OST",
+      "summary": "Imagine a boss, let's say a choir or orchestra. Great boss music with the whole latin chanting and full orchestra, but as you kill them off, the soundtrack loses that part of the orchestra till eventually silence as you finally beat it &#32; submitted by &#32; /u/Sockbat25 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf4k6u/shower_thought_boss_concept_the_ost/",
+      "thumb": null,
+      "taken_at": 1778963088,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 4.148899999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-3278113111",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "「ザ・キング・オブ・ファイターズ」のファイターたちが海外でカードゲームに。さまざまな技を組み合わせ，コンボや超必殺技で戦おう",
+      "summary": "「ザ・キング・オブ・ファイターズ」の公式カードゲーム「KingofFighters:TheOrochiSaga」のクラウドファンディングがKickstarterで行われている。作品の枠を超えて集ったファイターたちが，対戦はもちろん，ソロや協力プレイなど，さまざまな方法で楽しめるのだ。",
+      "url": "https://www.4gamer.net/games/999/G999905/20260516001/",
+      "thumb": null,
+      "taken_at": 1778900845,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 4.127199999999999,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "rps-9849110607",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "What are we all playing this weekend?",
+      "summary": "What are we all playing this weekend? There is currently a white cloud swimming across my right eye. It's not, as I thought first, a smudge on my glasses. It's my old friend, a retinal migraine. I'm hoping by the time this article goes live it will have dispersed entirely and I can get back to a walk in the park. If now, this weekend will be spent in a dark room staying exceedingly hydrated. That's enough about my wild plans. Here's what the rest of the team are up to. Read more",
+      "url": "https://www.rockpapershotgun.com/what-are-we-all-playing-this-weekend-382",
+      "thumb": "https://assetsio.gnwcdn.com/what-are-we-playing-this-weekend-bed-rest.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778923839,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 4.0873,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-6064757028",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Xbox Is Rebranding Itself, Sort Of",
+      "summary": "Earlier this week, Xbox CEO Asha Sharma put the following question to fans on social media: \"Xbox\" or \"XBOX\" ? Out of the 19,176 votes cast, all caps XBOX was the clear winner with 64.8% of the total. Now, Microsoft has seemingly taken that to heart by rebranding the Xbox account on X with all-caps XBOX. The Verge was one of the first outlets to notice the change, and it notes that Xbox's Bluesky and Threads accounts have yet to reflect the slight renaming. When reached for comment by The Verge,",
+      "url": "https://www.gamespot.com/articles/xbox-is-rebranding-itself-sort-of/1100-6540005/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1837/18375603/4697357-xboxlogo2.jpg",
+      "taken_at": 1778891460,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.9927999999999995,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-5193781227",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "When I started creating my indie game, I thought that maybe 10 people will play it. Today, I announced over 300 000 units sold across PC, iOS, Android and Nintendo Switch!",
+      "summary": "I have been working on this game solo for over 4 years, 2.5 of which the game was in Early Access. It fully released earlier this year on Steam, Nintendo Switch, iOS and Android! Short description: Build and command your own party of Dwarves in this mix of RPGs, roguelike and auto battlers. Prepare formations, assign equipment, and decide the fate of up to 10 Beardlings, as you lead the raid through reckless runs filled with Glory, Death, and Loot! Link: https://dwarves.ateo.ch/ &#32; submitted ",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1teu3l9/when_i_started_creating_my_indie_game_i_thought/",
+      "thumb": "https://external-preview.redd.it/cnJzN2g3dmY2aTFoMUJUsdzEDgrx6-dkdMGGnpryZnctLrvQNEb5BWQpumJG.png?width=640&crop=smart&auto=webp&s=dfe475c64da7b9d27f824f7272f229c30d518cb2",
+      "taken_at": 1778939048,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 3.9507999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-6743412169",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Subnautica 2 Is Off To A Massive Start",
+      "summary": "Subnautica 2 has been out for less than a day, and yet it's already attracted a massive number of players. Unknown Worlds Entertainment launched Subnautica 2 on Steam and Xbox Series X|S at 11 AM ET, May 14. There was a ton of interest right out of the gate, and a look at Steam's most-played games shows some eye-watering concurrent player count stats. It attracted hundreds of thousands of concurrent players on Steam almost immediately, peaking at 467,582. According to Unknown Worlds, combined co",
+      "url": "https://www.gamespot.com/articles/subnautica-2-overcomes-pre-release-controversy-to-become-massive-hit-on-steam/1100-6539956/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1849/18498836/4695805-subnautica-2.jpg",
+      "taken_at": 1778854980,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 1.0,
+      "penalty": false,
+      "score": 3.9123,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-3761922662",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Civvie 11 - THE SLIGHTLY ABOVE AVERAGE MOUSE DETECTIVE",
+      "summary": "&#32; submitted by &#32; /u/ZeUberSandvitch [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1tez8mz/civvie_11_the_slightly_above_average_mouse/",
+      "thumb": null,
+      "taken_at": 1778950859,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.8731,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-2065567163",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Project Rabbit - Official Reveal Trailer",
+      "summary": "&#32; submitted by &#32; /u/leijido [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1teue58/project_rabbit_official_reveal_trailer/",
+      "thumb": null,
+      "taken_at": 1778939766,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.8583999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-1318023162",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Save 50% Off the Logitech G923 Racing Wheel, Just in Time for the Forza Horizon 6 Release",
+      "summary": "Amazon Resale has \"Like New\" models for about $185.",
+      "url": "https://www.ign.com/articles/logitech-g923-racing-wheel-deal-for-forza-horizon-6",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/logitechg923-1778880188125.jpg",
+      "taken_at": 1778881200,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.8387999999999995,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_gaming-6059621610",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "The Legatus (Modded RDR2)",
+      "summary": "&#32; submitted by &#32; /u/JVNIVS_MAGNVS_OBLEVS [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf6k3k/the_legatus_modded_rdr2/",
+      "thumb": "https://preview.redd.it/sdy66hsclk1h1.jpeg?width=640&crop=smart&auto=webp&s=6fc04938f8691e56a085b7482c0fc047efa994de",
+      "taken_at": 1778968050,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.8065999999999995,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-2607765805",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Fanatical's Capcom Classics Bundle Offers 8 DRM-Free PC Games For Cheap",
+      "summary": "Fanatical's May 2026 Bundle Fest is still going strong, and one of the best ones to browse is the Capcom Classic Bundle: GOG Edition . If you're a fan of retro games, this eight-game collection offers some of Capcom's best, covering a few different genres like survival horror, fighting, and RPGs. Like with other build your own bundles through fanatical, you can start with choosing any three games for $8, or $3 each. Then if you get five or more games, they're down to $2.80. If you want all eight",
+      "url": "https://www.gamespot.com/articles/fanaticals-capcom-classics-bundle-gog-edition-offers-up-to-8-classics-for-cheap/1100-6539990/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1701/17013431/4696774-capcomgog.jpg",
+      "taken_at": 1778887800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.8030999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-656773822",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "What started your gaming addiction?",
+      "summary": "I grew up in the late 1900s (aka early 90s) in a household where I had to play half an hour of piano to play half an hour of Super Nintendo. If I played an hour of piano, guess what? I got half an hour of Super Nintendo. So I couldn’t play games like Link to the Past, Super Metroid, etc. cause they were so long and there was no way I could get to a save spot in 30 minutes. So I experienced games like Ocarina of Time and Majoras Mask way later in my life. What this did was put gaming on a pedesta",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf6jko/what_started_your_gaming_addiction/",
+      "thumb": null,
+      "taken_at": 1778968013,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.8009999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "psn_blog-2189471397",
+      "source_id": "psn_blog",
+      "source_name": "PlayStation Blog",
+      "authority": 2.0,
+      "region": "global",
+      "title": "Official PlayStation Podcast Episode 541: Legendary Run",
+      "summary": "Email us at PSPodcast@sony.com! Subscribe via Apple Podcasts, Spotify, or download here Hey, everybody! Sid, Kristen, and I are back this week to discuss min/maxing runs in Saros, the music and vibes of Mixtape, and other games that’ve been keeping us busy. We also have a special interview about Ghost of Yōtei Legends endgame raids [&#8230;]",
+      "url": "https://blog.playstation.com/2026/05/15/official-playstation-podcast-episode-541-legendary-run/",
+      "thumb": null,
+      "taken_at": 1778865609,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.7960999999999996,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "gamespot-6824892175",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Subnautica 2 For PS5? Here's What We Know So Far",
+      "summary": "Subnautica 2 is out now in early access, and it's doing great, but if you're playing on the biggest modern console platform out there--PlayStation 5--the game is not available for you. Why is that? And is Subnautica 2 ever going to come to PlayStation 5? Here's what we know. PS5 doesn't have a dedicated early-access program Some have theorized that Subnautica 2 is not on PlayStation 5 as of yet because the game is in an early-access state and is not available with a 1.0 version. Steam has its ow",
+      "url": "https://www.gamespot.com/articles/subnautica-2-for-ps5-heres-what-we-know-so-far/1100-6539996/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1179/11799911/4696727-subnautica2.jpg",
+      "taken_at": 1778869140,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 3.7925999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-8334499016",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "3rd place at our first ever game festival, and I still can't believe it!",
+      "summary": "That's me and my wife Annlyn at Capital Creative Showcase last weekend in Sacramento. Our first time ever showing the game in public. We're both ex-feature animators (Hoppers, Nimona) and we've been building our first indie game together for a while now. We went in with zero expectations, honestly just hoping a few people would give it a shot. The game made top 3 finalists for Exhibitors' Choice out of the whole showcase. We were floored. The game is called The Lost Froglins. The pitch: Vampire ",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tf1i7b/3rd_place_at_our_first_ever_game_festival_and_i/",
+      "thumb": "https://preview.redd.it/xlfyeqg2jj1h1.jpeg?width=640&crop=smart&auto=webp&s=9f0efb954c813114d185f252be0d9ae12090f42c",
+      "taken_at": 1778955944,
+      "categories": [
+        "indie",
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.7708999999999993,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "xbox_wire-7455501384",
+      "source_id": "xbox_wire",
+      "source_name": "Xbox Wire",
+      "authority": 2.0,
+      "region": "global",
+      "title": "Saccharine Echo: Paranormal Dating Novel or Something More?",
+      "summary": "The post Saccharine Echo: Paranormal Dating Novel or Something More? appeared first on Xbox Wire .",
+      "url": "https://news.xbox.com/en-us/2026/05/15/saccharine-echo-paranormal-dating/",
+      "thumb": null,
+      "taken_at": 1778864400,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.7464,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "reddit_indie-7732164126",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Spent the last 2 months working on this shader for my second person climbing roguelite game",
+      "summary": "&#32; submitted by &#32; /u/revouwu [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tf1bb7/spent_the_last_2_months_working_on_this_shader/",
+      "thumb": "https://external-preview.redd.it/amd0MWprdTBrajFoMVBSsCcErnF9oz1egt7I5svqoh-5RZ-BdTxi7YyHE90G.png?width=640&crop=smart&auto=webp&s=ad422ee92bf3bd7980f58728e3083f9f3da2afb4",
+      "taken_at": 1778955503,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.7177,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-1665055838",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Crunchyroll's Ani-May Offer Gets You 3 Months Of Mega Fan Membership For $3 A Month",
+      "summary": "Crunchyroll Ani-May Discounted Memberships $2-$3 monthly | Available until May 22 See at Crunchyroll Keeping up with an endless pile of streaming subscriptions can feel almost like a second job--not to mention how expensive it gets to pay for them all. That's why Crunchyroll's limited-time subscription deal during its annual Ani-May event is such a steal. You can snag three months of ad-free access for less than $10 in total to access popular shows like Dr. Stone, Solo Leveling, Witch Hat Atelie",
+      "url": "https://www.gamespot.com/articles/crunchyroll-animay-2026-promotion/1100-6539988/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1873/18732937/4696701-ani-maysale.jpg",
+      "taken_at": 1778886000,
+      "categories": [
+        "collab",
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.7156,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-7678097492",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Just an ordinary pirate ship doing ordinary pirate things",
+      "summary": "If you'd like to try some of these ordinary pirate things yourself, there is a public playtest available right now on the Steam page! https://store.steampowered.com/app/3327000/Roguebound_Pirates/ &#32; submitted by &#32; /u/AuroDev [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tewue5/just_an_ordinary_pirate_ship_doing_ordinary/",
+      "thumb": "https://external-preview.redd.it/emM2ZXZ4Zm5waTFoMdjPfoKpxA3dv-NDaHnM0LzZQ5OxI-rYr48KVR-jEqCa.png?width=640&crop=smart&auto=webp&s=d0c7525f8448561b8a868d1e9929c86c6d93c369",
+      "taken_at": 1778945430,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.7051,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-2054114035",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "I'm adding rain frogs to my game! Do they look right?",
+      "summary": "Hi! I’m working on a new critter for my game Havenroot Vale. I love rain frogs! Do they look recognizable as rain frogs? I'm not sure if I should do a design where it's just a normal rain frog or also mix in the game's magic theme and add a few extras to them (like the green one in the screenshot). If they look off, what would you change to make it read more clearly? Any other feedback is also welcome if you see anything that stands out in the image :) &#32; submitted by &#32; /u/confusedphoenix",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tewtyu/im_adding_rain_frogs_to_my_game_do_they_look_right/",
+      "thumb": "https://preview.redd.it/mgmbbp61qi1h1.png?width=640&crop=smart&auto=webp&s=f8e5cca1bea98da941b1441220c7a8cfc0b594a4",
+      "taken_at": 1778945407,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.703,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-4379759100",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Don't Buy a Marked-Up Steam Deck When Cheaper Options Exist",
+      "summary": "While the Steam Deck is still one of the best handheld gaming PCs, it isn't worth these marked-up prices.",
+      "url": "https://www.ign.com/articles/dont-buy-a-marked-up-steam-deck-when-cheaper-options-exist",
+      "thumb": "https://assets-prd.ignimgs.com/2022/10/24/flyzsqrwqamt5f8-1666578792849.jpg",
+      "taken_at": 1778876812,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.6392999999999995,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "gamespot-6283918570",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Create Your Own Indie Showcase With These Limited-Time Bundle Deals",
+      "summary": "Fanatical and Humble Bundle are easily the most popular bundle sites online, offering countless games, books, software, and more over the years at great discounts and benefitting good causes. This month, it both sites have a vast and eclectic of indie showcase bundles available for you to peruse. The Humble 15th Anniversary Indie Icons Showcase bundle gets you 8 games for just $10, with titles like Bloodstained: Ritual of the Night and Citizen Sleeper as part of its catalogue. Fanatical, on the ",
+      "url": "https://www.gamespot.com/articles/may-is-apparently-the-month-of-indie-showcase-bundles/1100-6539928/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1701/17013431/4696763-fanaticlaindieshowcase.jpg",
+      "taken_at": 1778884200,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.6309,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-1326348434",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "Krafton Will Likely Have to Pay $250 Million Bonus for Subnautica 2 That It Tried to Avoid",
+      "summary": "When Krafton acquired Unknown Worlds Entertainment back in 2021, part of the agreement indicated that a major bonus would be offered if certain revenue targets were achieved. According to the stipulation, if developer Unknown Worlds Entertainment earned more than $69.8 million in revenue, its new parent company would have to pay $3.12 for each additional dollar of sales, with a cap of $250 million. Given the game has already reached a million players and many more will likely pick it up over the",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf2xjf/krafton_will_likely_have_to_pay_250_million_bonus/",
+      "thumb": "https://external-preview.redd.it/gCezUoZb9yf6UZV13tiUXZN-TkrmjaxXXlWpXjuLJOw.jpeg?width=640&crop=smart&auto=webp&s=092227dce6bad88fefbcf9b8822b8975bc60e4cd",
+      "taken_at": 1778959207,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.6043,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-3836422493",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Alienware's Flagship Area-51 18\" Gaming Laptop With RTX 5080 GPU Drops to the Lowest Price of the Year",
+      "summary": "Amazon Resale has \"Like New\" models for $1,500 less than Dell's official outlet store.",
+      "url": "https://www.ign.com/articles/alienware-area-51-18-gaming-laptop-deal-amazon-resale",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/alienwarearea5116-1778872662511.jpg",
+      "taken_at": 1778875500,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.5832999999999995,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ign-8695435742",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Sony Seems to Be Testing a New Feature That Reveals PS5 Player Counts to the Public",
+      "summary": "Sony has seemingly started testing a new PlayStation 5 feature that will allow users to see player counts for games like Call of Duty, Battlefield 6, Minecraft, and more.",
+      "url": "https://www.ign.com/articles/sony-testing-new-feature-ps5-player-count",
+      "thumb": "http://assets1.ignimgs.com/2015/10/27/playstation-logojpg-9b373d.jpg",
+      "taken_at": 1778875069,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.5650999999999997,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ruliweb_news-1376241422",
+      "source_id": "ruliweb_news",
+      "source_name": "루리웹 뉴스",
+      "authority": 1.3,
+      "region": "kr",
+      "title": "네덜란드 마을에 등장한『에반게리온』, 하우스텐보스 방문기",
+      "summary": "일본 나가사키현 사세보시에 위치한 테마파크 '하우스텐보스'가 서브컬처 팬들에게 인기 있는 『에반게리온』 콜라보레이션을 진행하며 큰 주목을 받았다. 방문객들은 특급열차를 이용해 도착했으며, 「에반게리온 더 라이드 - 8K -」 와 같은...",
+      "url": "https://bbs.ruliweb.com/news/read/224655",
+      "thumb": "https://img.ruliweb.com/data/news/tn/26/05/16/19e2f309151_vnzikm.webp",
+      "taken_at": 1778913000,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.5378,
+      "_diversity_note": "매체 N=15"
+    },
+    {
+      "id": "4gamer-9716391576",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "ゲームボーイソフトのパッケージアートに注目。発売地域や再販など，異なるパッケージ1000種類以上を収録した書籍のクラウドファンディング実施中",
+      "summary": "ゲームボーイ向けソフトのパッケージアートにフォーカスした書籍「GameBoyBoxArtCollectionVolume1」のクラウドファンディングが，Kickstarterで行われている。1つのゲームについて，各国語版や再販版といったバージョン違いを網羅し，220ページにわたって1000種類以上を収録するという。",
+      "url": "https://www.4gamer.net/games/991/G999112/20260516002/",
+      "thumb": null,
+      "taken_at": 1778908491,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.4804,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-2982410506",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Fortnite's Overwatch Butt-Buffing Conspiracy Theory Goes All The Way To The Very Bottom",
+      "summary": "Earlier this year, Overwatch director Jeff Kaplan attempted to settle the nearly decade-old legend of Tracer's controversial victory pose by telling players that her butt was never nerfed . But the recently released Overwatch skins in Fortnite appear to tell a different story. As noted by several players online, Tracer's butt is back and seemingly bigger than ever. Fans responded to Tracer's apparently restored glutes in exactly the mature and measured way you probably predicted. The world has h",
+      "url": "https://www.gamespot.com/articles/fortnites-overwatch-butt-buffing-conspiracy-theory-goes-all-the-way-to-the-very-bottom/1100-6540002/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1837/18375603/4696750-overwatchtracer.jpg",
+      "taken_at": 1778878620,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.3887,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-556450576",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "넥슨 'FC온라인', 청주공고와 함께 지역사회에 1천만 원 기부",
+      "summary": "넥슨은 EA SPORTS FC Online의 중·고등학생 참여형 이벤트 '엪온 자율학습' 1차가 마무리됨에 따라 전국 포인트 1위를 차지한 청주공업고등학교 이름으로 충북장애인축구협회에 1천만 원의 기부금을 전달했다고 밝혔다.",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316489",
+      "thumb": "https://static.inven.co.kr/column/2026/05/16/news/thumb/s1539614785.jpg",
+      "taken_at": 1778913087,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.3733,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "xbox_wire-1623683013",
+      "source_id": "xbox_wire",
+      "source_name": "Xbox Wire",
+      "authority": 2.0,
+      "region": "global",
+      "title": "Next Week on Xbox: New Games for May 18 to 22",
+      "summary": "The post Next Week on Xbox: New Games for May 18 to 22 appeared first on Xbox Wire .",
+      "url": "https://news.xbox.com/en-us/2026/05/15/next-week-on-xbox-new-games-for-may-18-to-22/",
+      "thumb": null,
+      "taken_at": 1778853600,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.3467,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "reddit_gaming-281502035",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "Rise of the dragon",
+      "summary": "From the point and click era. &#32; submitted by &#32; /u/AUTOMATA88 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf58fh/rise_of_the_dragon/",
+      "thumb": "https://preview.redd.it/tsrd6qqhbk1h1.jpeg?width=216&crop=smart&auto=webp&s=c468febfb989ff9840b44b683f0e66251cb544be",
+      "taken_at": 1778964731,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.3166,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-5896246743",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Nintendo eShop Continues Its War Against Quality With This Dead Space And Gears Of War Knockoff",
+      "summary": "One of the biggest problems with the Switch 2 isn't availability or a looming price hike , but the platform's online marketplace. What should be a highlight reel of Nintendo exclusives, outstanding third-party titles, and rising indie stars is instead an eShop full of slop drops, and Dead Gears: Space of War is indicative of this problem. Scheduled to launch on May 29, the game's key art combines an on-the-nose use of the Cog symbol from Gears of War with the font of Dead Space, all positioned a",
+      "url": "https://www.gamespot.com/articles/nintendo-eshop-continues-its-war-against-quality-with-this-dead-space-and-gears-of-war-knockoff/1100-6539984/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1601/16018044/4696653-gars-of-space.jpg",
+      "taken_at": 1778856420,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 3.3082,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-8557415266",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "This week I released the Steam page for my post-sovietic style citybuilder, here's a little trailer!",
+      "summary": "Hi everyone! I've been working on Socialiskigrad, a citybuilder inspired by the Balkans and Eastern Europe in the 1990s. The game focuses on the development of a fictional nascent republic, shaped by brutalist architecture, aging infrastructure and economic struggle. I finally released the Steam page this week, so I wanted to share a short trailer and see what you think of the atmosphere so far. If you want to take a look, here's the Steam page link: Socialiskigrad &#32; submitted by &#32; /u/Sg",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1teup0w/this_week_i_released_the_steam_page_for_my/",
+      "thumb": "https://external-preview.redd.it/ODB5dTVmb203aTFoMc8ZuXJBFiFlb4xx6CC5WVKKTQsSjvOKX9jCJSgAuFv4.png?width=640&crop=smart&auto=webp&s=032bc725023d65adb63f1365902542c8c015b0aa",
+      "taken_at": 1778940492,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.2718000000000003,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-5472972738",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Forza Horizon 6 Crushes Franchise Record On Steam Despite The Need To Pay Extra",
+      "summary": "Forza Horizon 6 has crushed the franchise record on Steam for peak concurrent users, and that's especially noteworthy since the game is only available for a select group of people currently. Forza Horizon 5 set the franchise record for highest peak concurrent-player count on Steam with 81,096 back on November 13, 2021 , which was the first Saturday after the game launched on November 9. Forza Horizon 6, meanwhile, hit a high watermark of 172,093 players today, May 15, meaning Forza Horizon 6 dou",
+      "url": "https://www.gamespot.com/articles/forza-horizon-6-crushes-franchise-record-on-steam-despite-the-need-to-pay-extra/1100-6539998/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1179/11799911/4696736-fhorizon6.jpg",
+      "taken_at": 1778872200,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.1416,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-9926999173",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "FINALLLLY hired a professional artists to replace placeholder art (what do you think?)",
+      "summary": "Elemental Lands is my solo dev project for over a year now. It's a turn-based tactical card battler with roguelite upgrades. I have positive gameplay feedback on my combat with capturable objectives and the board game style campaign map, but can't get people past the placeholder art!!! (fyi - Steam page is still all old placeholder art). My friend made the placeholder art. And I'm worried he may have used AI and lied to me. But, idk, I'm past that now and just happy with the new artist rough dra",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1tetxnd/finalllly_hired_a_professional_artists_to_replace/",
+      "thumb": "https://preview.redd.it/rf1jmtc8pf1h1.jpg?width=140&height=67&auto=webp&s=0e3e3a4d5e890cf4857f7e3d1e55fcdf49a3f87b",
+      "taken_at": 1778938647,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.1310999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-6477201809",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Overwatch's lackluster 10th anniversary event will have its rewards improved next week, with more free stuff planned for later this year",
+      "summary": "Game director Aaron Keller acknowledged players' disappointment with the event on X.",
+      "url": "https://www.pcgamer.com/games/fps/overwatchs-lackluster-10th-anniversary-event-will-have-its-rewards-improved-next-week-with-more-free-stuff-planned-for-later-this-year/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/tkAYoSfzmnYNtG8rsEQq5B-1280-80.jpg",
+      "taken_at": 1778879988,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.1199,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "psn_blog-2286280971",
+      "source_id": "psn_blog",
+      "source_name": "PlayStation Blog",
+      "authority": 2.0,
+      "region": "global",
+      "title": "Ghost of Yōtei Legends Raid: building the multiplayer mode’s endgame",
+      "summary": "Launched last month, the Ghost of Yōtei Legends Raid forms the endgame of Sucker Punch’s multiplayer mode, as Ghosts face off against the last two of the supernatural Yōtei Six, The Dragon and Lord Saito. Well, them, plus a horde of warriors and labyrinth strongholds that four players must cooperate together to survive. With enough [&#8230;]",
+      "url": "https://blog.playstation.com/2026/05/15/ghost-of-yotei-legends-raid-building-the-multiplayer-modes-endgame/",
+      "thumb": null,
+      "taken_at": 1778846403,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 3.1177999999999995,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "4gamer-3732446286",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "結のほえほえゲーム演説：第265回「『東方LostWord』のライブでMCするよ！　東方アレンジ楽曲を語らせてくれ！」",
+      "summary": "「東方LostWord」の音楽イベント「LostWordLIVE2026」でMCを担当することになった結さん。原作はもちろん二次創作（特にアレンジ楽曲）が大好きで，どっぷりと東方Project沼に漬かり続けて20年という結さんが，思い入れのある「東方LostWord」関連楽曲を語ります。",
+      "url": "https://www.4gamer.net/games/326/G032635/20260515056/",
+      "thumb": null,
+      "taken_at": 1778900400,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 3.0750999999999995,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-7582117278",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "How To Unlock Metal Farms In Subnautica 2",
+      "summary": "Are you hoping to unlock Metal Farms in Subnautica 2 ? Let's face it: Most survival games will have you put in quite a bit of effort just to gather materials. However, with this particular contraption, you can sit back, relax, and come back later when you need to collect resources. Subnautica 2 base guide - The Metal Farm Those who are playing on Creative Mode have almost nothing to worry about. That's because that mode grants unlimited resources, which means you can build whatever you want with",
+      "url": "https://www.gamespot.com/articles/subnautica-2-metal-farms-guide/1100-6539994/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1816/18167535/4696742-subnautica-2-metal-farm-guide-.jpg",
+      "taken_at": 1778867340,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.9736,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-8762101707",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Mortal Kombat 2 Might Not Be Perfect, But It Fixes The First Movie's Biggest Flaw",
+      "summary": "Video game adaptations can be a tricky beast. They can either go the prestige route like The Last of Us with its Emmy-nominated television series, or be a dreadful reference marathon such as The Minecraft Movie. While 2021’s Mortal Kombat film had a myriad of issues, such as the lack of the tournament that serves as the game series' centerpiece, and a focus on an original character created for the film rather than one of the franchise's existing cast, it had its heart in the right place by tryin",
+      "url": "https://www.gamespot.com/articles/mortal-kombat-2-might-not-be-perfect-but-it-fixes-the-first-movies-biggest-flaw/1100-6540004/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1639/16394322/4696796-mortalkombat2.jpg",
+      "taken_at": 1778890800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.968,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-4731704477",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Hi, I created a new trailer for my Strategy game",
+      "summary": "&#32; submitted by &#32; /u/PicoBellum [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1texxje/hi_i_created_a_new_trailer_for_my_strategy_game/",
+      "thumb": "https://external-preview.redd.it/dHNzYXJkZDl4aTFoMVCevPnQ-yPOI58_Qwni8KRW4xhQRLXktycTRWP0EXoC.png?width=640&crop=smart&auto=webp&s=6091665dc428b9c4c96f057946805ca10e17530a",
+      "taken_at": 1778947884,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.968,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-8576401491",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "The Just-Released Hisense UR9 RGB Mini-LED TV Might Just Give OLED a Run for Its Money",
+      "summary": "The new 2026 TV boasts richer colors, a brighter picture, and wider viewing angles than ever before.",
+      "url": "https://www.ign.com/articles/hisense-ur9-rgb-mini-led-tv-deal-new-release",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/12/hisenseur9-1778547626181.jpg",
+      "taken_at": 1778882400,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.9225,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ign-9013768279",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Sam Raimi Set to Direct Magic Remake With Script from Send Help Writers",
+      "summary": "Sam Raimi has been tapped as director for a modern adaptation of the 1978 puppet horror movie, Magic, and some of the crew behind Send Help is coming with him.",
+      "url": "https://www.ign.com/articles/sam-raimi-directing-magic-remake-with-send-help-writers",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/sam-raimi-magic-1778877378964.png",
+      "taken_at": 1778881967,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.9064,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_games-5271978184",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "Forza Horizon 6 Makes Cherry Blossoms Unbreakable Because ‘They’re An Iconic Element Of Japanese Culture’",
+      "summary": "&#32; submitted by &#32; /u/Turbostrider27 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1teudyg/forza_horizon_6_makes_cherry_blossoms_unbreakable/",
+      "thumb": null,
+      "taken_at": 1778939753,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.8923999999999994,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-347146951",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "In the Grey Review",
+      "summary": "Director Guy Ritchie has hit a career low point with his new film In the Grey, featuring Henry Cavill and Jake Gyllenhaal.",
+      "url": "https://www.ign.com/articles/in-the-grey-review-henry-cavill-jake-gyllenhaal",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/in-the-grey-thumb-1778880543307.jpg",
+      "taken_at": 1778880657,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.8594999999999997,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ign-611702388",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Bundle & Save 20% on Shirts, Pants, Jeans, and More at Men's Wearhouse Right Now for Spring Savings",
+      "summary": "Elevate your wardrobe for less.",
+      "url": "https://www.ign.com/articles/renew-your-wardrobe-with-these-spring-deals-at-mens-wearhouse",
+      "thumb": "https://assets-prd.ignimgs.com/2026/04/20/menswearhouse-1776722783112.jpg",
+      "taken_at": 1778880600,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.8581,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ign-4355202087",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "The FlashForge AD5X Is One of the Best Multi Material and Multi Color 3D Printers Priced Under $300",
+      "summary": "Feature-rich 3D printer for both beginners and intermediate enthusiasts.",
+      "url": "https://www.ign.com/articles/flashforge-ad5x-3d-printer-deal-may-2026",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/12/flashforgead5x-1778625446722.jpg",
+      "taken_at": 1778880600,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.8581,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "eurogamer-8771690701",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "We haven't heard anything for months about The Duskbloods and Elden Ring coming to Switch 2, but FromSoftware's owner insists they're still coming out this year",
+      "summary": "We haven't heard anything for months about FromSoftware's Switch 2 exclusive The Duskbloods and the Switch 2 version of Elden Ring : Tarnished Edition, but apparently they're both still down for release this year. That's according to FromSoftware's owner Kadokawa, which listed both games in its financial report as \"slated for a 2026 release for Switch 2\". Read more",
+      "url": "https://www.eurogamer.net/the-duskbloods-elden-ring-switch-2-2026",
+      "thumb": "https://assetsio.gnwcdn.com/Screenshot-from-The-Duskbloods-showing-a-female-character-in-a-blue-jakcet-and-hat-standing-against-the-backdrop-of-a-dark-starry-sky.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778862478,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.8202999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-9091848122",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Everything Coming To Subnautica 2 Early Access: Co-Op, Sprinting, And New Gameplay Systems",
+      "summary": "Subnautica 2 has made a big splash in early access for PC and Xbox Series X|S, and developer Unknown Worlds Entertainment has outlined several planned updates for its underwater survival adventure. The developer says that its first updates will focus on gameplay improvements that address systems and smaller features before it moves on to larger expansions to the game world. Updates to the game world, biomes, creatures, resources, tools, and vehicles are in the pipeline, as well as the next chapt",
+      "url": "https://www.gamespot.com/articles/everything-coming-to-subnautica-2-early-access-co-op-sprinting-and-new-gameplay-systems/1100-6539991/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1601/16018044/4696689-subnautica2.jpg",
+      "taken_at": 1778861880,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.8021,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "rps-1710210374",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "EVE Online's Cradle of War expansion wants to make the space MMO more welcoming to new players, before killing them in galaxy-wide omniconflict",
+      "summary": "The effective onboarding of curious yet noncommitted first-time EVE Online players is a conundrum that developers Fenris Creations, formerly CCP Games , have been trying to solve for decades. Many are enticed by the MMORPG&rsquo;s purely player-spun tales of espionage and military adventure , only to bounce off its dense hull of complex economic spacemaths and a sandbox occupied by oft-unpunished pirates and con artists. Perhaps the game&rsquo;s next big expansion, Cradle of War, will have more ",
+      "url": "https://www.rockpapershotgun.com/eve-onlines-cradle-of-war-expansion-wants-to-make-the-space-mmo-more-welcoming-to-new-players-before-killing-them-in-galaxy-wide-omniconflict",
+      "thumb": "https://assetsio.gnwcdn.com/EVE-Online-Cradle-of-War-new-Navy-Destroyer.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778879852,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.8,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-4057186378",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "After a bit of a false start The Super Mario Galaxy Movie is absolutely, definitely getting a digital home release next week",
+      "summary": "After early reports of an imminent home release for The Super Mario Galaxy turned out to be false , Universal has officially announced the film is making its digital download debut next week. Those interested in watching Mario and co's latest animated outing from home can download it this coming Tuesday, 19th May. Read more",
+      "url": "https://www.eurogamer.net/super-mario-galaxy-digital-release-date",
+      "thumb": "https://assetsio.gnwcdn.com/Super-Mario-Galaxy-Movie-trailer-screenshot-showing-a-shruken-Bowser-sitting-in-Luigi's-hand.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778861435,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.7887999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-4373765643",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "ウェスタロスで自分だけの物語体験を。「ゲーム・オブ・スローンズ：キングスロード」開発者メールインタビュー",
+      "summary": "Netmarbleが2026年5月21日に正式サービスを開始する「ゲーム・オブ・スローンズ：キングスロード」の，開発者メールインタビューをお届けする。答えてくれたのは，本作の開発を手がけるNetmarbleNeoでエグゼクティブプロデューサーを務めるチャン・ヒョンイル氏と，同社本部長のムン・ジュンギ氏だ。",
+      "url": "https://www.4gamer.net/games/857/G085740/20260515040/",
+      "thumb": null,
+      "taken_at": 1778893200,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.7762,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-8872861082",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "세계 최초 240Hz AR 글래스, 'ROG XREAL R1' 출격",
+      "summary": "에이수스(ASUS)의 게이밍 브랜드 ROG와 글로벌 XR 하드웨어 기업 XREAL(엑스리얼)이 협업하여 세계 최초 240Hz 주사율을 갖춘 게이밍 AR 글래스 'ROG XREAL R1'를 공개했다. 이 제품은 소니 마이크로 OLED 패널을 통해 4미터 거리에서 최대 171인치의 가상 화면을 구현하며, 특히 ROG ALLY(엘라이) 및 주요 콘솔과의 원활한 연동을 지원하는 전용 컨트롤 독(Control Dock)을 포함됐다. 고주사율과 초저지연 기술을 결합하여 이동 중에도 고성능 모니터 수준의 매끄러운 게임 플레이 환경을 제공한다.",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316476",
+      "thumb": "https://static.inven.co.kr/column/2026/05/15/news/thumb/s1383368770.jpg",
+      "taken_at": 1778900461,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.7670999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-4924717509",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "I’m waiting days between attempts to catch one fish in Final Fantasy 14 before it disappears for months, so don’t let anyone tell you raids are the ‘hardcore’ challenge",
+      "summary": "If you thought I was bad at dodging bright lines on the floor, wait until you've seen me fish.",
+      "url": "https://www.pcgamer.com/games/final-fantasy/im-waiting-days-between-attempts-to-catch-one-fish-in-final-fantasy-14-before-it-disappears-for-months-so-dont-let-anyone-tell-you-raids-are-the-hardcore-challenge/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/R4iN7KVhv2FQZLMCG2nbY-1280-80.jpg",
+      "taken_at": 1778891760,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.7222999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-5425506489",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Nintendo Is Beating EA At Its Own (Cozy) Game",
+      "summary": "Since their introduction in 2006, I've largely viewed Miis as creepy little things. Sure, some of them are cute--anytime I buy a new Nintendo console, I spend a few minutes attempting to make my Mii a bit less offputting--but I'd be lying if I said I didn't feel a growing sense of dread in the pit of my stomach the first time I fired up my Wii U and saw them all run toward the screen en masse: a tiny stampede of ever-smiling, soulless bobbleheads. I silently judged fellow Animal Crossing: New Le",
+      "url": "https://www.gamespot.com/articles/nintendo-is-beating-ea-at-its-own-cozy-game/1100-6539983/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1639/16394322/4696661-grouppic2.jpg",
+      "taken_at": 1778859000,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.7180999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-5382617790",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "PS5 Will Now Tell You Exactly How Many People Are Playing GTA 5 As Sony Debuts A New Ranking",
+      "summary": "A new beta feature lists the most played games and their player counts",
+      "url": "https://kotaku.com/it-looks-like-sony-is-bringing-steam-charts-to-ps5-sorta-2000696556",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/PS5-Players.jpg",
+      "taken_at": 1778867960,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.6666666666666666,
+      "penalty": false,
+      "score": 2.7167,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "psn_blog-5380710688",
+      "source_id": "psn_blog",
+      "source_name": "PlayStation Blog",
+      "authority": 2.0,
+      "region": "global",
+      "title": "Share of the Week: EA Sports FC 26",
+      "summary": "Last week, we asked you to share your goal-winning moments from EA Sports FC 26, available to all PlayStation Plus members* as part of the PlayStation Plus Monthly Games lineup for May. Here are this week’s highlightings: Photomode_Raro shares the ball being kicked up and close to the foreground. call_me_xavii shares a goalie holding the [&#8230;]",
+      "url": "https://blog.playstation.com/2026/05/15/share-of-the-week-ea-sports-fc-26/",
+      "thumb": null,
+      "taken_at": 1778860973,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.7083,
+      "_diversity_note": "매체 N=10"
+    },
+    {
+      "id": "eurogamer-1355446076",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "\"I cannot condone piracy, but I get why people do\" - Subnautica 2 lead designer airs frustration at 'flagrant' pirates",
+      "summary": "Subnautica 2 is finally here, and while the vast majority of fans are playing - and paying - their hearts out, a few have taken to a different ocean. And the game's design lead has now pushed back against these flagrant pirates. Read more",
+      "url": "https://www.eurogamer.net/i-cannot-condone-piracy-but-i-get-why-people-do-subnautica-2-lead-developer-airs-frustration-at-flagrant-pirates",
+      "thumb": "https://assetsio.gnwcdn.com/subnautica-2_zv86SQE.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778858244,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.6971,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "ign-9954392854",
+      "source_id": "ign",
+      "source_name": "IGN",
+      "authority": 1.8,
+      "region": "global",
+      "title": "Hitman: The Board Game Hands-On Preview - Bringing a World of Assassination to the Tabletop",
+      "summary": "We go hands on with Hitman: The Board Game, coming to tabletops next year.",
+      "url": "https://www.ign.com/articles/hitman-board-game-preview",
+      "thumb": "https://assets-prd.ignimgs.com/2026/05/15/hitman-board-game-blogroll-1778875840407.png",
+      "taken_at": 1778875341,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.6824,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "ruliweb_news-8954036431",
+      "source_id": "ruliweb_news",
+      "source_name": "루리웹 뉴스",
+      "authority": 1.3,
+      "region": "kr",
+      "title": "‘모스: 더 포가튼 렐릭(Moss: The Forgotten Relic)’, 2026년 여름 PC 및 콘솔로 출시",
+      "summary": "독립 게임 스튜디오 폴리아크가 수작업 판타지 어드벤처 '모스: 더 포가튼 렐릭'을 발표하며, 이 작품은 어린 생쥐 퀼의 여정을 다룬 감성적인 모험작으로, 올여름 pc(스팀), ps5, 엑스박스 시리즈 x|s, 닌텐도 스위치 1|2로 ...",
+      "url": "https://bbs.ruliweb.com/news/read/224603",
+      "thumb": "https://img.ruliweb.com/data/news/tn/26/05/15/19e28e1cf0f_xsozph.webp",
+      "taken_at": 1778860800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 1.0,
+      "penalty": false,
+      "score": 2.6649,
+      "_diversity_note": "매체 N=15"
+    },
+    {
+      "id": "gamespot-8251788701",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Forza Horizon 6 Lets You Destroy Most Trees--With A Big Exception",
+      "summary": "Forza Horizon 6 is out now for people who pay extra ahead of its wider release on May 19, and one thing fans have noticed right off the bat is that they cannot destroy cherry blossom trees . This is notable because almost all other trees in the game can be smashed. Design director Torben Ellert explained to Japan Times that this was a deliberate decision done to honor cultural traditions in Japan, which is where the game takes place. \"Almost all trees in the game are smashable to ensure that tra",
+      "url": "https://www.gamespot.com/articles/orza-horizon-6-lets-you-destroy-most-trees-with-a-big-exception/1100-6539982/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1179/11799911/4696650-fh6cherryblossoms.jpg",
+      "taken_at": 1778855340,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.6172999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-6931937508",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "A domain related to J-Pop idol phenomenon Love Live! went up for auction and the lead bid is a very sane $615 million",
+      "summary": "Love Live… Profit?!?",
+      "url": "https://www.pcgamer.com/movies-tv/a-domain-related-to-j-pop-idol-phenomenon-love-live-went-up-for-auction-and-the-lead-bid-is-a-very-sane-usd615-million/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/UHPWLES2DYY57iLzFNGKyX-1280-80.png",
+      "taken_at": 1778888685,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.6130999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-8956981066",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "天井90連/すり抜けなしの「NTE: Neverness to Everness」で，限定キャラをお迎えするには，実際どのくらいガチャを回せばいいのか。シンプルに計算してみた",
+      "summary": "「NTE:NevernesstoEverness」のガチャはボードゲーム風になっており，天井が浅く，すり抜けもない。ただ，実際に天井まで回すことはまれのようだ。",
+      "url": "https://www.4gamer.net/games/817/G081722/20260515002/",
+      "thumb": null,
+      "taken_at": 1778886000,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.5235,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-1108668487",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "How To Get The Hydroelectric Turbine In Subnautica 2",
+      "summary": "Are you planning to build Hydroelectric Turbines in Subnautica 2 ? This is a fairly important fixture for your base. That's because it automatically generates power from naturally occurring underwater currents. Table of Contents [ hide ] Subnautica 2 base guide - The Hydroelectric Turbine Subnautica 2 base guide - The Hydroelectric Turbine If you're playing on Creative Mode, the Hydroelectric Turbine blueprint should be available right from the start. In fact, you have unlimited materials, so yo",
+      "url": "https://www.gamespot.com/articles/subnautica-2-hydroelectric-turbine-blueprint/1100-6539974/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1816/18167535/4696735-subnautica-2-hydroelectric-turbine-.jpg",
+      "taken_at": 1778877960,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.5214,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-7870900362",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Where To Find The Rebreather In Subnautica 2",
+      "summary": "Are you looking for the Rebreather in Subnautica 2 ? This particular equipment is quite important, since it decreases your oxygen consumption as you dive down to the depths of the seas. You simply won't be able to fully explore the world of Proteus without it. Table of Contents [ hide ] Subnautica gear guide - The Rebreather Subnautica gear guide - The Rebreather The Rebreather blueprint can be yours as soon as you scan at least one fragment. Thankfully, there are several objects scattered aroun",
+      "url": "https://www.gamespot.com/articles/subnautica-2-rebreather-location-guide/1100-6539975/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1816/18167535/4696728-subnautica-2-rebreather-guide-.jpg",
+      "taken_at": 1778877300,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.5018,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-4647787929",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Final Fantasy XI Is Expanding Its Free Trial",
+      "summary": "In 2002, Final Fantasy XI was one of the pioneering MMORPG titles on consoles, and Square Enix has kept the world of Vana'diel alive for nearly a quarter century. Now, as the game celebrates its 24th anniversary, Square Enix has announced that the free trial for Final Fantasy XI has been greatly expanded. During a livestream on Square Enix's Japanese YouTube account (via Reddit ), the publisher announced that the previous 14-day version of the free trial is being revamped. The new free trial doe",
+      "url": "https://www.gamespot.com/articles/final-fantasy-xi-is-expanding-its-free-trial/1100-6539999/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1837/18375603/4696745-finalfantasy11anniversary.jpg",
+      "taken_at": 1778876160,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.4675,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-1373690102",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "\"Sometimes all it really takes is one very bad commute\" - the Saros team reveal the surprising origins of Arjun's angry delivery",
+      "summary": "Many video game characters are immediately recognisable by their voices. Doug Cockle's gravely Geralt from The Witcher series is, Chrisopher Judge's imposing Kratos in God of War is, David Hayter's covert Snake is. I could go on. But how does an actor find the voice people will remember them for? When it came to playing Saros' protagonist Arjun Devraj, actor Rahul Kohli said inspiration struck while being fed up stuck in traffic. Read more",
+      "url": "https://www.eurogamer.net/saros-arjun-rahul-kolhi-voice",
+      "thumb": "https://assetsio.gnwcdn.com/Arjun-aiming-a-gun-in-Saros.-He-has-very-nice-facial-hair-and-is-dressed-in-dark-clothing-with-a-gold-pendant-by-his-chest.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778848803,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.4520999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamesindustry-3842930756",
+      "source_id": "gamesindustry",
+      "source_name": "GamesIndustry.biz",
+      "authority": 1.9,
+      "region": "global",
+      "title": "The hangover kicks in after a decade of games-as-a-service obsession | Opinion",
+      "summary": "Financial results season is upon us, and as is so often the case, it is a generous benefactor to anyone with an interest in seeing how the industry's winds are blowing. It throws up numbers, narratives, and the occasional brutally expensive admission of failure, and asks only that we do the courtesy of joining the dots between them. Read more",
+      "url": "https://www.gamesindustry.biz/the-hangover-kicks-in-after-a-decade-of-games-as-a-service-obsession-opinion",
+      "thumb": "https://assetsio.gnwcdn.com/Marathon_robot-enemies.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778858959,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.4415999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_pcgaming-9606092973",
+      "source_id": "reddit_pcgaming",
+      "source_name": "Reddit r/pcgaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "60% of PC gamers have no plans to build a new PC in the next two years — AI pricing crunch on RAM and other components paralyze enthusiast market",
+      "summary": "&#32; submitted by &#32; /u/Turbostrider27 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/pcgaming/comments/1teuiua/60_of_pc_gamers_have_no_plans_to_build_a_new_pc/",
+      "thumb": "https://external-preview.redd.it/4eYDXnw_aowFXIzXwK-U_xm9a7EmfJKBI9lTtVnh9O8.jpeg?width=640&crop=smart&auto=webp&s=31c7a6ef1e132ae4f6d5c06849e8137e8abf3e74",
+      "taken_at": 1778940078,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.4297,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-5496127615",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "The Fortnite-Overwatch crossover means we're talking about Tracer's butt again",
+      "summary": "Because of course we are.",
+      "url": "https://www.pcgamer.com/games/battle-royale/the-fortnite-overwatch-crossover-means-were-talking-about-tracers-butt-again/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/i44CpyNvDqJpfK7jeUekzS-1280-80.jpg",
+      "taken_at": 1778882954,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.4276,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-238338543",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "I found an EyeToy camera in a vintage store with other film cameras",
+      "summary": "I guess I’m old already &#32; submitted by &#32; /u/Elogano [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tf1i81/i_found_an_eyetoy_camera_in_a_vintage_store_with/",
+      "thumb": "https://preview.redd.it/9njqno6dlj1h1.jpeg?width=640&crop=smart&auto=webp&s=82eb0bef6348b55bf1d5e4d0eed2dd48ebcbe129",
+      "taken_at": 1778955945,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.4248,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_indie-476445336",
+      "source_id": "reddit_indie",
+      "source_name": "Reddit r/IndieGaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Making my dream game about a 90s New Year's Eve. Some early screenshots.",
+      "summary": "&#32; submitted by &#32; /u/FrozenBugsGames [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/IndieGaming/comments/1teu6rd/making_my_dream_game_about_a_90s_new_years_eve/",
+      "thumb": "https://preview.redd.it/7duwykgp7i1h1.jpg?width=140&height=78&auto=webp&s=0a580ec40296d00f89bc049e440a18531374d5d5",
+      "taken_at": 1778939262,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.3827999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-5094847992",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Get The Lego Legend Of Zelda Deku Tree Model Before It Retires",
+      "summary": "Lego The Legend of Zelda: Great Deku Tree 2-in-1 (2,500 Pieces) $300 | Retiring Soon See at Lego See at Amazon See at Best Buy See at Walmart See at Target See at Barnes and Noble If you have Lego's Legend of Zelda: Great Deku Tree set on your wishlist, you may want to pick it up soon as Lego has announced that it's retiring the set later this year--which is surprising, since the Lego Great Deku Tree set only launched at major retailers in January 2025. It's now listed on the Last Chance to Buy ",
+      "url": "https://www.gamespot.com/articles/lego-the-legend-of-zelda-great-deku-tree-nintendo-building-set/1100-6523747/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1601/16018044/4309133-great-deku-tree-main.jpg",
+      "taken_at": 1778872140,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.3547999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-4461612283",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Videogame pirates tell other pirates to shut up about it after Subnautica 2 developers are taunted with illicit copies",
+      "summary": "A breach of pirate etiquette has even pirates siding with a Subnautica 2 designer.",
+      "url": "https://www.pcgamer.com/games/survival-crafting/videogame-pirates-scold-each-other-after-subnautica-2-developers-are-taunted-with-illicit-copies/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/4wzumLEfni49wxqq2WuCQL-1280-80.jpg",
+      "taken_at": 1778879994,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.3400999999999996,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_games-9019971675",
+      "source_id": "reddit_games",
+      "source_name": "Reddit r/Games",
+      "authority": 1.0,
+      "region": "global",
+      "title": "RuneScape: Dragonwilds - Kuldra's Saga - The Roadmap Update",
+      "summary": "&#32; submitted by &#32; /u/_Protector [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Games/comments/1teqkmn/runescape_dragonwilds_kuldras_saga_the_roadmap/",
+      "thumb": null,
+      "taken_at": 1778929539,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.3072,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-995185043",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Subnautica 2's early access roadmap promises quality-of-life additions, co-op improvements, and—eventually—new biomes and creatures",
+      "summary": "The ocean's got room for more.",
+      "url": "https://www.pcgamer.com/games/survival-crafting/subnautica-2-roadmap-updates/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/q9EzVzJ3n2Vf6UxB4inhaF-1280-80.jpg",
+      "taken_at": 1778878689,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.303,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamesindustry-4134142246",
+      "source_id": "gamesindustry",
+      "source_name": "GamesIndustry.biz",
+      "authority": 1.9,
+      "region": "global",
+      "title": "Unity reveals winners for its 2026 Humanity Grant",
+      "summary": "Unity has named the winners of its 2026 Unity for Humanity Grant, highlighting the achievements of ten developers and three honourable mentions from eight countries. Read more",
+      "url": "https://www.gamesindustry.biz/unity-reveals-winners-for-its-2026-humanity-grant",
+      "thumb": "https://assetsio.gnwcdn.com/unity-for-humanity.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778852861,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.2939,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_gaming-9211176300",
+      "source_id": "reddit_gaming",
+      "source_name": "Reddit r/gaming",
+      "authority": 0.7,
+      "region": "global",
+      "title": "Alan Wake 2 has seriously impressive and photorealistic in-gameplay faces",
+      "summary": "This is on PS5. This game has the best in-game facial animations I’ve seen outside of cutscenes. I just sat down and took endless screenshots with photo mode, I kept zooming in on their faces to see the details lol &#32; submitted by &#32; /u/Lanky_Relation1171 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/gaming/comments/1tew5hr/alan_wake_2_has_seriously_impressive_and/",
+      "thumb": "https://preview.redd.it/oimukundli1h1.jpeg?width=640&crop=smart&auto=webp&s=281de550107f9bbb6df6593df362436999368db2",
+      "taken_at": 1778943844,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.2868999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-4598408511",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "We can thank a Jim Henson Company puppeteer for some of Valve's best animation work",
+      "summary": "TF2, Left 4 Dead, and Portal have some Fraggle Rock in them.",
+      "url": "https://www.pcgamer.com/gaming-industry/we-can-thank-a-jim-henson-company-puppeteer-for-some-of-valves-best-animation-work/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/cPH8HT7J8MR5t7XYPc4Ej5-1280-80.jpg",
+      "taken_at": 1778878053,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.2855,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-9481217549",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Director Infamous For Terrible Video Game Movies Announces ‘Unofficial Sequel’ To House Of The Dead 23 Years Later",
+      "summary": "I heard the original working title was \"Bungalow of Recently Departed\"",
+      "url": "https://kotaku.com/director-infamous-for-terrible-video-game-movies-announces-unofficial-sequel-to-house-of-the-dead-23-years-later-2000696506",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/The-House-of-The-Dead-2-Remake-official-image-Forever-Entertainment-1280x720.jpg",
+      "taken_at": 1778872119,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.2784999999999997,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "gamespot-5753841084",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Crimson Desert Patch Fixes Damiane's Armor And Adds Powerful Finisher",
+      "summary": "Only three days have passed since Pearl Abyss shared the last update for Crimson Desert , but the publisher has now dropped another patch that makes some notable improvements to the game. It also fixes the issue with Damiane’s Elegant Carmine leather armor that sparked some backlash earlier this month. According to the patch notes, the \"abnormal\" appearance of Damiane's new armor wasn't planned. The Elegant Carmine leather armor briefly covered up more of her body than usual, which caused some p",
+      "url": "https://www.gamespot.com/articles/crimson-desert-patch-fixes-damianes-armor-and-adds-powerful-finisher/1100-6539997/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1837/18375603/4696725-crimsondesertelegantcarmine.jpg",
+      "taken_at": 1778868960,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.2708,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "rps-3323832784",
+      "source_id": "rps",
+      "source_name": "Rock Paper Shotgun",
+      "authority": 1.5,
+      "region": "global",
+      "title": "Forza Horizon 6 will unleash the Wankel-powered Furai to kick off its Festival Playlist car additions",
+      "summary": "Forza Horizon 6 is out in full next week, so naturally Playground Games have already started to spool up the motors of its live-service events and car rewards. The Festival Playlist gets going on May 21st, and fittingly its first series will offer a chance grab one of the funkiest concept cars Japan have ever produced. Read more",
+      "url": "https://www.rockpapershotgun.com/forza-horizon-6-will-unleash-the-wankel-powered-furai-to-kick-off-its-festival-playlist-car-additions",
+      "thumb": "https://assetsio.gnwcdn.com/forza-horizon-6-first-festival-playlist-furai-01.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778860925,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.2582,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-5335868003",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "冒険は続いている――24周年を迎えた「FFXI」の特別映像「FINAL FANTASY XI 24th Anniversary Movie」が公開。記念キャンペーンも開始",
+      "summary": "スクウェア・エニックスは本日（2026年5月15日），MMORPG「ファイナルファンタジーXI」の24周年記念映像「FINALFANTASYXI24thAnniversaryMovie」を公開した。また，本日からは複数の24周年記念キャンペーンが開催されている。",
+      "url": "https://www.4gamer.net/games/005/G000546/20260515064/",
+      "thumb": null,
+      "taken_at": 1778849404,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.2337,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-7944408849",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "GamesRadar has decamped to Kyoto to bring you some killer world premieres and trailers straight out of BitSummit Punch 2026",
+      "summary": "We just came in and found a letter in Japanese on their desks. We assume this is what it says.",
+      "url": "https://www.pcgamer.com/games/gamesradar-has-decamped-to-kyoto-to-bring-you-some-killer-world-premieres-and-trailers-straight-out-of-bitsummit-punch-2026/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/c9QQ8qbeAz6BRCEKFpCTNF-1280-80.jpg",
+      "taken_at": 1778875647,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.2211,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-1165461722",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "I'm tired of everything getting turned into a roguelite, but I'll make an exception for pinball",
+      "summary": "My weakness has been laser targeted.",
+      "url": "https://www.pcgamer.com/games/roguelike/im-tired-of-everything-getting-turned-into-a-roguelite-but-ill-make-an-exception-for-pinball/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/gCFwWWMhPqAKED8DBkK2Lk-1280-80.jpg",
+      "taken_at": 1778874471,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.1902999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-1843627874",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "How To Get Past The Heat Barrier In Subnautica 2",
+      "summary": "If you travel roughly 250 meters away from the starting lifepod in Subnautica 2 , you'll encounter a new biome that looks like an underwater desert. While you might be tempted to explore this biome, you'll get a message from your PDA that tells you to stop immediately. This biome has an extremely high temperature, and you'll receive a heat warning as soon as you get too close to it. Naturally, with map space being so limited in early access of Subnautica 2, you'll want to equip whatever equipmen",
+      "url": "https://www.gamespot.com/articles/how-to-get-past-the-heat-barrier-in-subnautica-2/1100-6539992/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1745/17457013/4696690-ss_787e2315a1eb5aaba73c4f75e6f7d7d8835fa260.1920x1080%281%29.jpg",
+      "taken_at": 1778865660,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.1896,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-6261850053",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Subnautica 2 already has huge concurrent player counts and has swum to 2 million sales",
+      "summary": "Subnautica 2 has done exceptionally well following its launch into Early Access, quickly coasting to 467,000 concurrent players on Steam alone. Read more",
+      "url": "https://www.eurogamer.net/subnautica-2-sales-launch-one-million",
+      "thumb": "https://assetsio.gnwcdn.com/Subnautica-2-system-spec.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778835797,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.1713999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_pcgaming-8931049469",
+      "source_id": "reddit_pcgaming",
+      "source_name": "Reddit r/pcgaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "PC game discounts for the weekend",
+      "summary": "&#32; submitted by &#32; /u/Axeisacutabove [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/pcgaming/comments/1tesibe/pc_game_discounts_for_the_weekend/",
+      "thumb": "https://external-preview.redd.it/r1LpO3hfILvcYrUYaAZCby3PbEVHV_Lyho12o4Hlq6Y.jpeg?width=640&crop=smart&auto=webp&s=b88067a893942ab460a8a80db9c95295ac23ad40",
+      "taken_at": 1778934979,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.1595,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "pcgamer-7506280799",
+      "source_id": "pcgamer",
+      "source_name": "PC Gamer",
+      "authority": 1.6,
+      "region": "global",
+      "title": "Another metaverse is set to die in June",
+      "summary": "Holoearth, which just launched in 2024, is the latest proof that PC Gamer's Wes Fenlon was right.",
+      "url": "https://www.pcgamer.com/games/vr/another-metaverse-is-set-to-die-in-june/",
+      "thumb": "https://cdn.mos.cms.futurecdn.net/pCzWUqxUpsbo4Ttm9PAmnn-1280-80.png",
+      "taken_at": 1778871876,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.1252,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-5415862210",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "\"We are not trying to dismiss handmade work or disrespect creators\" - studio behind popular party game Party Animals backtracks after AI video contest outcry",
+      "summary": "Recreate Games has apologised after an AI-focused video contest for its popular casual brawler Party Animals drew significant community criticism, insisting it was \"not trying to dismiss handmade work or disrespect creators\". Read more",
+      "url": "https://www.eurogamer.net/party-animals-ai-competition-controversy-apology",
+      "thumb": "https://assetsio.gnwcdn.com/party-animals-screenshot.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778862709,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.1203,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamesindustry-1288192276",
+      "source_id": "gamesindustry",
+      "source_name": "GamesIndustry.biz",
+      "authority": 1.9,
+      "region": "global",
+      "title": "Advocating for Godot: A report from A Maze Berlin | Opinion",
+      "summary": "And so to Berlin, where the A Maze indie games festival is celebrating its 15th year, and time continues to make fools of all of us. Read more",
+      "url": "https://www.gamesindustry.biz/advocating-for-godot-a-report-from-a-maze-berlin-opinion",
+      "thumb": "https://assetsio.gnwcdn.com/A-Maze-Berlin-2026-(1).jpeg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778843693,
+      "categories": [
+        "indie"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.0978999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-6723410387",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Stephen Colbert And David Letterman Throw Crap Off A Roof At A Giant CBS Bullseye",
+      "summary": "Turns out, all I needed to feel better was to watch Letterman throw watermelons off the Ed Sullivan Theater again",
+      "url": "https://kotaku.com/stephen-colbert-and-david-letterman-throw-crap-off-a-roof-at-a-giant-cbs-bullseye-2000696526",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/cbsss-1280x720.jpg",
+      "taken_at": 1778864419,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.0902,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "4gamer-1700436892",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "最大4人で遊べる東方二次創作ゲーム「帝国幻想郷〜TOHOTOPIA」，早期アクセス版をリリース。カジュアルに楽しめるターン制ストラテジー",
+      "summary": "RemiliaCommandは2026年5月14日，新作タイトル「帝国幻想郷〜TOHOTOPIA」の早期アクセス版をSteamでリリースした。本作は，「東方Project」を題材とした二次創作ゲームで，「Polytopia」に大きな影響を受けたカジュアルなターン制ストラテジーになっているという。",
+      "url": "https://www.4gamer.net/games/007/G100716/20260515048/",
+      "thumb": null,
+      "taken_at": 1778841943,
+      "categories": [
+        "community"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.0797,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamesindustry-6171518259",
+      "source_id": "gamesindustry",
+      "source_name": "GamesIndustry.biz",
+      "authority": 1.9,
+      "region": "global",
+      "title": "Nexon Q1 net income rises 118% to $360.7m",
+      "summary": "Nexon reported strong first-quarter results, with net income rising 118% year-over-year, supported by a &yen;14.5 billion ($91.4 million) foreign exchange gain. Read more",
+      "url": "https://www.gamesindustry.biz/nexon-q1-net-income-rises-118-to-3607m",
+      "thumb": "https://assetsio.gnwcdn.com/arc-raiders_59Bfapt.png?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778841816,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.0614999999999997,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-6613552880",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "「パワーウォッシュ シミュレーター」，スクウェア・エニックスによる販売を5月19日をもって終了。「トゥームレイダー特別依頼」なども配信終了へ",
+      "summary": "スクウェア・エニックスは本日，「パワーウォッシュシミュレーター」の同社による販売を2026年5月19日をもって終了すると発表した。今後は開発元のFuturLabが販売を継続する。これに伴い，無料DLC「トゥームレイダー特別依頼」と「ミッドガル特別依頼」も同日で配信終了となる。",
+      "url": "https://www.4gamer.net/games/571/G057159/20260515044/",
+      "thumb": null,
+      "taken_at": 1778839776,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 2.0383999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-8857823754",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "How To Build And Use The Dive Elevator In Subnautica 2",
+      "summary": "Subnautica 2 brings back many of the same tools and objects from the first two games in the series, but the Dive Elevator is one of the brand new additions. This is among the most intriguing objects you can build in Subnautica 2, as it allows you much quicker access to lower depths in the ocean. However, before you can figure out how to use the Dive Elevator, you'll have to unlock its crafting recipe. Below, you can see where to find its blueprints, its crafting recipe, and the best way to use t",
+      "url": "https://www.gamespot.com/articles/how-to-build-and-use-the-dive-elevator-in-subnautica-2/1100-6539989/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1632/16320660/4696704-subnautica2dive.jpg",
+      "taken_at": 1778858220,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.0222999999999995,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-8007787775",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Bungie Is Looking To Expand Marathon's Appeal With \"Chill\" New PvE Modes",
+      "summary": "Marathon developer Bungie has revealed plans to revitalize the game ahead of its Season 2 launch and beyond. These plans include a massive amount of gameplay tweaks, though Bungie isn't getting too specific just yet. But what we do know--based on a recent blog post announcing the upcoming changes--is that a bigger focus on PvE gameplay is on the way. \"In Season 2, we will be experimenting with two modes, one at the beginning of the season and one towards the middle/latter half of the season,\" ga",
+      "url": "https://www.gamespot.com/articles/bungie-is-looking-to-expand-marathons-appeal-with-chill-new-pve-modes/1100-6539987/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1752/17528202/4696678-marathons2.jpg",
+      "taken_at": 1778857860,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.0146,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamespot-7512185439",
+      "source_id": "gamespot",
+      "source_name": "GameSpot",
+      "authority": 1.7,
+      "region": "global",
+      "title": "The Most Interesting Game Out There Just Got Easier To Start Playing",
+      "summary": "When you consider jumping into a 23-year-old game like Eve Online , the thought is daunting. Hundreds of thousands of veteran players with thousands of hours of Eve Online gameplay, located across thousands of systems, all with their own individual or faction-led objectives, with the capability to wipe you out in seconds without a second thought? Yeah, that's terrifying. But there are plenty of reasons to persevere. There's a vast community, and despite the perception that they may be initially ",
+      "url": "https://www.gamespot.com/articles/the-most-interesting-game-out-there-just-got-easier-to-start-playing/1100-6539986/?ftag=CAD-01-10abi2f",
+      "thumb": "https://www.gamespot.com/a/uploads/screen_medium/1850/18507742/4696669-starter-space.jpg",
+      "taken_at": 1778857560,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 2.0083,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-9071098303",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "중파 적용 신캐 2종에 장기 주차 개선, '스타세이비어' 반주년 쇼케이스",
+      "summary": "스튜디오비사이드는 오늘(15일) 자사의 육성 시뮬레이션 RPG '스타세이비어'의 반주년 쇼케이스를 공개했다. 이번 쇼케이스에서는 이성원 디렉터가 출연, 반주년 업데이트 및 이후의 로드맵에 대해서 소개했다. 우선 반주년 업데이트에 앞서 메인스토리 업데이트 주기에 대해서 언급했다. 침식 잔흔이나 풍월당 등 대형 이벤트로 준비 기간이 길어지면서 메인 스토리 텀",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316447",
+      "thumb": "https://static.inven.co.kr/column/2026/05/15/news/thumb/s1489468351.png",
+      "taken_at": 1778847249,
+      "categories": [
+        "release",
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 1.9663,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "inven-7977641259",
+      "source_id": "inven",
+      "source_name": "인벤",
+      "authority": 1.5,
+      "region": "kr",
+      "title": "스팀덱과 컨트롤러 지원, 러닝 이벤트까지 '블루 아카이브' 4.5주년 방송",
+      "summary": "넥슨은 오늘(15일), '블루 아카이브'의 4.5주년을 기념해 특별 생방송 키보토스 라이브를 진행했다. 공식 유튜브를 통해 진행된 이번 라이브에는 김용하 총괄 PD와 이준호 부PD가 출연, 4.5주년 업데이트 및 로드맵과 각종 이벤트에 대한 소개가 이어졌다. 강철 대륙에서의 결전, '데카그라마톤 편' 3장 업데이트 우선 오는 5월 19일, 메인 스토리 '",
+      "url": "https://www.inven.co.kr/webzine/news/?news=316448",
+      "thumb": "https://static.inven.co.kr/column/2026/05/15/news/thumb/s1404934885.jpg",
+      "taken_at": 1778846758,
+      "categories": [
+        "release",
+        "collab"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 1.9571999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "reddit_pcgaming-1870854719",
+      "source_id": "reddit_pcgaming",
+      "source_name": "Reddit r/pcgaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "Forza Horizon 6 Optimization, The Best Settings to Change on PC!",
+      "summary": "&#32; submitted by &#32; /u/ZazaLeNounours [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/pcgaming/comments/1teqrtj/forza_horizon_6_optimization_the_best_settings_to/",
+      "thumb": "https://external-preview.redd.it/I0y9SOXZRU71dRLEt4TH9yh2c8X6JyPTjgNNUGFn4i4.jpeg?width=320&crop=smart&auto=webp&s=e31593f56de1fb79faf7d461d8d05c80c801198b",
+      "taken_at": 1778930148,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.9473999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-3085449103",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Arcade Cabinets For A Satirical Trump RPG Have Appeared In Washington D.C.",
+      "summary": "Operation Epic Furious: Strait To Hell is also playable on browsers",
+      "url": "https://kotaku.com/donald-trump-video-game-satire-rpg-play-arcade-cabinet-2000696590",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/Screen-Shot-2026-05-15-at-4.45.36-PM.jpg",
+      "taken_at": 1778882424,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.9333999999999998,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "reddit_pcgaming-1175844139",
+      "source_id": "reddit_pcgaming",
+      "source_name": "Reddit r/pcgaming",
+      "authority": 0.9,
+      "region": "global",
+      "title": "RuneScape: Dragonwilds - Kuldra's Saga - The Roadmap Update",
+      "summary": "&#32; submitted by &#32; /u/_Protector [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/pcgaming/comments/1teqkg6/runescape_dragonwilds_kuldras_saga_the_roadmap/",
+      "thumb": "https://external-preview.redd.it/O6jrw3SG8KfP_lZmGK5uyuusxlPpG8QDAPp_17zm1H0.png?width=640&crop=smart&auto=webp&s=6fec0c2fd5ca86a743b377f7d5d793af9290aa34",
+      "taken_at": 1778929523,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.9222,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "gamesindustry-7131918669",
+      "source_id": "gamesindustry",
+      "source_name": "GamesIndustry.biz",
+      "authority": 1.9,
+      "region": "global",
+      "title": "Square Enix FY26 operating income surges 34.9% despite net sales decline",
+      "summary": "Square Enix has reported financial results for the year ending March 31, 2026, noting a decline in net sales due to reduced revenues from MMOs and games for smart devices and PC browsers. Read more",
+      "url": "https://www.gamesindustry.biz/square-enix-fy26-operating-income-surges-349-despite-net-sales-decline",
+      "thumb": "https://assetsio.gnwcdn.com/final-fantasy_6ecLIFB.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778833886,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.918,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "eurogamer-3890923061",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "Marathon \"overwhelming\" for newcomers, director admits as plans for PvE and PvP-lite modes revealed",
+      "summary": "Marathon game director Joe Ziegler has shared some of Bungie's plans to improve its divisive extraction shooter, which include the introduction of PvE and PvP-lite game modes as alternatives to the \"overwhelming\" core experience. Read more",
+      "url": "https://www.eurogamer.net/marathon-future-seasons-pve-pvp-lite",
+      "thumb": "https://assetsio.gnwcdn.com/marathon-arachne.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778852786,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.9131,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "4gamer-7814140740",
+      "source_id": "4gamer",
+      "source_name": "4Gamer (日)",
+      "authority": 1.6,
+      "region": "jp",
+      "title": "ネズミのクイルが滅びた王国を探索するアドベンチャーゲーム「Moss: The Forgotten Relic」，今夏に発売決定",
+      "summary": "Polyarcは2026年5月16日，アドベンチャーゲーム「Moss:TheForgottenRelic」を今夏に発売すると発表した。本作は，「Moss:第1巻」「Moss:第2巻」を1本にまとめたタイトル。プレイヤーは，小さいが勇敢なネズミのクイルを導き，自然に飲み込まれつつある滅びた王国を探索していく。",
+      "url": "https://www.4gamer.net/games/007/G100706/20260515037/",
+      "thumb": null,
+      "taken_at": 1778860800,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.8808999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-6243805802",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Diablo 4 Bug Fix Accidentally Makes Players Basically Immortal Instead: ‘Yep This Broke The Game”",
+      "summary": "A small issue is having big consequences in Lord of Hatred",
+      "url": "https://kotaku.com/diablo-4-bug-fix-accidentally-makes-players-basically-immortal-instead-yep-this-broke-the-game-2000696580",
+      "thumb": "https://kotaku.com/app/uploads/2026/05/image-80.jpg",
+      "taken_at": 1778880183,
+      "categories": [
+        "industry"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.8801999999999999,
+      "_diversity_note": "매체 N=20"
+    },
+    {
+      "id": "eurogamer-6987450338",
+      "source_id": "eurogamer",
+      "source_name": "Eurogamer",
+      "authority": 1.7,
+      "region": "global",
+      "title": "BioWare had a plan to reboot Star Wars: The Old Republic and make it more KOTOR like, but EA's board of directors shut it down",
+      "summary": "Former BioWare lead designer James Ohlen has revealed there was once a plan to reboot the studio's massively-multiplayer online role-playing game Star Wars: The Old Republic , and it would have made it more like 2003's single-player RPG Star Wars: Knights of the Old Republic , had the project been allowed to go ahead. Read more",
+      "url": "https://www.eurogamer.net/bioware-swtor-old-republic-reboot-ohlen",
+      "thumb": "https://assetsio.gnwcdn.com/kotor_darth_revan.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "taken_at": 1778850627,
+      "categories": [
+        "collab"
+      ],
+      "keyword_bonus": 0.0,
+      "penalty": false,
+      "score": 1.8724999999999998,
+      "_diversity_note": "매체 N=25"
+    },
+    {
+      "id": "kotaku-1807028763",
+      "source_id": "kotaku",
+      "source_name": "Kotaku",
+      "authority": 1.4,
+      "region": "global",
+      "title": "Subnautica 2 Dev Responds To Player Who Asked For Tech Support On A Leaked Version Of The Game: ‘Thanks For Pirating A Game That I’ve Spent Years Working On’",
+      "summary": "The Steam hit somehow leaked ahead of launch",
+      "url": "https://kotaku.com/subnautica-2-dev-responds-to-player-who-asked-for-tech-support-on-a-leaked-version-of-the-game-thanks-for-pirating-a-game-that-ive-spent-years-working-on-2000696489",
+      "thumb": "https://kotaku.com/app/uploads/2025/07/c6fe2ac031e2e4dc16c414acdd1c7662-1280x720.jpg",
+      "taken_at": 1778853659,
+      "categories": [
+        "release"
+      ],
+      "keyword_bonus": 0.3333333333333333,
+      "penalty": false,
+      "score": 1.8676,
+      "_diversity_note": "매체 N=20"
+    }
+  ]
+}

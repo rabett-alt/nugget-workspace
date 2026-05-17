@@ -1,0 +1,40 @@
+name: RSS 수집 + 스코어링
+
+# 매시간 정각 (24회/일) - GitHub Actions 무료 limit 안 (월 2,000분)
+on:
+  schedule:
+    - cron: '5 * * * *'   # 매시 05분 (정각 trigger 분산)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install feedparser
+
+      - name: Collect + score
+        run: python scripts/collect_rss.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name 'nugget-bot'
+          git config user.email 'bot@nugget.local'
+          if ! git diff --quiet data/feed.json; then
+            git add data/feed.json
+            git commit -m "rss: $(date -u +%Y-%m-%dT%H:%MZ) feed update"
+            git push
+          else
+            echo "No change"
+          fi

@@ -1017,3 +1017,209 @@ body {
   color: var(--text);
   padding: 0 2px; border-radius: 2px;
 }
+
+/* ===== v0.13: 콘텐츠 카드 그리드 + 모달 ===== */
+.cat-tabs {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin: 18px 0 24px;
+}
+.cat-tab {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  background: var(--bg-soft);
+  border: 1px solid transparent;
+  color: var(--text-2);
+  font-size: 12px; font-weight: 500;
+  cursor: pointer; font-family: inherit;
+  transition: all 0.12s;
+}
+.cat-tab:hover { color: var(--text); background: #ececea; }
+.cat-tab.active { background: var(--dark); color: var(--on-dark); border-color: var(--dark); }
+.cat-tab .dot { width: 6px; height: 6px; border-radius: 50%; }
+.cat-tab .count { font-size: 10px; opacity: 0.7; font-variant-numeric: tabular-nums; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.feed-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(135deg, #c9b59a 0%, #a88c68 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feed-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); }
+.feed-card .bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.4s ease;
+}
+.feed-card:hover .bg { transform: scale(1.06); }
+.feed-card .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.85) 100%);
+}
+.feed-card .badge {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(255,255,255,0.94);
+  color: var(--text);
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.3px;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.feed-card .badge .dot { width: 5px; height: 5px; border-radius: 50%; }
+.feed-card .score-pill {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 4px 8px;
+  border-radius: var(--r-pill);
+}
+.feed-card .meta-bottom {
+  position: absolute; left: 16px; right: 16px; bottom: 14px;
+  color: #fff;
+}
+.feed-card .src-line {
+  font-size: 10px; font-weight: 600;
+  opacity: 0.85; letter-spacing: 0.3px;
+  margin-bottom: 6px;
+}
+.feed-card .title {
+  font-size: 14px; font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.feed-card.empty { background: var(--bg-soft); }
+.feed-card.empty .bg { display: none; }
+.feed-card.empty .overlay { background: none; }
+.feed-card.empty .title { color: var(--text-3); text-shadow: none; }
+
+.cards-empty {
+  grid-column: 1/-1;
+  text-align: center; padding: 60px 0;
+  color: var(--text-3); font-size: 12px;
+}
+
+/* ===== 카드 모달 ===== */
+.card-modal {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.card-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.18s ease;
+}
+.card-modal-panel {
+  position: relative;
+  background: var(--bg);
+  border-radius: 24px;
+  max-width: 720px; width: 100%;
+  max-height: 92vh; overflow: hidden;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  animation: popIn 0.22s ease;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes popIn { from{opacity:0; transform: translateY(12px) scale(0.98)} to{opacity:1; transform: none} }
+
+.modal-close {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.92);
+  font-size: 16px; cursor: pointer;
+  color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-thumb {
+  background-size: cover; background-position: center;
+  background-color: var(--bg-soft);
+  min-height: 100%;
+}
+.modal-body {
+  padding: 28px 28px 24px;
+  display: flex; flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+.modal-meta {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px;
+}
+.modal-cat {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--bg-soft);
+  font-weight: 600;
+}
+.modal-cat .dot { width: 5px; height: 5px; border-radius: 50%; }
+.modal-src { color: var(--text-3); letter-spacing: 0.3px; }
+.modal-title {
+  font-size: 20px; font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  color: var(--text);
+}
+.modal-brief {
+  background: var(--bg-soft);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+.brief-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--beige-deep);
+  margin-bottom: 8px;
+}
+.brief-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 7px;
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.brief-list li::before {
+  content: '·  '; color: var(--text-3); font-weight: 700;
+}
+.modal-buttons {
+  display: flex; gap: 10px; margin-top: auto;
+}
+.modal-btn {
+  flex: 1; text-align: center;
+  padding: 12px 18px;
+  border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 600;
+  text-decoration: none;
+  transition: all 0.12s;
+}
+.modal-btn.dark { background: var(--dark); color: var(--on-dark); }
+.modal-btn.dark:hover { background: #000; }
+.modal-btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.modal-btn.ghost:hover { background: var(--bg-soft); }
+
+@media (max-width: 720px) {
+  .card-modal-panel { grid-template-columns: 1fr; }
+  .modal-thumb { min-height: 200px; }
+}

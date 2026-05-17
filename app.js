@@ -703,3 +703,210 @@ startSilentRefresh();
     setTimeout(function(){ var its = items(); if (its.length) setActive(0); }, 60);
   });
 })();
+
+// ─── v0.12 ───
+var _silentTimer = null;
+function startSilentRefresh() {
+  if (_silentTimer) clearInterval(_silentTimer);
+  _silentTimer = setInterval(function(){
+    if (document.hidden) return;
+    if (typeof loadAll === 'function') loadAll();
+  }, 30000);
+}
+document.addEventListener('visibilitychange', function(){
+  if (!document.hidden && typeof loadAll === 'function') loadAll();
+});
+startSilentRefresh();
+
+// 검색 키보드 네비 (↑↓ Enter ESC)
+(function(){
+  var inp = $('globalSearch');
+  var res = $('gsResults');
+  if (!inp || !res) return;
+  var activeIdx = -1;
+  function items(){ return res.querySelectorAll('.gs-item'); }
+  function setActive(idx){
+    var its = items();
+    its.forEach(function(el, i){ el.classList.toggle('kbd-active', i === idx); });
+    var el = its[idx];
+    if (el) el.scrollIntoView({block:'nearest'});
+    activeIdx = idx;
+  }
+  inp.addEventListener('keydown', function(e){
+    var its = items();
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (res.hidden) return;
+      setActive(Math.min(its.length-1, activeIdx+1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActive(Math.max(0, activeIdx-1));
+    } else if (e.key === 'Enter') {
+      var el = its[activeIdx >= 0 ? activeIdx : 0];
+      if (el) { e.preventDefault(); el.click(); }
+    } else if (e.key === 'Escape') {
+      res.hidden = true; inp.blur();
+    } else {
+      activeIdx = -1;
+    }
+  });
+  inp.addEventListener('input', function(){
+    setTimeout(function(){ var its = items(); if (its.length) setActive(0); }, 60);
+  });
+})();
+
+// ─── v0.13: 콘텐츠 카드 그리드 (feed.json) ───
+var _feedState = { all: [], cats: [], byCat: {}, activeCat: 'all' };
+
+function loadFeed() {
+  return fetch('./data/feed.json?t=' + Date.now()).then(function(r){ return r.json(); }).then(function(d){
+    _feedState.all = d.items || [];
+    _feedState.cats = d._categories || [];
+    _feedState.byCat = d.by_category || {};
+    renderCatTabs();
+    renderCards();
+    return d;
+  }).catch(function(e){ console.error('feed load fail', e); });
+}
+
+function renderCatTabs() {
+  var el = $('catTabs'); if (!el) return;
+  var total = _feedState.all.length;
+  var tabs = [{ id: 'all', label: '전체', color: '#0e0e0e', count: total }];
+  _feedState.cats.forEach(function(c){
+    tabs.push({ id: c.id, label: c.label, color: c.color, count: (_feedState.byCat[c.id] || []).length });
+  });
+  el.innerHTML = tabs.map(function(t){
+    var cls = (t.id === _feedState.activeCat) ? 'cat-tab active' : 'cat-tab';
+    return '<button class="' + cls + '" data-cat="' + t.id + '">' +
+      '<span class="dot" style="background:' + t.color + '"></span>' +
+      esc(t.label) + ' <span class="count">' + t.count + '</span></button>';
+  }).join('');
+  el.querySelectorAll('.cat-tab').forEach(function(b){
+    b.addEventListener('click', function(){
+      _feedState.activeCat = b.dataset.cat;
+      renderCatTabs();
+      renderCards();
+    });
+  });
+}
+
+function fmtRelShort(ts) {
+  var s = ts / 1; // seconds
+  var diff = (Date.now()/1000 - s);
+  if (diff < 60) return '방금';
+  if (diff < 3600) return Math.floor(diff/60) + '분';
+  if (diff < 86400) return Math.floor(diff/3600) + '시간';
+  return Math.floor(diff/86400) + '일';
+}
+
+function renderCards() {
+  var el = $('cardsGrid'); if (!el) return;
+  var ids;
+  if (_feedState.activeCat === 'all') {
+    ids = _feedState.all.map(function(it){ return it.id; });
+  } else {
+    ids = _feedState.byCat[_feedState.activeCat] || [];
+  }
+  var itemsMap = {};
+  _feedState.all.forEach(function(it){ itemsMap[it.id] = it; });
+  var items = ids.map(function(id){ return itemsMap[id]; }).filter(Boolean);
+
+  if (!items.length) {
+    el.innerHTML = '<div class="cards-empty">아직 수집된 항목이 없습니다. 1시간마다 자동 업데이트됩니다.</div>';
+    return;
+  }
+
+  // 카테고리 색 매핑
+  var catColor = {};
+  _feedState.cats.forEach(function(c){ catColor[c.id] = c.color; });
+  var catLabel = {};
+  _feedState.cats.forEach(function(c){ catLabel[c.id] = c.label; });
+
+  el.innerHTML = items.slice(0, 60).map(function(it){
+    var primaryCat = it.categories && it.categories[0];
+    var color = catColor[primaryCat] || '#a88c68';
+    var label = catLabel[primaryCat] || '기타';
+    var bg = it.thumb
+      ? 'background-image:url(' + JSON.stringify(it.thumb) + ');'
+      : 'background:linear-gradient(135deg,' + color + ',' + color + 'dd);';
+    var when = fmtRelShort(it.taken_at);
+    return '<div class="feed-card" data-id="' + it.id + '">' +
+      '<div class="bg" style="' + bg + '"></div>' +
+      '<div class="overlay"></div>' +
+      '<div class="badge"><span class="dot" style="background:' + color + '"></span>' + esc(label) + '</div>' +
+      '<div class="score-pill">' + Math.round(it.score) + '</div>' +
+      '<div class="meta-bottom">' +
+        '<div class="src-line">' + esc(it.source_name) + ' · ' + when + ' 전</div>' +
+        '<div class="title">' + esc(it.title) + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  el.querySelectorAll('.feed-card').forEach(function(card){
+    card.addEventListener('click', function(){ openModal(card.dataset.id); });
+  });
+}
+
+function openModal(id) {
+  var it = _feedState.all.find(function(x){ return x.id === id; });
+  if (!it) return;
+  var catColor = {}, catLabel = {};
+  _feedState.cats.forEach(function(c){ catColor[c.id] = c.color; catLabel[c.id] = c.label; });
+  var primaryCat = it.categories && it.categories[0];
+
+  // 썸네일
+  var th = $('modalThumb');
+  th.style.backgroundImage = it.thumb ? 'url(' + JSON.stringify(it.thumb) + ')' : 'linear-gradient(135deg,' + (catColor[primaryCat]||'#a88c68') + ',#5a3a2a)';
+
+  // 카테고리·매체
+  $('modalCat').innerHTML = '<span class="dot" style="background:' + (catColor[primaryCat]||'#a88c68') + '"></span>' + esc(catLabel[primaryCat] || '기타');
+  $('modalSrc').textContent = it.source_name + ' · ' + fmtRelShort(it.taken_at) + ' 전 · 점수 ' + Math.round(it.score);
+  $('modalTitle').textContent = it.title;
+
+  // 3줄 압축 (요약에서 문장 자르기 — 더 정밀한 압축은 Claude API 받은 후)
+  var briefs = makeBrief(it);
+  $('modalBrief').innerHTML = briefs.map(function(b){ return '<li>' + esc(b) + '</li>'; }).join('');
+
+  // 원문 / 게임 링크
+  $('modalLinkOriginal').href = it.url;
+  $('modalLinkGame').href = guessGameLink(it);
+
+  $('cardModal').hidden = false;
+}
+
+function closeModal() { $('cardModal').hidden = true; }
+
+function makeBrief(it) {
+  // 우선 요약을 문장 단위로 자르기. 빈 경우 제목만.
+  var text = (it.summary || '').replace(/\s+/g, ' ').trim();
+  if (!text) return ['' + it.title, '원문에서 자세히 확인', it.source_name + ' 발행'];
+  // 문장 분리
+  var sents = text.split(/(?<=[.?!。！？])\s+/).filter(Boolean);
+  if (sents.length >= 3) return sents.slice(0, 3).map(function(s){ return s.length > 90 ? s.substring(0, 87) + '...' : s; });
+  if (sents.length === 2) return [sents[0], sents[1], it.source_name + ' · ' + fmtRelShort(it.taken_at) + ' 전'];
+  // 한 문장: 길면 잘라 3개로
+  if (text.length > 80) {
+    return [text.substring(0, 80) + '...', '키워드: ' + (it.categories || []).join(', '), it.source_name];
+  }
+  return [text, '키워드: ' + (it.categories || []).join(', '), it.source_name];
+}
+
+function guessGameLink(it) {
+  // 간단 휴리스틱 — 제목에서 게임명 키워드 추출해 Steam 검색으로
+  var t = (it.title || '').toLowerCase();
+  var q = encodeURIComponent(it.title.replace(/[\[\]【】「」『』]/g, '').slice(0, 60));
+  // 콘솔 게임이면 PSN/Xbox/Nintendo 추가 검토 가능. 일단 Steam 검색.
+  var BASE = 'https://store.steampowered.com/search/?term=';
+  return BASE + q;
+}
+
+document.addEventListener('click', function(e){
+  if (e.target && (e.target.id === 'cardModalBg' || e.target.id === 'modalClose')) closeModal();
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeModal();
+});
+
+loadFeed();
+setInterval(function(){ if (!document.hidden) loadFeed(); }, 60000);
