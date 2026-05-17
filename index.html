@@ -8,7 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=20260517">
+  <script id="cache-bust">
+    (function(){
+      var b = Date.now();
+      var l = document.querySelector('link[href*="style.css"]');
+      if (l) l.href = './style.css?b=' + b;
+      window.__bust = b;
+    })();
+  </script>
 </head>
 <body>
 
@@ -180,6 +188,6 @@
 
   <div class="dummy-notice" id="dummyNotice"></div>
 
-  <script src="./app.js"></script>
+  <script>(function(){var s=document.createElement("script");s.src="./app.js?b="+(window.__bust||Date.now());document.body.appendChild(s);})();</script>
 </body>
 </html>
