@@ -49,45 +49,90 @@ function saveWorkerCache(data) {
   try { localStorage.setItem(WORKER_CACHE_KEY, JSON.stringify({at: Date.now(), data: data})); } catch (e) {}
 }
 
-function fetchWorker() {
+// stale-while-revalidate: 캐시 있으면 즉시 resolve, fresh는 백그라운드 fetch 후 callback
+function fetchOnce(timeoutMs) {
   return new Promise(function(resolve, reject){
+    var ctrl = new AbortController();
+    var t = setTimeout(function(){ ctrl.abort(); }, timeoutMs || 5000);
+    fetch(WORKER_URL + '?t=' + Date.now(), { cache: 'no-store', signal: ctrl.signal })
+      .then(function(r){ return r.json(); })
+      .then(function(d){ clearTimeout(t); resolve(d); })
+      .catch(function(e){ clearTimeout(t); reject(e); });
+  });
+}
+
+// 백그라운드에서 fresh 시도 - 성공 시 onFresh(data) 콜백
+function fetchFreshBackground(onFresh) {
+  var tries = 0;
+  var delays = [600, 1200, 2000, 3000, 4500];
+  function attempt() {
+    fetchOnce(6000).then(function(d){
+      var n = ((d.all_posts || []).length) || ((d.recent_posts || []).length);
+      var bad = (d && d.ok === false) || n === 0;
+      if (!bad) {
+        saveWorkerCache(d);
+        if (typeof onFresh === 'function') onFresh(d);
+        return;
+      }
+      if (tries < delays.length) { tries++; setTimeout(attempt, delays[tries-1]); }
+    }).catch(function(){
+      if (tries < delays.length) { tries++; setTimeout(attempt, delays[tries-1]); }
+    });
+  }
+  attempt();
+}
+
+function fetchWorker() {
+  // 1) 캐시가 있으면 즉시 resolve
+  // 2) 동시에 백그라운드 fresh fetch → 성공 시 _onWorkerFresh 콜백 발동
+  return new Promise(function(resolve, reject){
+    var cached = loadWorkerCache();
+    if (cached) {
+      var ageMin = Math.round((Date.now() - cached.at) / 60000);
+      // 즉시 캐시 응답
+      resolve(Object.assign({}, cached.data, { _fromCache: true, _ageMin: ageMin }));
+      // 백그라운드 fresh
+      fetchFreshBackground(function(fresh){
+        if (typeof window._onWorkerFresh === 'function') window._onWorkerFresh(fresh);
+      });
+      return;
+    }
+    // 캐시 없음 → 첫 방문자. 짧은 retry 후 결과 (성공 시 cache 저장)
     var tries = 0;
-    var delays = [400, 700, 1200, 1800, 2500, 3500];
+    var delays = [400, 800, 1500, 2500];
     function attempt() {
-      fetch(WORKER_URL + '?t=' + Date.now(), { cache: 'no-store' })
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          var n = ((d.all_posts || []).length) || ((d.recent_posts || []).length);
-          var bad = (d && d.ok === false) || n === 0;
-          if (!bad) { saveWorkerCache(d); return resolve(d); }
-          if (tries >= delays.length) {
-            // 다 빈 응답 → 캐시 폴백
-            var cached = loadWorkerCache();
-            if (cached) {
-              var ageMin = Math.round((Date.now() - cached.at) / 60000);
-              return resolve(Object.assign({}, cached.data, { _fromCache: true, _ageMin: ageMin }));
-            }
-            return resolve(d); // 캐시도 없으면 빈 응답 그대로
-          }
-          tries++;
-          setTimeout(attempt, delays[tries-1]);
-        })
-        .catch(function(e){
-          if (tries >= delays.length) {
-            var cached = loadWorkerCache();
-            if (cached) {
-              var ageMin = Math.round((Date.now() - cached.at) / 60000);
-              return resolve(Object.assign({}, cached.data, { _fromCache: true, _ageMin: ageMin }));
-            }
-            return reject(e);
-          }
-          tries++;
-          setTimeout(attempt, delays[tries-1]);
-        });
+      fetchOnce(5000).then(function(d){
+        var n = ((d.all_posts || []).length) || ((d.recent_posts || []).length);
+        var bad = (d && d.ok === false) || n === 0;
+        if (!bad) { saveWorkerCache(d); return resolve(d); }
+        if (tries >= delays.length) return resolve(d);
+        tries++; setTimeout(attempt, delays[tries-1]);
+      }).catch(function(e){
+        if (tries >= delays.length) return resolve({ ok:false, error:e.message, all_posts:[], recent_posts:[], followers: 0 });
+        tries++; setTimeout(attempt, delays[tries-1]);
+      });
     }
     attempt();
   });
 }
+
+// fresh 데이터 도착 시 화면 갱신 hook
+window._onWorkerFresh = function(worker) {
+  if (typeof renderHero === 'function') renderHero(worker);
+  if (typeof renderWeekly === 'function') renderWeekly(worker);
+  // followers 갱신
+  if (typeof worker.followers === 'number') {
+    var h = _state.hist.slice();
+    var today = fmtDate(new Date());
+    var last = h[h.length-1];
+    if (!last || last.date !== today) h.push({date: today, count: worker.followers});
+    else last.count = worker.followers;
+    _state.hist = h;
+    renderFollowersChart();
+  }
+  var n = $('dummyNotice');
+  if (n) { n.classList.remove('on'); n.textContent = ''; }
+};
 
 // ─── 팔로워 차트 (D/W/M/Y) ───
 var _state = { hist: [], period: 'Y' };
