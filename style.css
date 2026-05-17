@@ -1549,8 +1549,8 @@ body {
 .content-app .dummy-notice { display: none !important; }
 /* ===== v0.15: 좌 nav rail + violet accent + 카테고리 6색 + 신선도 + 큐레이션 ===== */
 :root {
-  --accent: #6B4FFF;        /* violet — LIVE/NEW/CTA/hover */
-  --accent-bg: rgba(107,79,255,0.10);
+  --accent: var(--beige-deep);        /* violet — LIVE/NEW/CTA/hover */
+  --accent-bg: rgba(168,149,122,0.10);
   --cat-release:   #ef4444;
   --cat-industry:  #3b82f6;
   --cat-collab:    #ec4899;
@@ -1596,7 +1596,7 @@ body {
 .rail-btn.active {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(107,79,255,0.32);
+  box-shadow: 0 4px 14px rgba(168,149,122,0.32);
 }
 .rail-btn[disabled] { opacity: 0.35; cursor: not-allowed; }
 .rail-btn svg { width: 18px; height: 18px; stroke-width: 1.8; }
@@ -1611,7 +1611,7 @@ body { padding-left: 64px; }
 .cat-tab .dot, .feed-card .badge .dot, .modal-cat .dot { width: 7px; height: 7px; }
 
 /* === LIVE/NEW 배지 violet 처리 === */
-.hero-big .live-badge { background: var(--accent); box-shadow: 0 4px 14px rgba(107,79,255,0.35); }
+.hero-big .live-badge { background: var(--accent); box-shadow: 0 4px 14px rgba(168,149,122,0.35); }
 .hero-big .live-badge::before { background: #fff; }
 .new-badge {
   display: inline-flex; align-items: center; gap: 5px;
@@ -1634,7 +1634,7 @@ body { padding-left: 64px; }
 /* === 타이포 위계 강화 === */
 .content-title-v2 {
   font-size: 56px;
-  background: linear-gradient(135deg, var(--text) 20%, var(--accent) 90%);
+  background: linear-gradient(135deg, var(--text) 30%, var(--beige-deep) 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1663,15 +1663,15 @@ body { padding-left: 64px; }
 }
 
 /* === 카드 hover: violet glow === */
-.feed-card:hover { box-shadow: 0 12px 32px rgba(107,79,255,0.18); }
-.hero-big:hover, .hero-small:hover { box-shadow: 0 14px 40px rgba(107,79,255,0.20); }
+.feed-card:hover { box-shadow: 0 12px 32px rgba(168,149,122,0.18); }
+.hero-big:hover, .hero-small:hover { box-shadow: 0 14px 40px rgba(168,149,122,0.20); }
 
 /* === 카테고리 active = accent violet === */
 .cat-tab.active { background: var(--accent); border-color: var(--accent); }
 
 /* === Modal violet CTA === */
 .modal-btn.dark { background: var(--accent); }
-.modal-btn.dark:hover { background: #5638e8; }
+.modal-btn.dark:hover { background: #8b7758; }
 
 /* === Rail 반응형: 작은 화면에서 자동 숨김 === */
 @media (max-width: 720px) {
