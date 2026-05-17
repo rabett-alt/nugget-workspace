@@ -15,6 +15,13 @@
   <nav class="page-nav">
     <button class="page-tab active" data-page="dashboard">대시보드</button>
     <button class="page-tab" data-page="content">콘텐츠</button>
+    <div class="sync-info">
+      <span class="dot"></span>
+      <span id="syncTime">동기화 중...</span>
+      <button class="refresh-btn" id="refreshBtn" title="새로고침">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+      </button>
+    </div>
   </nav>
 
   <div class="app page-section active" data-page-section="dashboard">
@@ -41,6 +48,8 @@
         </div>
         <div class="sub">팔로워</div>
         <div class="chart" id="followersChart"></div>
+        <div class="month-axis" id="followersMonths"></div>
+        <div class="followers-tooltip placeholder" id="followersTooltip">점을 클릭하면 그 시점 수치</div>
       </div>
 
       <div class="ai-insight-block">
@@ -66,6 +75,12 @@
 
       <div class="hero-card">
         <div class="hero-image">
+          <div class="hero-meta-top">
+            <span class="when" id="heroWhen"></span>
+            <a class="open-link" id="heroLink" href="#" target="_blank" rel="noopener" title="인스타그램에서 보기">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+            </a>
+          </div>
           <div class="hero-tag">
             <span class="live-dot"></span>
             <span>이번 주 베스트</span>
@@ -148,6 +163,10 @@
     <header class="content-head">
       <h2 class="content-title">콘텐츠 소스</h2>
       <p class="content-sub">너겟이 매일 훑는 국내·해외 매체와 커뮤니티</p>
+      <div class="filter-row">
+        <input class="filter-input" id="linksFilter" placeholder="매체·커뮤니티 이름으로 필터 (예: 인벤, IGN, reddit)"/>
+        <span class="filter-hint" id="linksFilterHint"></span>
+      </div>
     </header>
     <div class="links-grid" id="linksGrid"></div>
   </main>
