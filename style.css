@@ -42,8 +42,9 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 260px 1fr 300px;
-  gap: 36px;
+  grid-template-columns: 260px minmax(0, 1fr) 300px;
+  column-gap: 10%;      /* v0.9.2: hero 좌우 각 10% (합 20%) 간격 */
+  row-gap: 36px;
   padding: 44px 48px;
   min-height: 100vh;
   max-width: 1640px;
@@ -769,5 +770,4 @@ body {
 .content-head .filter-hint {
   font-size: 10px; color: var(--text-3); letter-spacing: 0.3px;
 }
-.link-row.filter-hidden { display: none; }
-.links-card .links-empty { font-size: 11px; color: var(--text-3); padding: 10px 0; }
+.link-row.filter-hidden { display: non
