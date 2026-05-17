@@ -1,155 +1,178 @@
-// 너겟 작업 사이트 v0.7 — 3섹션 + 콘텐츠 탭 / 실데이터만
-const WORKER_URL = 'https://nugget.rabett.workers.dev/';
-const DAY_LABELS_KR = ['일','월','화','수','목','금','토'];
+// 너겟 작업 사이트 v0.8 - v0.6 3컬럼 그대로 + 3섹션만 활성 + 콘텐츠 탭
+var WORKER_URL = 'https://nugget.rabett.workers.dev/';
+var DAYS = ['일','월','화','수','목','금','토'];
+var BEIGE = '#a8957a';
 
-function mediaTypeToFormat(t) {
-  if (t === 8) return '캐러셀';
-  if (t === 2) return '릴스';
-  return '단일 포스트';
-}
+function $(id) { return document.getElementById(id); }
+function esc(s) { return String(s).replace(/[&<>"']/g, function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];}); }
+function mtype(t) { return t === 8 ? '캐러셀' : (t === 2 ? '릴스' : '단일 포스트'); }
 
-async function fetchWorkerWithRetry(maxRetries = 2) {
-  for (let i = 0; i <= maxRetries; i++) {
-    try {
-      const r = await fetch(WORKER_URL + '?t=' + Date.now(), { cache: 'no-store' });
-      const d = await r.json();
-      const postCount = (d.all_posts || d.recent_posts || []).length;
-      if (postCount > 0 || i === maxRetries) return d;
-      await new Promise(res => setTimeout(res, 900));
-    } catch (e) {
-      if (i === maxRetries) throw e;
-      await new Promise(res => setTimeout(res, 900));
-    }
-  }
-}
-
-// ───────── 탭 ─────────
-function bindTabs() {
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const page = tab.dataset.page;
-      document.querySelectorAll('.tab').forEach(t => {
-        t.classList.toggle('active', t === tab);
-        t.setAttribute('aria-selected', t === tab);
-      });
-      document.querySelectorAll('.page').forEach(p => {
-        p.classList.toggle('active', p.id === 'page-' + page);
+function setupTabs() {
+  document.querySelectorAll('.page-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.dataset.page;
+      document.querySelectorAll('.page-tab').forEach(function(b){ b.classList.toggle('active', b === btn); });
+      document.querySelectorAll('.page-section').forEach(function(s){
+        s.classList.toggle('active', s.dataset.pageSection === name);
       });
     });
   });
 }
 
-// ───────── 진입점 ─────────
-bindTabs();
-
-Promise.all([
-  fetchWorkerWithRetry(),
-  fetch('./data/followers_history.json').then(r => r.json()),
-  fetch('./data/links.json').then(r => r.json())
-]).then(([worker, hist, links]) => {
-
-  // 팔로워 history: 기록된 시계열 + 오늘 Worker 값
-  const todayStr = new Date().toISOString().slice(0, 10);
-  const history = [...(hist.history || [])];
-  if (worker && typeof worker.followers === 'number') {
-    const last = history[history.length - 1];
-    if (!last || last.date !== todayStr) {
-      history.push({ date: todayStr, count: worker.followers });
-    } else if (last.date === todayStr) {
-      // 같은 날이면 Worker 최신값으로 갱신 (페이지 새로고침 반영)
-      last.count = worker.followers;
+function fetchWorker() {
+  return new Promise(function(resolve, reject){
+    var tries = 0;
+    function attempt() {
+      fetch(WORKER_URL + '?t=' + Date.now(), { cache: 'no-store' })
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var n = ((d.all_posts || []).length) || ((d.recent_posts || []).length);
+          if (n > 0 || tries >= 2) return resolve(d);
+          tries++;
+          setTimeout(attempt, 800);
+        })
+        .catch(function(e){
+          if (tries >= 2) return reject(e);
+          tries++;
+          setTimeout(attempt, 800);
+        });
     }
+    attempt();
+  });
+}
+
+function renderFollowers(worker, history) {
+  var hist = (history && history.history) ? history.history.slice() : [];
+  var today = new Date().toISOString().slice(0,10);
+  if (worker && typeof worker.followers === 'number') {
+    var last = hist[hist.length - 1];
+    if (!last || last.date !== today) hist.push({date: today, count: worker.followers});
+    else last.count = worker.followers;
+  }
+  if (!hist.length) return;
+  var cur = hist[hist.length-1].count;
+  $('followersNum').textContent = cur.toLocaleString();
+  $('followersDelta').textContent = '';
+  var sub = document.querySelector('.followers-mini .sub');
+  if (sub) sub.textContent = '팔로워 · ' + hist[0].date + ' →';
+
+  if (hist.length < 2) {
+    $('followersChart').innerHTML =
+      '<svg viewBox="0 0 100 36" preserveAspectRatio="none">' +
+      '<line x1="0" y1="18" x2="100" y2="18" stroke="#d8d6d0" stroke-width="1" stroke-dasharray="3 3"/>' +
+      '<circle cx="96" cy="18" r="2.4" fill="' + BEIGE + '"/></svg>';
+    return;
   }
 
-  renderFollowers(history, worker);
-  renderWeekly(worker);
-  renderHero(worker);
-  renderLinks(links);
+  var w = 100, h = 36, padX = 2, padY = 6;
+  var counts = hist.map(function(d){return d.count;});
+  var max = Math.max.apply(null, counts), min = Math.min.apply(null, counts);
+  var rng = (max - min) || 1;
+  var pts = hist.map(function(d, i){
+    return [
+      padX + (i / (hist.length - 1)) * (w - padX * 2),
+      h - padY - ((d.count - min) / rng) * (h - padY * 2)
+    ];
+  });
+  var line = 'M ' + pts[0][0].toFixed(2) + ',' + pts[0][1].toFixed(2);
+  for (var i = 1; i < pts.length; i++) line += ' L ' + pts[i][0].toFixed(2) + ',' + pts[i][1].toFixed(2);
+  var area = line + ' L ' + pts[pts.length-1][0].toFixed(2) + ',' + h + ' L ' + pts[0][0].toFixed(2) + ',' + h + ' Z';
+  var dots = pts.map(function(p, i){
+    var isLast = i === pts.length - 1;
+    return '<circle cx="' + p[0].toFixed(2) + '" cy="' + p[1].toFixed(2) + '" r="' + (isLast ? 2.4 : 1.8) + '" fill="' + BEIGE + '"/>';
+  }).join('');
+  $('followersChart').innerHTML =
+    '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+    '<path d="' + area + '" fill="' + BEIGE + '" fill-opacity="0.18"/>' +
+    '<path d="' + line + '" fill="none" stroke="' + BEIGE + '" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>' +
+    dots + '</svg>';
+}
 
-  // 메모리 안내 (시계열이 짧을 때)
-  const notice = document.getElementById('dataNotice');
-  if (history.length < 7) {
-    notice.classList.add('on');
-    notice.textContent = `ℹ️ 팔로워 시계열은 ${history.length}일치만 누적됨. 매일 자동 누적 시스템 셋업 후 정밀화 예정.`;
-  }
-}).catch(e => {
-  console.error(e);
-  const notice = document.getElementById('dataNotice');
-  notice.classList.add('on');
-  notice.textContent = '⚠️ 데이터 로드 실패: ' + e.message;
-});
-
-// ───────── 섹션 1. Hero ─────────
 function renderHero(worker) {
-  const posts = (worker.all_posts && worker.all_posts.length ? worker.all_posts : worker.recent_posts) || [];
+  var posts = (worker.all_posts && worker.all_posts.length) ? worker.all_posts : (worker.recent_posts || []);
   if (!posts.length) return;
-  const now = Date.now();
-  const weekMs = 7 * 24 * 3600 * 1000;
-  const recentWeek = posts.filter(p => p.taken_at && (now - p.taken_at) <= weekMs);
-  const pool = recentWeek.length ? recentWeek : posts;
-  const best = pool.slice().sort((a, b) => {
-    const sa = (a.likes || 0) + (a.views || 0) / 100;
-    const sb = (b.likes || 0) + (b.views || 0) / 100;
-    return sb - sa;
+  var now = Date.now();
+  var weekMs = 7 * 24 * 3600 * 1000;
+  var recent = posts.filter(function(p){ return p.taken_at && (now - p.taken_at) <= weekMs; });
+  var pool = recent.length ? recent : posts;
+  var best = pool.slice().sort(function(a,b){
+    return ((b.likes||0) + (b.views||0)/100) - ((a.likes||0) + (a.views||0)/100);
   })[0];
   if (!best) return;
-
-  const fmt = mediaTypeToFormat(best.media_type);
-  const firstLine = (best.caption || '').split('\n')[0].trim() || '(캡션 없음)';
-  const rest = (best.caption || '').split('\n').slice(1).join(' ').trim();
-  document.getElementById('heroSource').textContent = `@${worker.handle || 'nugget_zine'} · ${fmt}`;
-  document.getElementById('heroTitle').textContent = firstLine;
-  document.getElementById('heroSummary').textContent = rest.length > 200 ? rest.substring(0, 197) + '...' : rest;
-  document.getElementById('heroLikes').textContent = (best.likes || 0).toLocaleString();
-  document.getElementById('heroViews').textContent = (best.views || 0).toLocaleString();
-
+  var lines = (best.caption || '').split('\n');
+  var firstLine = (lines[0] || '').trim() || '(캡션 없음)';
+  var rest = lines.slice(1).join(' ').trim();
+  $('heroSource').textContent = '@' + (worker.handle || 'nugget_zine') + ' · ' + mtype(best.media_type);
+  $('heroTitle').textContent = firstLine;
+  $('heroSummary').textContent = rest.length > 180 ? rest.substring(0, 177) + '...' : rest;
+  $('heroLikes').textContent = (best.likes || 0).toLocaleString();
+  $('heroComments').textContent = (best.views || 0).toLocaleString();
   if (best.thumbnail) {
-    const hero = document.querySelector('.hero-image');
+    var hero = document.querySelector('.hero-image');
     if (hero) {
-      hero.style.backgroundImage =
-        `linear-gradient(180deg, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.62) 100%), url("${best.thumbnail}")`;
+      hero.style.backgroundImage = 'linear-gradient(180deg, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.62) 100%), url("' + best.thumbnail + '")';
       hero.style.backgroundSize = 'cover';
       hero.style.backgroundPosition = 'center';
     }
   }
 }
 
-// ───────── 섹션 2. 팔로워 꺾은선 ─────────
-function renderFollowers(history, worker) {
-  const num = worker.followers || (history[history.length - 1] && history[history.length - 1].count) || 0;
-  document.getElementById('followersNum').textContent = num.toLocaleString();
-
-  // 델타: 시계열 2점 이상이면 (오늘 - 처음) / 처음 %
-  const deltaEl = document.getElementById('followersDelta');
-  if (history.length >= 2) {
-    const first = history[0].count;
-    const last = history[history.length - 1].count;
-    const pct = ((last - first) / first * 100);
-    const sign = pct >= 0 ? '+' : '';
-    deltaEl.textContent = `${sign}${pct.toFixed(1)}%`;
-    deltaEl.style.color = pct >= 0 ? 'var(--green)' : 'var(--warm-1)';
-  } else {
-    deltaEl.textContent = '';
+function renderWeekly(worker) {
+  var posts = (worker.all_posts && worker.all_posts.length) ? worker.all_posts : (worker.recent_posts || []);
+  var now = Date.now(), weekMs = 7 * 24 * 3600 * 1000;
+  var dayCount = [0,0,0,0,0,0,0];
+  posts.forEach(function(p){
+    if (!p.taken_at || (now - p.taken_at) > weekMs) return;
+    dayCount[new Date(p.taken_at).getDay()] += 1;
+  });
+  var order = [1,2,3,4,5,6,0];
+  var weekly = order.map(function(i){ return {day: DAYS[i], count: dayCount[i]}; });
+  var total = weekly.reduce(function(s,d){return s+d.count;}, 0);
+  $('weeklyTotal').textContent = total;
+  $('weeklyAvg').textContent = (total/7).toFixed(1);
+  var counts = weekly.map(function(d){return d.count;});
+  var max = Math.max.apply(null, counts.concat([1]));
+  var peakIdx = -1;
+  for (var k = 0; k < weekly.length; k++) {
+    if (weekly[k].count === max && max > 0) { peakIdx = k; break; }
   }
+  $('weeklyBars').innerHTML = weekly.map(function(d, i){
+    var bh = Math.max((d.count / max) * 56, 8);
+    var peak = (i === peakIdx) ? ' peak' : '';
+    return '<div class="col"><div class="bar' + peak + '" style="height:' + bh + 'px"></div><div class="day' + peak + '">' + d.day + '</div></div>';
+  }).join('');
+}
 
-  // 범위 라벨
-  if (history.length >= 1) {
-    const f = history[0].date, l = history[history.length - 1].date;
-    document.getElementById('followersRange').textContent = `${f} → ${l}`;
-  }
+function renderLinks(links) {
+  if (!links || !Array.isArray(links.categories)) return;
+  $('linksGrid').innerHTML = links.categories.map(function(cat){
+    var badgeClass = cat.region === '국내' ? 'kr' : 'intl';
+    var rows = cat.items.map(function(it){
+      return '<a class="link-row" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+        '<div><div class="name">' + esc(it.name) + '</div><div class="note">' + esc(it.note || '') + '</div></div>' +
+        '<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>' +
+        '</a>';
+    }).join('');
+    return '<div class="links-card">' +
+      '<div class="head"><div class="title">' + esc(cat.label) + '</div>' +
+      '<span class="badge ' + badgeClass + '">' + cat.region + ' · ' + cat.type + ' · ' + cat.items.length + '</span></div>' +
+      rows + '</div>';
+  }).join('');
+}
 
-  // 꺾은선 (탁한 베이지)
-  const data = history.slice();
-  const chart = document.getElementById('followersChart');
-  if (data.length === 0) {
-    chart.innerHTML = '';
-    return;
-  }
-  if (data.length === 1) {
-    // 1점만: 중앙에 점 + 라벨
-    chart.innerHTML = `
-      <svg viewBox="0 0 200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="0" y1="40" x2="200" y2="40" stroke="var(--beige-soft)" stroke-width="1" stroke-dasharray="3 4"/>
-        <circle cx="180" cy="40" r="3.5" fill="var(--beige-deep)"/>
-        <text x="100" y="68" text-anchor="middle" font-size="9" fill="var(--text-3)" letter-spacing="0.5">데이터 1점 — 매일 누적 예정</text>
-      </svg>`;
+setupTabs();
+Promise.all([
+  fetchWorker(),
+  fetch('./data/followers_history.json').then(function(r){return r.json();}).catch(function(){return {history:[]};}),
+  fetch('./data/links.json').then(function(r){return r.json();}).catch(function(){return {categories:[]};})
+]).then(function(arr){
+  var worker = arr[0], hist = arr[1], links = arr[2];
+  renderFollowers(worker, hist);
+  renderHero(worker);
+  renderWeekly(worker);
+  renderLinks(links);
+}).catch(function(e){
+  console.error(e);
+  var n = $('dummyNotice');
+  if (n) { n.textContent = '⚠️ 데이터 로드 실패: ' + e.message; n.classList.add('on'); }
+});
