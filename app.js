@@ -1233,3 +1233,107 @@ document.addEventListener('click', function(e){
     if (m) m.hidden = true;
   }
 });
+
+// ─── v0.17: Genres 타일 + Hero swipe + Top Sellers 리스트 보강 ───
+(function(){
+  var _heroIdx = 0;
+  function renderGenresTiles() {
+    var el = document.getElementById('genresTiles'); if (!el) return;
+    var items = _feedState.all || [];
+    var cats = _feedState.cats || [];
+    el.innerHTML = cats.map(function(c){
+      var firstWithThumb = items.find(function(it){
+        return (it.categories||[]).indexOf(c.id) !== -1 && it.thumb;
+      });
+      var count = (_feedState.byCat && _feedState.byCat[c.id] || []).length;
+      var bgStyle = firstWithThumb && firstWithThumb.thumb
+        ? 'background-image:url(' + JSON.stringify(firstWithThumb.thumb) + ');'
+        : 'background:linear-gradient(135deg,' + c.color + ',#5a3a2a);';
+      return '<div class="cat-tile" data-cat="' + c.id + '">' +
+        '<div class="tile-bg" style="' + bgStyle + '"></div>' +
+        '<div class="tile-overlay"></div>' +
+        '<div class="tile-label">' + c.label + '</div>' +
+        '<div class="tile-count">' + count + '건</div>' +
+      '</div>';
+    }).join('');
+    el.querySelectorAll('.cat-tile').forEach(function(t){
+      t.addEventListener('click', function(){
+        _feedState.activeCat = t.dataset.cat;
+        renderCatTabs(); renderCards();
+        document.querySelector('.cards-grid').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
+
+  function addHeroSwipe() {
+    var hr = document.getElementById('heroRow'); if (!hr) return;
+    if (hr.querySelector('.hero-nav.prev')) return;
+    var prev = document.createElement('button');
+    prev.className = 'hero-nav prev'; prev.textContent = '‹'; prev.title = '이전';
+    var next = document.createElement('button');
+    next.className = 'hero-nav next'; next.textContent = '›'; next.title = '다음';
+    hr.appendChild(prev); hr.appendChild(next);
+
+    function getPool() {
+      var ids = _feedState.activeCat === 'all'
+        ? _feedState.all.map(function(i){return i.id;})
+        : (_feedState.byCat[_feedState.activeCat] || []);
+      var m = {}; _feedState.all.forEach(function(i){ m[i.id]=i; });
+      return ids.map(function(id){ return m[id]; }).filter(Boolean);
+    }
+    prev.onclick = function(){
+      var pool = getPool();
+      if (!pool.length) return;
+      _heroIdx = (_heroIdx - 1 + pool.length) % pool.length;
+      rotateHero(pool);
+    };
+    next.onclick = function(){
+      var pool = getPool();
+      if (!pool.length) return;
+      _heroIdx = (_heroIdx + 1) % pool.length;
+      rotateHero(pool);
+    };
+  }
+  function rotateHero(pool) {
+    if (!pool || !pool.length) return;
+    var top5 = [];
+    for (var i = 0; i < 5; i++) top5.push(pool[(_heroIdx + i) % pool.length]);
+    // 임시로 _feedState.all 재배치 → renderHeroRowAndPanel만 호출
+    var saved = _feedState.all.slice();
+    var ids5 = top5.map(function(x){return x.id;});
+    _feedState.all = top5.concat(saved.filter(function(x){ return ids5.indexOf(x.id) === -1; }));
+    if (typeof renderHeroRowAndPanel === 'function') renderHeroRowAndPanel();
+    _feedState.all = saved;
+  }
+
+  // 인기 매체 리스트에 썸네일 추가 (Top Sellers 스타일)
+  function boostTopSources() {
+    var el = document.getElementById('topSources'); if (!el) return;
+    var items = _feedState.all || [];
+    var srcMap = {};
+    items.forEach(function(it){
+      var s = srcMap[it.source_id] || (srcMap[it.source_id] = { name: it.source_name, count: 0, sample: null });
+      s.count++;
+      if (!s.sample && it.thumb) s.sample = it.thumb;
+    });
+    var ranked = Object.keys(srcMap).map(function(k){ var s = srcMap[k]; s.id = k; return s; })
+      .sort(function(a,b){ return b.count - a.count; }).slice(0, 10);
+    el.innerHTML = ranked.map(function(r,i){
+      var tCls = i < 3 ? ' top' : '';
+      return '<li class="media-row' + tCls + '">' +
+        '<span class="rank-name">' + r.name + '</span>' +
+        '<span class="rank-count">' + r.count + '</span>' +
+      '</li>';
+    }).join('');
+  }
+
+  var _prevRender = renderCards;
+  renderCards = function() {
+    _prevRender();
+    setTimeout(function(){
+      renderGenresTiles();
+      addHeroSwipe();
+      boostTopSources();
+    }, 30);
+  };
+})();

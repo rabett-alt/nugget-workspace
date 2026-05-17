@@ -28,24 +28,34 @@
         <path d="M5 13 L14 11 L14 16 L5 18 Z"/>
         <path d="M5 20 L14 18 L14 23 L5 25 Z"/>
       </svg>
+      <span class="rail-brand">너겟</span>
     </div>
     <nav class="rail-nav">
       <button class="rail-btn active" data-page="dashboard" title="대시보드">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3l9 9M5 10v10h14V10"/></svg>
+        <span>대시보드</span>
       </button>
       <button class="rail-btn" data-page="content" title="콘텐츠">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <span>콘텐츠</span>
       </button>
-      <button class="rail-btn" title="큐 (개발 중)" disabled>
+      <button class="rail-btn" title="발행 큐" disabled>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <span>큐</span>
       </button>
-      <button class="rail-btn" title="통계 (개발 중)" disabled>
+      <button class="rail-btn" title="통계" disabled>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20V10M9 20V4M15 20v-7M21 20V8"/></svg>
+        <span>통계</span>
+      </button>
+      <button class="rail-btn" title="즐겨찾기" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+        <span>즐겨찾기</span>
       </button>
     </nav>
     <div class="rail-spacer"></div>
     <button class="rail-btn rail-bottom" title="설정" disabled>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3h0a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5h0a1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8v0a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12c0-.6 0-1.2-.1-1.8l2-1.6-2-3.5-2.5 1c-.9-.7-1.9-1.2-3-1.5L13 2h-2l-.5 2.6c-1.1.3-2.1.8-3 1.5l-2.5-1-2 3.5 2 1.6c-.1.6-.1 1.2-.1 1.8s0 1.2.1 1.8l-2 1.6 2 3.5 2.5-1c.9.7 1.9 1.2 3 1.5L11 22h2l.5-2.6c1.1-.3 2.1-.8 3-1.5l2.5 1 2-3.5-2-1.6c.1-.6.1-1.2.1-1.8z"/></svg>
+      <span>설정</span>
     </button>
   </aside>
 
@@ -204,6 +214,10 @@
           <span class="grid-meta" id="gridMeta">—</span>
         </div>
         <div class="cards-grid" id="cardsGrid"></div>
+      <section class="genres-tiles">
+          <h3 class="grid-title">카테고리별</h3>
+          <div class="tiles-grid" id="genresTiles"></div>
+        </section>
       </section>
 
       <aside class="right-panel">
