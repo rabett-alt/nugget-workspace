@@ -1547,3 +1547,134 @@ body {
 /* v0.14.1: 모달 hidden 강제 + dummyNotice 콘텐츠 페이지에서 안 보이게 */
 .card-modal[hidden] { display: none !important; }
 .content-app .dummy-notice { display: none !important; }
+/* ===== v0.15: 좌 nav rail + violet accent + 카테고리 6색 + 신선도 + 큐레이션 ===== */
+:root {
+  --accent: #6B4FFF;        /* violet — LIVE/NEW/CTA/hover */
+  --accent-bg: rgba(107,79,255,0.10);
+  --cat-release:   #ef4444;
+  --cat-industry:  #3b82f6;
+  --cat-collab:    #ec4899;
+  --cat-indie:     #10b981;
+  --cat-offline:   #f97316;
+  --cat-community: #8b5cf6;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+/* 좌측 nav rail (fixed 64px) */
+.side-rail {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: 64px;
+  background: var(--bg);
+  border-right: 1px solid var(--border-soft);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 18px 0 16px;
+  gap: 22px;
+  z-index: 80;
+}
+.rail-logo {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text);
+}
+.rail-logo svg { width: 26px; height: 26px; }
+.rail-nav {
+  display: flex; flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+.rail-spacer { flex: 1; }
+.rail-btn {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: transparent;
+  border: none; cursor: pointer;
+  color: var(--text-3);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.12s;
+}
+.rail-btn:hover { background: var(--bg-soft); color: var(--text); }
+.rail-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(107,79,255,0.32);
+}
+.rail-btn[disabled] { opacity: 0.35; cursor: not-allowed; }
+.rail-btn svg { width: 18px; height: 18px; stroke-width: 1.8; }
+
+/* body 본문은 rail 만큼 좌측 여백 */
+body { padding-left: 64px; }
+.page-nav { max-width: none; padding: 18px 36px 0; }
+.app { padding: 44px 36px; }
+.content-app { padding: 28px 36px 64px; }
+
+/* === 카테고리 컬러 도트 표준화 (sources.json 색 인라인 우선) === */
+.cat-tab .dot, .feed-card .badge .dot, .modal-cat .dot { width: 7px; height: 7px; }
+
+/* === LIVE/NEW 배지 violet 처리 === */
+.hero-big .live-badge { background: var(--accent); box-shadow: 0 4px 14px rgba(107,79,255,0.35); }
+.hero-big .live-badge::before { background: #fff; }
+.new-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 9px; font-weight: 800;
+  letter-spacing: 1px;
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+}
+.new-badge::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%; background: #fff;
+  animation: livePulse 1.4s ease-out infinite;
+}
+
+/* 카드에 좌상단 NEW + 우상단 score 동시 표시 가능하게 - score 약간 우측 */
+.feed-card .new-badge { position: absolute; top: 12px; left: 12px; z-index: 2; }
+.feed-card .badge.has-new { left: auto; right: 60px; }
+
+/* === 타이포 위계 강화 === */
+.content-title-v2 {
+  font-size: 56px;
+  background: linear-gradient(135deg, var(--text) 20%, var(--accent) 90%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-big .title-xl { font-size: 44px; }
+.feed-card .title { font-size: 17px; }
+.feed-card .src-line, .hero-big .src-line, .hero-small .mini-badge {
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+}
+
+/* === Hero 좌 큰 카드 - 640x400 비례 (16:10) === */
+.hero-row { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 20px; }
+.hero-big { aspect-ratio: 16 / 10; }
+
+/* === 큐레이터 카피 === */
+.curator-line {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.curator-line::before {
+  content: ''; width: 24px; height: 1px; background: var(--accent);
+}
+
+/* === 카드 hover: violet glow === */
+.feed-card:hover { box-shadow: 0 12px 32px rgba(107,79,255,0.18); }
+.hero-big:hover, .hero-small:hover { box-shadow: 0 14px 40px rgba(107,79,255,0.20); }
+
+/* === 카테고리 active = accent violet === */
+.cat-tab.active { background: var(--accent); border-color: var(--accent); }
+
+/* === Modal violet CTA === */
+.modal-btn.dark { background: var(--accent); }
+.modal-btn.dark:hover { background: #5638e8; }
+
+/* === Rail 반응형: 작은 화면에서 자동 숨김 === */
+@media (max-width: 720px) {
+  .side-rail { display: none; }
+  body { padding-left: 0; }
+}

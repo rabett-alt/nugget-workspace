@@ -1021,3 +1021,58 @@ renderCards = function() {
   var firstFive = grid.querySelectorAll('.feed-card');
   for (var i = 0; i < Math.min(5, firstFive.length); i++) firstFive[i].style.display = 'none';
 };
+// ─── v0.15: nav rail sync + NEW 24h 배지 + 큐레이션 카피 ───
+// rail 버튼 ↔ page-tab sync
+(function(){
+  document.querySelectorAll('.rail-btn[data-page]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.dataset.page;
+      var pt = document.querySelector('.page-tab[data-page="' + p + '"]');
+      if (pt) pt.click();
+      document.querySelectorAll('.rail-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
+    });
+  });
+  document.querySelectorAll('.page-tab[data-page]').forEach(function(pt){
+    pt.addEventListener('click', function(){
+      var p = pt.dataset.page;
+      document.querySelectorAll('.rail-btn[data-page]').forEach(function(b){
+        b.classList.toggle('active', b.dataset.page === p);
+      });
+    });
+  });
+})();
+
+// 큐레이션 카피 ("너겟 픽 · 토요일")
+(function(){
+  var el = document.getElementById('curatorLine');
+  if (!el) return;
+  var days = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+  var today = new Date();
+  var d = days[today.getDay()];
+  el.textContent = '너겟 픽 · ' + (today.getMonth()+1) + '월 ' + today.getDate() + '일 ' + d;
+})();
+
+// NEW 24h 배지 + 카드 렌더에 hook
+var _origRenderCardsV15 = renderCards;
+renderCards = function() {
+  _origRenderCardsV15();
+  // 24시간 이내 게시물에 NEW 배지 추가
+  var now = Date.now() / 1000;
+  document.querySelectorAll('#cardsGrid .feed-card').forEach(function(card){
+    var id = card.dataset.id;
+    var it = _feedState.all.find(function(x){ return x.id === id; });
+    if (!it) return;
+    var ageH = (now - it.taken_at) / 3600;
+    if (ageH <= 24) {
+      var existing = card.querySelector('.new-badge');
+      if (!existing) {
+        var newBadge = document.createElement('div');
+        newBadge.className = 'new-badge';
+        newBadge.textContent = ageH < 1 ? '방금' : 'NEW';
+        card.appendChild(newBadge);
+        var oldBadge = card.querySelector('.badge');
+        if (oldBadge) oldBadge.classList.add('has-new');
+      }
+    }
+  });
+};

@@ -2,61 +2,578 @@
   "_설명": "너겟 6 카테고리 매체 마스터. method: rss/claude/manual. authority: 0.5(커뮤니티)~2.0(공식)",
   "_갱신": "2026-05-17",
   "_카테고리": [
-    {"id": "release",   "label": "신작·출시·업데이트", "color": "#a88c68", "weight": 0.35},
-    {"id": "industry",  "label": "산업·이슈",           "color": "#1e3a5f", "weight": 0.30},
-    {"id": "collab",    "label": "콜라보·IP",           "color": "#d44a2a", "weight": 0.20},
-    {"id": "indie",     "label": "인디·발굴",           "color": "#2eb086", "weight": 0.05},
-    {"id": "offline",   "label": "오프라인·행사",       "color": "#5a3a7a", "weight": 0.10},
-    {"id": "community", "label": "커뮤니티 반응",       "color": "#7a5a3a", "weight": 0.00}
+    {
+      "id": "release",
+      "label": "신작·출시·업데이트",
+      "color": "#ef4444",
+      "weight": 0.35
+    },
+    {
+      "id": "industry",
+      "label": "산업·이슈",
+      "color": "#3b82f6",
+      "weight": 0.3
+    },
+    {
+      "id": "collab",
+      "label": "콜라보·IP",
+      "color": "#ec4899",
+      "weight": 0.2
+    },
+    {
+      "id": "indie",
+      "label": "인디·발굴",
+      "color": "#10b981",
+      "weight": 0.05
+    },
+    {
+      "id": "offline",
+      "label": "오프라인·행사",
+      "color": "#f97316",
+      "weight": 0.1
+    },
+    {
+      "id": "community",
+      "label": "커뮤니티 반응",
+      "color": "#8b5cf6",
+      "weight": 0.0
+    }
   ],
   "sources": [
-
-    {"id":"gamfeed","name":"겜피드 (한국 통합)","rss":"https://gamfeed.com/feed/","method":"rss","region":"kr","authority":1.0,"categories":["release","industry"],"note":"한국 17개 매체 통합"},
-    {"id":"inven","name":"인벤","rss":"http://webzine.inven.co.kr/news/rss.php","method":"rss","region":"kr","authority":1.5,"categories":["release","industry","collab"],"note":"한국 1위 게임포털"},
-    {"id":"ruliweb_news","name":"루리웹 뉴스","rss":"https://bbs.ruliweb.com/news/rss","method":"rss","region":"kr","authority":1.3,"categories":["release","industry"],"note":"콘솔·일본겜 강세"},
-    {"id":"gamemeca","name":"게임메카","url":"https://www.gamemeca.com/news.php","method":"claude","region":"kr","authority":1.2,"categories":["release","industry"],"note":"RSS X, Claude+Search로 수집"},
-    {"id":"thisisgame","name":"디스이즈게임","url":"https://www.thisisgame.com/","method":"claude","region":"kr","authority":2.0,"categories":["industry","release"],"note":"국내 1차 출처 권위 최고. 실적·인터뷰·정책"},
-    {"id":"khgames","name":"경향게임스","url":"https://www.khgames.co.kr/","method":"claude","region":"kr","authority":1.4,"categories":["industry"],"note":"산업·정책"},
-    {"id":"daily_esports","name":"데일리e스포츠","url":"https://www.dailyesports.com/","method":"claude","region":"kr","authority":1.3,"categories":["industry","offline"],"note":"e스포츠 전문"},
-    {"id":"etnews_game","name":"전자신문 게임","url":"https://www.etnews.com/news/section.html?id1=10&id2=10","method":"claude","region":"kr","authority":1.5,"categories":["industry"],"note":"산업 1차 출처"},
-
-    {"id":"ign","name":"IGN","rss":"https://feeds.ign.com/ign/all","method":"rss","region":"global","authority":1.8,"categories":["release","industry","collab","indie"],"note":"글로벌 1위"},
-    {"id":"gamespot","name":"GameSpot","rss":"https://www.gamespot.com/feeds/news/","method":"rss","region":"global","authority":1.7,"categories":["release","industry"],"note":"리뷰·뉴스"},
-    {"id":"eurogamer","name":"Eurogamer","rss":"https://www.eurogamer.net/?format=rss","method":"rss","region":"global","authority":1.7,"categories":["release","industry","indie"],"note":"유럽·심층 분석"},
-    {"id":"pcgamer","name":"PC Gamer","rss":"https://www.pcgamer.com/rss/","method":"rss","region":"global","authority":1.6,"categories":["release","indie"],"note":"PC 전문"},
-    {"id":"polygon","name":"Polygon","rss":"https://www.polygon.com/rss/index.xml","method":"rss","region":"global","authority":1.6,"categories":["industry","collab","release"],"note":"문화·산업"},
-    {"id":"rps","name":"Rock Paper Shotgun","rss":"https://www.rockpapershotgun.com/feed","method":"rss","region":"global","authority":1.5,"categories":["release","indie"],"note":"PC·인디 심층"},
-    {"id":"gameinformer","name":"Game Informer","rss":"https://gameinformer.com/rss","method":"rss","region":"global","authority":1.6,"categories":["release","industry"],"note":"독점 인터뷰"},
-    {"id":"vg247","name":"VG247","rss":"https://www.vg247.com/feed","method":"rss","region":"global","authority":1.3,"categories":["release"],"note":"속보"},
-    {"id":"kotaku","name":"Kotaku","rss":"https://kotaku.com/rss","method":"rss","region":"global","authority":1.4,"categories":["industry","collab"],"note":"독립·이슈"},
-    {"id":"gamesindustry","name":"GamesIndustry.biz","rss":"https://www.gamesindustry.biz/feed","method":"rss","region":"global","authority":1.9,"categories":["industry"],"note":"산업 1차 출처"},
-    {"id":"4gamer","name":"4Gamer (日)","rss":"https://www.4gamer.net/rss/index.xml","method":"rss","region":"jp","authority":1.6,"categories":["release","collab"],"note":"일본 1위"},
-    {"id":"famitsu","name":"Famitsu (日)","url":"https://www.famitsu.com/","method":"claude","region":"jp","authority":1.7,"categories":["release","industry"],"note":"일본 정통, 매출 차트"},
-
-    {"id":"steam_news","name":"Steam News","rss":"https://store.steampowered.com/feeds/news.xml","method":"rss","region":"global","authority":2.0,"categories":["release","industry"],"note":"공식 1차 출처"},
-    {"id":"psn_blog","name":"PlayStation Blog","rss":"https://blog.playstation.com/feed/","method":"rss","region":"global","authority":2.0,"categories":["release"],"note":"PS 공식"},
-    {"id":"xbox_wire","name":"Xbox Wire","rss":"https://news.xbox.com/en-us/feed/","method":"rss","region":"global","authority":2.0,"categories":["release","collab"],"note":"Xbox 공식"},
-    {"id":"nintendo_news","name":"Nintendo News","url":"https://www.nintendo.com/whatsnew/","method":"claude","region":"global","authority":2.0,"categories":["release","collab"],"note":"닌텐도 공식 (RSS X)"},
-    {"id":"epic_news","name":"Epic Games Store News","url":"https://store.epicgames.com/en-US/news","method":"claude","region":"global","authority":1.8,"categories":["release","collab"],"note":"Epic 공식"},
-
-    {"id":"itch","name":"itch.io","rss":"https://itch.io/games.xml","method":"rss","region":"global","authority":1.4,"categories":["indie"],"note":"인디 최대 플랫폼"},
-    {"id":"indiedb","name":"IndieDB","rss":"https://www.indiedb.com/news/feed/rss.xml","method":"rss","region":"global","authority":1.3,"categories":["indie"],"note":"인디 발굴"},
-    {"id":"gjolt","name":"GameJolt","url":"https://gamejolt.com/games","method":"claude","region":"global","authority":1.1,"categories":["indie"],"note":"인디 커뮤니티"},
-
-    {"id":"gstar","name":"지스타 (G-Star)","url":"https://www.gstar.or.kr/","method":"claude","region":"kr","authority":1.8,"categories":["offline"],"note":"한국 최대 게임쇼 (11월 부산)"},
-    {"id":"tgs","name":"Tokyo Game Show","url":"https://tgs.cesa.or.jp/","method":"claude","region":"jp","authority":1.8,"categories":["offline"],"note":"일본 최대 게임쇼 (9월)"},
-    {"id":"gamescom","name":"Gamescom","url":"https://www.gamescom.global/","method":"claude","region":"global","authority":1.8,"categories":["offline"],"note":"독일 최대 게임쇼 (8월)"},
-    {"id":"sgf","name":"Summer Game Fest","url":"https://www.summergamefest.com/","method":"claude","region":"global","authority":1.7,"categories":["offline","release"],"note":"6월 글로벌 쇼케이스"},
-    {"id":"gdc","name":"GDC","url":"https://gdconf.com/","method":"claude","region":"global","authority":1.6,"categories":["offline","industry"],"note":"개발자 컨퍼런스 (3월)"},
-
-    {"id":"reddit_games","name":"Reddit r/Games","rss":"https://www.reddit.com/r/Games/.rss","method":"rss","region":"global","authority":1.0,"categories":["release","industry","community"],"note":"큰 발표 중심"},
-    {"id":"reddit_gaming","name":"Reddit r/gaming","rss":"https://www.reddit.com/r/gaming/.rss","method":"rss","region":"global","authority":0.7,"categories":["community"],"note":"캐주얼·짤"},
-    {"id":"reddit_pcgaming","name":"Reddit r/pcgaming","rss":"https://www.reddit.com/r/pcgaming/.rss","method":"rss","region":"global","authority":0.9,"categories":["release","community"],"note":"PC 전용"},
-    {"id":"reddit_indie","name":"Reddit r/IndieGaming","rss":"https://www.reddit.com/r/IndieGaming/.rss","method":"rss","region":"global","authority":0.9,"categories":["indie","community"],"note":"인디 발견"},
-    {"id":"reddit_kr","name":"Reddit r/Korea_Game","rss":"https://www.reddit.com/r/Korea_Game/.rss","method":"rss","region":"kr","authority":0.6,"categories":["community"],"note":"한국 게이머"},
-    {"id":"dc_inside","name":"DC인사이드 게임갤","url":"https://gall.dcinside.com/board/lists/?id=game","method":"claude","region":"kr","authority":0.5,"categories":["community"],"note":"노이즈 많음. Claude+Search 키워드 픽업"},
-    {"id":"ruliweb_bbs","name":"루리웹 게시판","url":"https://bbs.ruliweb.com/","method":"claude","region":"kr","authority":0.7,"categories":["community"],"note":"콘솔·일본겜 중심"},
-    {"id":"arcalive","name":"아카라이브","url":"https://arca.live/","method":"claude","region":"kr","authority":0.6,"categories":["community"],"note":"게임별 채널"},
-    {"id":"fmkorea","name":"펨코 포텐","url":"https://www.fmkorea.com/","method":"claude","region":"kr","authority":0.6,"categories":["community"],"note":"트렌드·짤 빠름"}
+    {
+      "id": "gamfeed",
+      "name": "겜피드 (한국 통합)",
+      "rss": "https://gamfeed.com/feed/",
+      "method": "rss",
+      "region": "kr",
+      "authority": 1.0,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "한국 17개 매체 통합"
+    },
+    {
+      "id": "inven",
+      "name": "인벤",
+      "rss": "http://webzine.inven.co.kr/news/rss.php",
+      "method": "rss",
+      "region": "kr",
+      "authority": 1.5,
+      "categories": [
+        "release",
+        "industry",
+        "collab"
+      ],
+      "note": "한국 1위 게임포털"
+    },
+    {
+      "id": "ruliweb_news",
+      "name": "루리웹 뉴스",
+      "rss": "https://bbs.ruliweb.com/news/rss",
+      "method": "rss",
+      "region": "kr",
+      "authority": 1.3,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "콘솔·일본겜 강세"
+    },
+    {
+      "id": "gamemeca",
+      "name": "게임메카",
+      "url": "https://www.gamemeca.com/news.php",
+      "method": "claude",
+      "region": "kr",
+      "authority": 1.2,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "RSS X, Claude+Search로 수집"
+    },
+    {
+      "id": "thisisgame",
+      "name": "디스이즈게임",
+      "url": "https://www.thisisgame.com/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 2.0,
+      "categories": [
+        "industry",
+        "release"
+      ],
+      "note": "국내 1차 출처 권위 최고. 실적·인터뷰·정책"
+    },
+    {
+      "id": "khgames",
+      "name": "경향게임스",
+      "url": "https://www.khgames.co.kr/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 1.4,
+      "categories": [
+        "industry"
+      ],
+      "note": "산업·정책"
+    },
+    {
+      "id": "daily_esports",
+      "name": "데일리e스포츠",
+      "url": "https://www.dailyesports.com/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 1.3,
+      "categories": [
+        "industry",
+        "offline"
+      ],
+      "note": "e스포츠 전문"
+    },
+    {
+      "id": "etnews_game",
+      "name": "전자신문 게임",
+      "url": "https://www.etnews.com/news/section.html?id1=10&id2=10",
+      "method": "claude",
+      "region": "kr",
+      "authority": 1.5,
+      "categories": [
+        "industry"
+      ],
+      "note": "산업 1차 출처"
+    },
+    {
+      "id": "ign",
+      "name": "IGN",
+      "rss": "https://feeds.ign.com/ign/all",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.8,
+      "categories": [
+        "release",
+        "industry",
+        "collab",
+        "indie"
+      ],
+      "note": "글로벌 1위"
+    },
+    {
+      "id": "gamespot",
+      "name": "GameSpot",
+      "rss": "https://www.gamespot.com/feeds/news/",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.7,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "리뷰·뉴스"
+    },
+    {
+      "id": "eurogamer",
+      "name": "Eurogamer",
+      "rss": "https://www.eurogamer.net/?format=rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.7,
+      "categories": [
+        "release",
+        "industry",
+        "indie"
+      ],
+      "note": "유럽·심층 분석"
+    },
+    {
+      "id": "pcgamer",
+      "name": "PC Gamer",
+      "rss": "https://www.pcgamer.com/rss/",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.6,
+      "categories": [
+        "release",
+        "indie"
+      ],
+      "note": "PC 전문"
+    },
+    {
+      "id": "polygon",
+      "name": "Polygon",
+      "rss": "https://www.polygon.com/rss/index.xml",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.6,
+      "categories": [
+        "industry",
+        "collab",
+        "release"
+      ],
+      "note": "문화·산업"
+    },
+    {
+      "id": "rps",
+      "name": "Rock Paper Shotgun",
+      "rss": "https://www.rockpapershotgun.com/feed",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.5,
+      "categories": [
+        "release",
+        "indie"
+      ],
+      "note": "PC·인디 심층"
+    },
+    {
+      "id": "gameinformer",
+      "name": "Game Informer",
+      "rss": "https://gameinformer.com/rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.6,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "독점 인터뷰"
+    },
+    {
+      "id": "vg247",
+      "name": "VG247",
+      "rss": "https://www.vg247.com/feed",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.3,
+      "categories": [
+        "release"
+      ],
+      "note": "속보"
+    },
+    {
+      "id": "kotaku",
+      "name": "Kotaku",
+      "rss": "https://kotaku.com/rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.4,
+      "categories": [
+        "industry",
+        "collab"
+      ],
+      "note": "독립·이슈"
+    },
+    {
+      "id": "gamesindustry",
+      "name": "GamesIndustry.biz",
+      "rss": "https://www.gamesindustry.biz/feed",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.9,
+      "categories": [
+        "industry"
+      ],
+      "note": "산업 1차 출처"
+    },
+    {
+      "id": "4gamer",
+      "name": "4Gamer (日)",
+      "rss": "https://www.4gamer.net/rss/index.xml",
+      "method": "rss",
+      "region": "jp",
+      "authority": 1.6,
+      "categories": [
+        "release",
+        "collab"
+      ],
+      "note": "일본 1위"
+    },
+    {
+      "id": "famitsu",
+      "name": "Famitsu (日)",
+      "url": "https://www.famitsu.com/",
+      "method": "claude",
+      "region": "jp",
+      "authority": 1.7,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "일본 정통, 매출 차트"
+    },
+    {
+      "id": "steam_news",
+      "name": "Steam News",
+      "rss": "https://store.steampowered.com/feeds/news.xml",
+      "method": "rss",
+      "region": "global",
+      "authority": 2.0,
+      "categories": [
+        "release",
+        "industry"
+      ],
+      "note": "공식 1차 출처"
+    },
+    {
+      "id": "psn_blog",
+      "name": "PlayStation Blog",
+      "rss": "https://blog.playstation.com/feed/",
+      "method": "rss",
+      "region": "global",
+      "authority": 2.0,
+      "categories": [
+        "release"
+      ],
+      "note": "PS 공식"
+    },
+    {
+      "id": "xbox_wire",
+      "name": "Xbox Wire",
+      "rss": "https://news.xbox.com/en-us/feed/",
+      "method": "rss",
+      "region": "global",
+      "authority": 2.0,
+      "categories": [
+        "release",
+        "collab"
+      ],
+      "note": "Xbox 공식"
+    },
+    {
+      "id": "nintendo_news",
+      "name": "Nintendo News",
+      "url": "https://www.nintendo.com/whatsnew/",
+      "method": "claude",
+      "region": "global",
+      "authority": 2.0,
+      "categories": [
+        "release",
+        "collab"
+      ],
+      "note": "닌텐도 공식 (RSS X)"
+    },
+    {
+      "id": "epic_news",
+      "name": "Epic Games Store News",
+      "url": "https://store.epicgames.com/en-US/news",
+      "method": "claude",
+      "region": "global",
+      "authority": 1.8,
+      "categories": [
+        "release",
+        "collab"
+      ],
+      "note": "Epic 공식"
+    },
+    {
+      "id": "itch",
+      "name": "itch.io",
+      "rss": "https://itch.io/games.xml",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.4,
+      "categories": [
+        "indie"
+      ],
+      "note": "인디 최대 플랫폼"
+    },
+    {
+      "id": "indiedb",
+      "name": "IndieDB",
+      "rss": "https://www.indiedb.com/news/feed/rss.xml",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.3,
+      "categories": [
+        "indie"
+      ],
+      "note": "인디 발굴"
+    },
+    {
+      "id": "gjolt",
+      "name": "GameJolt",
+      "url": "https://gamejolt.com/games",
+      "method": "claude",
+      "region": "global",
+      "authority": 1.1,
+      "categories": [
+        "indie"
+      ],
+      "note": "인디 커뮤니티"
+    },
+    {
+      "id": "gstar",
+      "name": "지스타 (G-Star)",
+      "url": "https://www.gstar.or.kr/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 1.8,
+      "categories": [
+        "offline"
+      ],
+      "note": "한국 최대 게임쇼 (11월 부산)"
+    },
+    {
+      "id": "tgs",
+      "name": "Tokyo Game Show",
+      "url": "https://tgs.cesa.or.jp/",
+      "method": "claude",
+      "region": "jp",
+      "authority": 1.8,
+      "categories": [
+        "offline"
+      ],
+      "note": "일본 최대 게임쇼 (9월)"
+    },
+    {
+      "id": "gamescom",
+      "name": "Gamescom",
+      "url": "https://www.gamescom.global/",
+      "method": "claude",
+      "region": "global",
+      "authority": 1.8,
+      "categories": [
+        "offline"
+      ],
+      "note": "독일 최대 게임쇼 (8월)"
+    },
+    {
+      "id": "sgf",
+      "name": "Summer Game Fest",
+      "url": "https://www.summergamefest.com/",
+      "method": "claude",
+      "region": "global",
+      "authority": 1.7,
+      "categories": [
+        "offline",
+        "release"
+      ],
+      "note": "6월 글로벌 쇼케이스"
+    },
+    {
+      "id": "gdc",
+      "name": "GDC",
+      "url": "https://gdconf.com/",
+      "method": "claude",
+      "region": "global",
+      "authority": 1.6,
+      "categories": [
+        "offline",
+        "industry"
+      ],
+      "note": "개발자 컨퍼런스 (3월)"
+    },
+    {
+      "id": "reddit_games",
+      "name": "Reddit r/Games",
+      "rss": "https://www.reddit.com/r/Games/.rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 1.0,
+      "categories": [
+        "release",
+        "industry",
+        "community"
+      ],
+      "note": "큰 발표 중심"
+    },
+    {
+      "id": "reddit_gaming",
+      "name": "Reddit r/gaming",
+      "rss": "https://www.reddit.com/r/gaming/.rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 0.7,
+      "categories": [
+        "community"
+      ],
+      "note": "캐주얼·짤"
+    },
+    {
+      "id": "reddit_pcgaming",
+      "name": "Reddit r/pcgaming",
+      "rss": "https://www.reddit.com/r/pcgaming/.rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 0.9,
+      "categories": [
+        "release",
+        "community"
+      ],
+      "note": "PC 전용"
+    },
+    {
+      "id": "reddit_indie",
+      "name": "Reddit r/IndieGaming",
+      "rss": "https://www.reddit.com/r/IndieGaming/.rss",
+      "method": "rss",
+      "region": "global",
+      "authority": 0.9,
+      "categories": [
+        "indie",
+        "community"
+      ],
+      "note": "인디 발견"
+    },
+    {
+      "id": "reddit_kr",
+      "name": "Reddit r/Korea_Game",
+      "rss": "https://www.reddit.com/r/Korea_Game/.rss",
+      "method": "rss",
+      "region": "kr",
+      "authority": 0.6,
+      "categories": [
+        "community"
+      ],
+      "note": "한국 게이머"
+    },
+    {
+      "id": "dc_inside",
+      "name": "DC인사이드 게임갤",
+      "url": "https://gall.dcinside.com/board/lists/?id=game",
+      "method": "claude",
+      "region": "kr",
+      "authority": 0.5,
+      "categories": [
+        "community"
+      ],
+      "note": "노이즈 많음. Claude+Search 키워드 픽업"
+    },
+    {
+      "id": "ruliweb_bbs",
+      "name": "루리웹 게시판",
+      "url": "https://bbs.ruliweb.com/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 0.7,
+      "categories": [
+        "community"
+      ],
+      "note": "콘솔·일본겜 중심"
+    },
+    {
+      "id": "arcalive",
+      "name": "아카라이브",
+      "url": "https://arca.live/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 0.6,
+      "categories": [
+        "community"
+      ],
+      "note": "게임별 채널"
+    },
+    {
+      "id": "fmkorea",
+      "name": "펨코 포텐",
+      "url": "https://www.fmkorea.com/",
+      "method": "claude",
+      "region": "kr",
+      "authority": 0.6,
+      "categories": [
+        "community"
+      ],
+      "note": "트렌드·짤 빠름"
+    }
   ]
 }

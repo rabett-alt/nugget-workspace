@@ -5,37 +5,37 @@
     {
       "id": "release",
       "label": "신작·출시·업데이트",
-      "color": "#a88c68",
+      "color": "#ef4444",
       "weight": 0.35
     },
     {
       "id": "industry",
       "label": "산업·이슈",
-      "color": "#1e3a5f",
+      "color": "#3b82f6",
       "weight": 0.3
     },
     {
       "id": "collab",
       "label": "콜라보·IP",
-      "color": "#d44a2a",
+      "color": "#ec4899",
       "weight": 0.2
     },
     {
       "id": "indie",
       "label": "인디·발굴",
-      "color": "#2eb086",
+      "color": "#10b981",
       "weight": 0.05
     },
     {
       "id": "offline",
       "label": "오프라인·행사",
-      "color": "#5a3a7a",
+      "color": "#f97316",
       "weight": 0.1
     },
     {
       "id": "community",
       "label": "커뮤니티 반응",
-      "color": "#7a5a3a",
+      "color": "#8b5cf6",
       "weight": 0.0
     }
   ],
