@@ -1337,3 +1337,100 @@ document.addEventListener('click', function(e){
     }, 30);
   };
 })();
+
+// ─── v0.18: Music Dashboard 100% 클론 데이터 매핑 ───
+(function(){
+  function fmtRelShortMd(ts){
+    var d = (Date.now()/1000 - ts)/60;
+    if (d < 60) return Math.floor(d)+'m';
+    if (d < 1440) return Math.floor(d/60)+'h';
+    return Math.floor(d/1440)+'d';
+  }
+  function renderMd() {
+    if (!_feedState.all || !_feedState.all.length) return;
+    var hero = $('mdHeroTitle'); if (!hero) return;
+    var items = _feedState.all.slice();
+    var top = items[0]; if (!top) return;
+
+    // 시간 표시
+    var t = new Date(); var pad = function(n){return n<10?'0'+n:n;};
+    var ttx = $('mdTime'); if (ttx) ttx.textContent = pad(t.getHours())+':'+pad(t.getMinutes());
+
+    var catLabel = {}; (_feedState.cats||[]).forEach(function(c){ catLabel[c.id]=c.label; });
+
+    // Hero
+    $('mdHeroTitle').textContent = top.title || '(제목 없음)';
+    var cat = (top.categories && top.categories[0]) || '';
+    $('mdHeroCat').textContent = catLabel[cat] || '게임';
+    $('mdHeroSrc').textContent = top.source_name || '';
+    $('mdHeroTime').textContent = fmtRelShortMd(top.taken_at);
+    $('mdHeroDesc').textContent = top.summary || '게임 매거진 너겟이 자동 큐레이션 한 콘텐츠.';
+    var a = $('mdHeroLink'); if (a) a.href = top.url || '#';
+    var g = $('mdHeroGame'); if (g && window.guessGameLink) g.href = window.guessGameLink(top);
+    var art = $('mdHeroThumb');
+    if (art) {
+      art.style.backgroundImage = top.thumb
+        ? 'url(' + JSON.stringify(top.thumb) + ')'
+        : 'linear-gradient(135deg, #3a5f8a, #1e3a5f)';
+    }
+
+    // Top Albums (2~5위)
+    var top4 = items.slice(1, 5);
+    var albums = $('mdTopAlbums');
+    if (albums) {
+      albums.innerHTML = top4.map(function(it){
+        var bg = it.thumb ? 'background-image:url(' + JSON.stringify(it.thumb) + ');' : '';
+        return '<article class="md-album-card" data-id="' + it.id + '">' +
+          '<div class="md-cover" style="' + bg + '"></div>' +
+          '<strong>' + esc((it.title||'').substring(0,30)) + '</strong>' +
+          '<span>' + esc(it.source_name||'') + '</span>' +
+        '</article>';
+      }).join('');
+      albums.querySelectorAll('.md-album-card').forEach(function(el){
+        el.addEventListener('click', function(){ openModal(el.dataset.id); });
+      });
+    }
+
+    // Play Lists (6~10위)
+    var tracks = items.slice(5, 10);
+    var trackEl = $('mdTracks');
+    if (trackEl) {
+      trackEl.innerHTML = tracks.map(function(it, i){
+        var bg = it.thumb ? 'background-image:url(' + JSON.stringify(it.thumb) + ');' : '';
+        var active = i === 1 ? ' active' : '';
+        return '<div class="md-track' + active + '" data-id="' + it.id + '">' +
+          '<span class="md-num">' + ('0'+(i+1)).slice(-2) + '</span>' +
+          '<div class="md-tcover" style="' + bg + '"></div>' +
+          '<div class="md-tinfo"><span class="md-ttitle">' + esc((it.title||'').substring(0,30)) + '</span>' +
+          '<span class="md-tartist">' + esc(it.source_name||'') + '</span></div>' +
+          '<span class="md-play-dot">' + (i===1?'❚❚':'▶') + '</span>' +
+        '</div>';
+      }).join('');
+      trackEl.querySelectorAll('.md-track').forEach(function(el){
+        el.addEventListener('click', function(){ openModal(el.dataset.id); });
+      });
+    }
+
+    // Player (현재 픽업 = 활성 트랙)
+    var player = $('mdPlayer');
+    if (player && tracks[1]) {
+      var pi = tracks[1];
+      var bg = pi.thumb ? 'background-image:url(' + JSON.stringify(pi.thumb) + ');' : '';
+      player.innerHTML =
+        '<div class="md-pcover" style="' + bg + '"></div>' +
+        '<div class="md-player-info">' +
+          '<strong>' + esc((pi.title||'').substring(0,28)) + '</strong>' +
+          '<span>' + esc(pi.source_name||'') + ' · ' + fmtRelShortMd(pi.taken_at) + '</span>' +
+          '<div class="md-controls"><span>◀◀</span><span class="md-pause">❚❚</span><span>▶▶</span><span>♡</span></div>' +
+        '</div>';
+    }
+  }
+
+  // 콘텐츠 페이지 들어갈 때마다 갱신
+  document.querySelectorAll('.page-tab[data-page="content"], .rail-btn[data-page="content"]').forEach(function(b){
+    b.addEventListener('click', function(){ setTimeout(renderMd, 100); });
+  });
+  // 첫 로드 시 + 데이터 도착 시
+  var _prevRender3 = renderCards;
+  renderCards = function(){ _prevRender3(); setTimeout(renderMd, 50); };
+})();

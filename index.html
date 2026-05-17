@@ -195,50 +195,68 @@
   </div>
 
   <main class="content-app page-section" data-page-section="content">
-    <div class="content-layout">
-
-      <section class="content-main">
-        <header class="content-head-v2">
-          <div>
-            <div class="curator-line" id="curatorLine"></div>
-            <h2 class="content-title-v2">GAME · NUGGET</h2>
-            <p class="content-sub-v2">매시간 자동 수집 · 신선도·매체권위·키워드 스코어링</p>
-          </div>
-          <nav class="cat-tabs" id="catTabs"></nav>
-        </header>
-
-        <div class="hero-row" id="heroRow"></div>
-
-        <div class="grid-head">
-          <h3 class="grid-title">최신 픽업</h3>
-          <span class="grid-meta" id="gridMeta">—</span>
+    <div class="md-screen">
+      <header class="md-top-bar">
+        <div class="md-profile-mini">
+          <div class="md-avatar">너</div>
+          <span>Hi, 너겟</span>
         </div>
-        <div class="cards-grid" id="cardsGrid"></div>
-      <section class="genres-tiles">
-          <h3 class="grid-title">카테고리별</h3>
-          <div class="tiles-grid" id="genresTiles"></div>
+        <div class="md-status">
+          <span id="mdTime">--:--</span>
+          <div class="md-status-icons">
+            <span>▥</span><span>◒</span><span>⌁</span><span>◖</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="md-main">
+        <section class="md-hero">
+          <div class="md-copy">
+            <h1 id="mdHeroTitle">불러오는 중...</h1>
+            <div class="md-meta">
+              <strong id="mdHeroCat">—</strong><span>•</span>
+              <strong id="mdHeroSrc">—</strong><span>•</span>
+              <strong id="mdHeroTime">—</strong>
+            </div>
+            <p class="md-desc" id="mdHeroDesc"></p>
+            <div class="md-actions">
+              <a class="md-play-now" id="mdHeroLink" target="_blank" rel="noopener">원문 보기 <span class="md-circle">↗</span></a>
+              <a class="md-like-btn" id="mdHeroGame" target="_blank" rel="noopener" title="게임 링크">🎮</a>
+            </div>
+          </div>
+
+          <div class="md-artist-wrap">
+            <div class="md-artist-glow"></div>
+            <div class="md-artist" id="mdHeroThumb"></div>
+          </div>
+
+          <div class="md-albums">
+            <div class="md-section-title">Top Picks</div>
+            <div class="md-album-row" id="mdTopAlbums"></div>
+          </div>
         </section>
-      </section>
 
-      <aside class="right-panel">
-        <div class="panel-block">
-          <h4 class="panel-title">인기 매체 <span>TOP 10</span></h4>
-          <ol class="rank-list" id="topSources"></ol>
-        </div>
-        <div class="panel-block">
-          <h4 class="panel-title">키워드 트렌드</h4>
-          <div class="keyword-cloud" id="keywordCloud"></div>
-        </div>
-        <div class="panel-block">
-          <h4 class="panel-title">퀵 링크</h4>
-          <div class="quick-tabs">
-            <button class="qt-btn active" data-qt="media">매거진</button>
-            <button class="qt-btn" data-qt="community">커뮤니티</button>
+        <aside class="md-side">
+          <div class="md-playlist">
+            <h2>Today\'s Lineup</h2>
+            <div id="mdTracks"></div>
           </div>
-          <ul class="quick-list" id="quickList"></ul>
-        </div>
-      </aside>
+          <div class="md-player" id="mdPlayer"></div>
+        </aside>
+      </div>
 
+      <nav class="md-bottom-nav">
+        <span class="md-nav-item md-small-icon">▰</span>
+        <span class="md-nav-item md-small-icon">◉</span>
+        <span class="md-hide-mobile"></span>
+        <span class="md-nav-item">▲</span>
+        <span class="md-temp">237</span>
+        <span class="md-nav-item">✤</span>
+        <span class="md-temp">200</span>
+        <span class="md-nav-item md-small-icon">▦</span>
+        <span class="md-nav-item md-small-icon">⌕</span>
+        <span class="md-nav-item md-small-icon">♫</span>
+      </nav>
     </div>
 
     <div class="card-modal" id="cardModal" hidden>
