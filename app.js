@@ -388,15 +388,16 @@ function applyLinksFilter(q) {
 
 function updateSyncTime() {
   var t = new Date();
-  $('syncTime').textContent = '동기화 ' + pad2(t.getHours()) + ':' + pad2(t.getMinutes());
+  setT('syncTime', '동기화 ' + pad2(t.getHours()) + ':' + pad2(t.getMinutes()));
 }
 
 // ─── 진입점 ───
 setupTabs();
 setupPeriodTabs();
 
+function setT(id, txt) { var el = $(id); if (el) el.textContent = txt; }
 function loadAll() {
-  $('syncTime').textContent = '동기화 중...';
+  setT('syncTime', '동기화 중...');
   return Promise.all([
     fetchWorker(),
     fetch('./data/followers_history.json?t=' + Date.now()).then(function(r){return r.json();}).catch(function(){return {history:[]};}),
@@ -433,7 +434,7 @@ function loadAll() {
     }
   }).catch(function(e){
     console.error(e);
-    $('syncTime').textContent = '동기화 실패';
+    setT('syncTime', '동기화 실패');
     var n = $('dummyNotice');
     if (n) { n.textContent = '⚠️ 데이터 로드 실패: ' + e.message; n.classList.add('on'); }
   });
