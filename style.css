@@ -1543,3 +1543,7 @@ body {
   .content-title-v2 { font-size: 30px; }
   .hero-big .title-xl { font-size: 22px; }
 }
+
+/* v0.14.1: 모달 hidden 강제 + dummyNotice 콘텐츠 페이지에서 안 보이게 */
+.card-modal[hidden] { display: none !important; }
+.content-app .dummy-notice { display: none !important; }
