@@ -770,7 +770,9 @@ body {
 .content-head .filter-hint {
   font-size: 10px; color: var(--text-3); letter-spacing: 0.3px;
 }
-.link-row.filter-hidden { display: non/* ===== v0.10: 팔로워 차트 재설계 (D/W/M/Y + 두 시기 비교 + 이중 꺾은선) ===== */
+.link-row.filter-hidden { display: none; }
+
+/* ===== v0.10: 팔로워 차트 재설계 (D/W/M/Y + 두 시기 비교 + 이중 꺾은선) ===== */
 .followers-mini {
   position: relative;
   display: flex; flex-direction: column;
