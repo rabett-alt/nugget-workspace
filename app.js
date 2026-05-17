@@ -34,22 +34,55 @@ function setupTabs() {
   });
 }
 
-// ─── Worker ───
+// ─── Worker (localStorage 캐시 + 점진 백오프 retry 6회) ───
+var WORKER_CACHE_KEY = 'nugget_worker_cache_v1';
+
+function loadWorkerCache() {
+  try {
+    var raw = localStorage.getItem(WORKER_CACHE_KEY);
+    if (!raw) return null;
+    var obj = JSON.parse(raw);
+    return obj && obj.data ? obj : null;
+  } catch (e) { return null; }
+}
+function saveWorkerCache(data) {
+  try { localStorage.setItem(WORKER_CACHE_KEY, JSON.stringify({at: Date.now(), data: data})); } catch (e) {}
+}
+
 function fetchWorker() {
   return new Promise(function(resolve, reject){
     var tries = 0;
+    var delays = [400, 700, 1200, 1800, 2500, 3500];
     function attempt() {
       fetch(WORKER_URL + '?t=' + Date.now(), { cache: 'no-store' })
         .then(function(r){ return r.json(); })
         .then(function(d){
           var n = ((d.all_posts || []).length) || ((d.recent_posts || []).length);
           var bad = (d && d.ok === false) || n === 0;
-          if (!bad || tries >= 4) return resolve(d);
-          tries++; setTimeout(attempt, 700);
+          if (!bad) { saveWorkerCache(d); return resolve(d); }
+          if (tries >= delays.length) {
+            // 다 빈 응답 → 캐시 폴백
+            var cached = loadWorkerCache();
+            if (cached) {
+              var ageMin = Math.round((Date.now() - cached.at) / 60000);
+              return resolve(Object.assign({}, cached.data, { _fromCache: true, _ageMin: ageMin }));
+            }
+            return resolve(d); // 캐시도 없으면 빈 응답 그대로
+          }
+          tries++;
+          setTimeout(attempt, delays[tries-1]);
         })
         .catch(function(e){
-          if (tries >= 4) return reject(e);
-          tries++; setTimeout(attempt, 700);
+          if (tries >= delays.length) {
+            var cached = loadWorkerCache();
+            if (cached) {
+              var ageMin = Math.round((Date.now() - cached.at) / 60000);
+              return resolve(Object.assign({}, cached.data, { _fromCache: true, _ageMin: ageMin }));
+            }
+            return reject(e);
+          }
+          tries++;
+          setTimeout(attempt, delays[tries-1]);
         });
     }
     attempt();
@@ -384,6 +417,20 @@ function loadAll() {
     renderWeekly(worker);
     renderLinks(links);
     updateSyncTime();
+    // 캐시·빈응답 안내
+    var n = $('dummyNotice');
+    var posts = (worker.all_posts || worker.recent_posts || []);
+    if (worker._fromCache) {
+      n.textContent = '⚠️ Worker 응답 지연. 캐시 데이터 표시 중 (' + worker._ageMin + '분 전 데이터). 새로고침으로 재시도.';
+      n.classList.add('on');
+    } else if (!posts.length) {
+      n.textContent = '⚠️ 인스타 API 일시적 지연. 잠시 후 새로고침 ↻ 눌러주세요.';
+      n.classList.add('on');
+      $('heroTitle').textContent = '데이터 동기화 대기 중';
+    } else {
+      n.classList.remove('on');
+      n.textContent = '';
+    }
   }).catch(function(e){
     console.error(e);
     $('syncTime').textContent = '동기화 실패';
@@ -514,7 +561,6 @@ function runGlobalSearch(q) {
   });
   res.innerHTML = html;
   res.hidden = false;
-  // 클릭 핸들러
   res.querySelectorAll('.gs-item').forEach(function(el){
     el.addEventListener('click', function(){
       var grp = el.dataset.grp, idx = parseInt(el.dataset.idx, 10);
@@ -527,7 +573,6 @@ function runGlobalSearch(q) {
   });
 }
 
-// 진입점 보완 - 인덱스 빌드 + 검색 input 바인딩
 (function(){
   var input = $('globalSearch');
   if (input) {
@@ -545,7 +590,6 @@ function runGlobalSearch(q) {
   });
 })();
 
-// loadAll 후 검색 인덱스 빌드되도록 fetchAll에 hook
 var _origLoadAll = loadAll;
 loadAll = function(){
   return _origLoadAll().then(function(){
@@ -555,7 +599,6 @@ loadAll = function(){
     ]).then(function(arr){ buildSearchIndex(arr[0], arr[1]); });
   });
 };
-// 첫 로드 후 한 번 더 인덱스 빌드
 setTimeout(function(){
   Promise.all([
     fetch(WORKER_URL + '?t='+Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};}),
