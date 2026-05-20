@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local Cloudflare Pages development.
+# In Cloudflare Pages dashboard, add these as environment variables/secrets.
+META_APP_ID="your-meta-app-id"
+META_APP_SECRET="your-meta-app-secret"
+INSTAGRAM_REDIRECT_URI="https://your-domain.com/api/instagram/callback"
+INSTAGRAM_SCOPES="instagram_basic,instagram_manage_insights,pages_show_list,pages_read_engagement"
