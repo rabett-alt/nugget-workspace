@@ -1,0 +1,9 @@
+name = "nugget-workspace"
+compatibility_date = "2026-05-20"
+pages_build_output_dir = "."
+
+# Cloudflare Pages Functions use this KV binding to store Instagram OAuth sessions.
+# Replace the id after creating the KV namespace in Cloudflare.
+[[kv_namespaces]]
+binding = "INSTAGRAM_SESSIONS"
+id = "REPLACE_WITH_CLOUDFLARE_KV_NAMESPACE_ID"
