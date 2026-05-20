@@ -1,0 +1,12 @@
+{
+  "name": "nugget-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy . --project-name nugget-workspace"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}
