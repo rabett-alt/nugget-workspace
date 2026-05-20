@@ -1,4 +1,4 @@
-import { clearCookie, cookie, getRedirectUri, json, parseCookies, randomId, redirect, requireConfig } from "./_utils.js";
+import { clearCookie, cookie, getRedirectUri, json, parseCookies, randomId, requireConfig } from "./_utils.js";
 
 const GRAPH_BASE = "https://graph.facebook.com/v20.0";
 const SESSION_MAX_AGE = 60 * 60 * 24 * 55;
@@ -12,6 +12,12 @@ async function graphGet(path, params) {
     throw new Error(data.error?.message || "Instagram API request failed");
   }
   return data;
+}
+
+function redirectWithCookies(location, cookies) {
+  const headers = new Headers({ location, "cache-control": "no-store" });
+  cookies.forEach((value) => headers.append("set-cookie", value));
+  return new Response(null, { status: 302, headers });
 }
 
 export async function onRequestGet({ request, env }) {
@@ -81,14 +87,10 @@ export async function onRequestGet({ request, env }) {
       { expirationTtl: SESSION_MAX_AGE }
     );
 
-    return redirect("/preview.html#home", {
-      headers: {
-        "set-cookie": [
-          cookie("ig_session", sessionId, SESSION_MAX_AGE),
-          clearCookie("ig_oauth_state"),
-        ].join(", "),
-      },
-    });
+    return redirectWithCookies("/preview.html#home", [
+      cookie("ig_session", sessionId, SESSION_MAX_AGE),
+      clearCookie("ig_oauth_state"),
+    ]);
   } catch (error) {
     return json({ ok: false, error: "instagram_callback_failed", message: error.message }, { status: 500 });
   }
