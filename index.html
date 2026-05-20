@@ -1,117 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="너겟 게임 매거진의 작업·분석 대시보드. @nugget_zine 팔로워·발행 현황과 큐레이션 소스 모음." />
-  <title>너겟 작업 사이트</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=20260517">
-  <script id="cache-bust">
-    (function(){
-      var b = Date.now();
-      var l = document.querySelector('link[href*="style.css"]');
-      if (l) l.href = './style.css?b=' + b;
-      window.__bust = b;
-    })();
-  </script>
-</head>
-<body>
-
-  <main class="content-app page-section active" data-page-section="content">
-    <div class="md-screen">
-      <header class="md-top-bar">
-        <div class="md-profile-mini">
-          <div class="md-avatar">너</div>
-          <span>Hi, 너겟</span>
-        </div>
-        <div class="md-status">
-          <span id="mdTime">--:--</span>
-          <div class="md-status-icons">
-            <span>▥</span><span>◒</span><span>⌁</span><span>◖</span>
-          </div>
-        </div>
-      </header>
-
-      <div class="md-main">
-        <section class="md-hero">
-          <div class="md-copy">
-            <h1 id="mdHeroTitle">불러오는 중...</h1>
-            <div class="md-meta">
-              <strong id="mdHeroCat">—</strong><span>•</span>
-              <strong id="mdHeroSrc">—</strong><span>•</span>
-              <strong id="mdHeroTime">—</strong>
-            </div>
-            <p class="md-desc" id="mdHeroDesc"></p>
-            <div class="md-actions">
-              <a class="md-play-now" id="mdHeroLink" target="_blank" rel="noopener">원문 보기 <span class="md-circle">↗</span></a>
-              <a class="md-like-btn" id="mdHeroGame" target="_blank" rel="noopener" title="게임 링크">🎮</a>
-            </div>
-          </div>
-
-          <div class="md-artist-wrap">
-            <div class="md-artist-glow"></div>
-            <div class="md-artist" id="mdHeroThumb"></div>
-          </div>
-
-          <div class="md-albums">
-            <div class="md-section-title">Top Picks</div>
-            <div class="md-album-row" id="mdTopAlbums"></div>
-          </div>
-        </section>
-
-        <aside class="md-side">
-          <div class="md-playlist">
-            <h2>Today\'s Lineup</h2>
-            <div id="mdTracks"></div>
-          </div>
-          <div class="md-player" id="mdPlayer"></div>
-        </aside>
-      </div>
-
-      <nav class="md-bottom-nav">
-        <span class="md-nav-item md-small-icon">▰</span>
-        <span class="md-nav-item md-small-icon">◉</span>
-        <span class="md-hide-mobile"></span>
-        <span class="md-nav-item">▲</span>
-        <span class="md-temp">237</span>
-        <span class="md-nav-item">✤</span>
-        <span class="md-temp">200</span>
-        <span class="md-nav-item md-small-icon">▦</span>
-        <span class="md-nav-item md-small-icon">⌕</span>
-        <span class="md-nav-item md-small-icon">♫</span>
-      </nav>
-    </div>
-
-    <div class="card-modal" id="cardModal" hidden>
-      <div class="card-modal-backdrop" id="cardModalBg"></div>
-      <div class="card-modal-panel">
-        <button class="modal-close" id="modalClose">✕</button>
-        <div class="modal-thumb" id="modalThumb"></div>
-        <div class="modal-body">
-          <div class="modal-meta">
-            <span class="modal-cat" id="modalCat"></span>
-            <span class="modal-src" id="modalSrc"></span>
-          </div>
-          <h2 class="modal-title" id="modalTitle"></h2>
-          <div class="modal-brief">
-            <div class="brief-label">3줄 압축</div>
-            <ul class="brief-list" id="modalBrief"></ul>
-          </div>
-          <div class="modal-buttons">
-            <a class="modal-btn dark" id="modalLinkOriginal" target="_blank" rel="noopener">↗  원문 보기</a>
-            <a class="modal-btn ghost" id="modalLinkGame" target="_blank" rel="noopener">🎮  게임 링크</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <div class="dummy-notice" id="dummyNotice"></div>
-
-  <script>(function(){var s=document.createElement("script");s.src="./app.js?b="+(window.__bust||Date.now());document.body.appendChild(s);})();</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="nugget game magazine dashboard preview." />
+    <title>nugget</title>
+    <meta http-equiv="refresh" content="0; url=./preview.html#home" />
+    <link rel="canonical" href="./preview.html" />
+    <style>
+      body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fff;color:#09090b;font-family:Inter,Pretendard,"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif}
+      a{color:#09090b;text-decoration:none;border-bottom:1px solid #09090b}
+      p{font-size:13px;font-weight:600;letter-spacing:-.03em;color:#71717a}
+    </style>
+  </head>
+  <body>
+    <p>Opening nugget. <a href="./preview.html#home">Continue</a></p>
+  </body>
 </html>
